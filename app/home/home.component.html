@@ -1,0 +1,39 @@
+<section style="min-height: 600px;" class="pt-5 pb-5 pt-md-11 pb-md-11 font-play">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-5 col-lg-6 order-md-2">
+
+                <!-- Image -->
+                <img src="assets/images/logo2.png" class="animated fadeInLeft img-fluid">
+
+            </div>
+            <div class="col-12 col-md-7 col-lg-6 order-md-1">
+
+                <!-- Heading -->
+                <h1 class="animated fadeInDown delay-1s text-center mt-4 text-md-left ">
+                    ĐẨY<br>
+                    <span class="text-primary">KIẾN THỨC</span><br>
+                    ĐẾN TƯƠNG LAI
+                </h1>
+
+                <!-- Buttons -->
+                <div class="text-md-left text-center">
+                    <a ng-href="{{$parent.$scope.leftRoutes[0].url}}" class="animated zoomIn delay-1s btn btn-primary shadow mr-1">
+                        Khóa học <i class="fas fa-arrow-right d-none d-md-inline ml-3"></i>
+                    </a>
+                    <a ng-href="#dang-ky" target="_self" class="animated zoomIn delay-1s btn btn-outline-primary mr-1">
+                        Đăng ký
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-5 pb-5 pt-md-11 pb-md-11 font-play bg-light">
+    <app-gioi-thieu></app-gioi-thieu>
+</section>
+
+<section id="dang-ky" class="pt-5 pb-5 pt-md-11 pb-md-11 font-play bg-dark">
+    <app-dang-ky></app-dang-ky>
+</section>

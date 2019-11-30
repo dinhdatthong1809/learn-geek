@@ -1,0 +1,107 @@
+<nav class="w-100 navbar shadow-sm navbar-expand-lg navbar-custom navbar-light font-balooda">
+    <a class="navbar-brand" href="#/">
+        <img src="assets/images/logo4.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span class="text-primary">LEARN</span><span class="text-dark">GEEK</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li ng-repeat="route in $scope.leftRoutes" class="nav-item" ng-class="{ active: $scope.isActive('{{route.url}}')}">
+                <a ng-href="{{route.url}}" class="nav-link text-uppercase">{{route.name}}</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li ng-repeat="route in $scope.rightRoutes" class="nav-item">
+                <a ng-href="{{route.url}}" class="btn btn-primary nav-link text-uppercase text-white">{{route.name}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row content-body">
+        <div class="col-12 m-0 p-0">
+            <div ng-view></div>
+        </div>
+    </div>
+
+    <div class="row bg-light">
+        <div class="container">
+            <div class="pb-4 pt-4 row d-flex justify-content-center">
+                <div class="col-lg-4">
+                    <div class="mt-3 text-lg-center text-sm-left font-balooda">
+                        <h3>
+                            <img class="img-fluid" width="50" height="50" src="assets/images/logo4.png">
+                            <span class="text-primary">LEARN</span><span class="text-dark">GEEK</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="text-dark mb-4 mt-4">Thông tin <span class="text-primary">liên hệ</span></h4>
+                    <div class="text-secondary">
+                        <p>260/10, Bình Quới, Tp. Hồ Chí Minh, Việt Nam</p>
+                        <p>Số điện thoại : (090) 6546 948</p>
+                        <p>Email : thongddps08464@fpt.edu.vn</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="text-dark mb-4 mt-4">Gửi <span class="text-primary">góp ý </span></h4>
+                    <div class="text-secondary">
+                        <form>
+                            <div class="form-group row mb-1">
+                                <div class="col-md-8">
+                                    <input required type="text" class="form-control" name="email" placeholder="Email của bạn...">
+                                </div>
+                                <label for="email" class="col-md-4 col-form-label"></label>
+                            </div>
+                            <div class="form-group row mb-1">
+                                <div class="col-md-8">
+                                    <textarea required type="text" class="form-control" name="noiDung" placeholder="Nội dung góp ý..."></textarea>
+                                </div>
+                                <label for="noiDung" class="col-md-4 col-form-label"></label>
+                            </div>
+                            <div class="form-group row mb-1">
+                                <div class="col-sm-8">
+                                    <button class="btn btn-primary" type="submit">Gửi</button>
+                                </div>
+                                <label for="submit" class="col-sm-4 col-form-label"></label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row p-3 bg-dark">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 d-flex">
+                    <p class="text-white mr-auto mb-auto">
+                        Copyright &copy; 2019. Designed by
+                        <a href="{{$scope.author.facebook}}">
+                            {{$scope.author.fullName}}
+                        </a>. All rights reseved
+                    </p>
+                </div>
+                <div class="col-lg-6 d-flex">
+                    <div class="ml-auto">
+                        <a ng-href="{{$scope.author.facebook}}" target="_blank" class="text-dark btn-social btn-social-circle btn-outline-primary m-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a ng-href="{{$scope.author.facebook}}" target="_blank" class="text-dark btn-social btn-social-circle btn-outline-primary m-1">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                        <a ng-href="{{$scope.author.facebook}}" target="_blank" class="text-dark btn-social btn-social-circle btn-outline-primary m-1">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a ng-href="{{$scope.author.facebook}}" target="_blank" class="text-dark btn-social btn-social-circle btn-outline-primary m-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

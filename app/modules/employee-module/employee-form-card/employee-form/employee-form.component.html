@@ -1,0 +1,64 @@
+<form name="formEmployeeBonus">
+    <div class="form-group row">
+        <label for="fullName" class="font-weight-bold col-sm-3 col-form-label">Họ tên</label>
+        <div class="col-sm-9">
+            <input required name="fullName" type="text" class="form-control" placeholder="Họ tên..." ng-model="$scope.employee.fullName" ng-model-options="{updateOn: 'blur'}">
+            <span class="text-danger" ng-show="formEmployeeBonus.fullName.$invalid && formEmployeeBonus.fullName.$dirty">
+                Vui lòng nhập họ tên
+            </span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="salary" class="font-weight-bold col-sm-3 col-form-label">Lương</label>
+        <div class="col-sm-9">
+            <div class="input-group mb-2">
+                <input required name="salary" type="number" min="2000000" class="form-control" placeholder="Lương..." ng-model="$scope.employee.salary" ng-model-options="{updateOn: 'blur'}">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">VND</div>
+                </div>
+            </div>
+            <span class="text-danger" ng-show="formEmployeeBonus.salary.$invalid && formEmployeeBonus.salary.$dirty">
+                Lương ít nhất 2 triệu
+            </span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="gender" class="font-weight-bold col-sm-3 col-form-label">Giới tính</label>
+        <div class="col-sm-9">
+            <md-switch name="gender" class="md-primary" ng-model="$scope.employee.gender">
+                {{ $scope.employee.gender ? 'Nam' : 'Nữ' }}
+            </md-switch>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="age" class="font-weight-bold col-sm-3 col-form-label">Độ tuổi</label>
+        <div class="col-sm-9">
+            <select name="age" class="form-control" id="age" ng-model="$scope.employee.age" ng-options="item.age for item in $scope.ages track by item.age">
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label for="bonus" class="font-weight-bold col-sm-3 col-form-label">Tiền thưởng</label>
+        <div class="col-sm-9">
+            <div class="input-group mb-2">
+                <span class="form-control">
+                    <span class="font-weight-bold text-primary">{{$scope.getBonus() | number: 0}}</span>
+                </span>
+                <div class="input-group-prepend">
+                    <div class="input-group-text">VND</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <div class="float-right">
+                <div ng-click="formEmployeeBonus.$setPristine(); $scope.resetForm()" style="cursor: pointer;" class="btn btn-secondary">Khôi phục</div>
+            </div>
+            <h5 class="text-success" ng-show="formEmployeeBonus.$valid">
+                Chúc mừng bạn đã nhập đúng
+            </h5>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,13 @@
+@import '../lib/css/font.css';
+
+.font-kodchasan {
+    font-family: 'Kodchasan', sans-serif;
+}
+
+.font-play {
+    font-family: 'Play', sans-serif;
+}
+
+.font-balooda {
+    font-family: 'Baloo Da', cursive;
+}
