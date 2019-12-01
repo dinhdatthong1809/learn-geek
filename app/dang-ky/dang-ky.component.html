@@ -13,44 +13,79 @@
             <img class="img-fluid" src="assets/images/logo8.png">
         </div>
         <div class="col-lg-6">
-            <div class="card card-primary shadow shadow-dark bg-secondary h-100">
+            <div class="card card-primary shadow shadow-dark bg-secondary">
                 <div class="card-header bg-primary text-dark text-uppercase">Thông tin của bạn</div>
                 <div class="card-body">
                     <form>
                         <div class="form-group row">
                             <label for="tenDangNhap" class="col-md-4 col-form-label text-light">Tên đăng nhập</label>
                             <div class="col-md-8">
-                                <input required type="text" class="form-control bg-dark text-light border border-secondary" name="tenDangNhap">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text border border-secondary text-dark bg-primary">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <input required type="text" class="form-control bg-dark text-light border border-secondary" name="tenDangNhap">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="matKhau" class="col-md-4 col-form-label text-light">Mật khẩu</label>
                             <div class="col-md-8">
-                                <input required type="password" class="form-control bg-dark text-light border border-secondary" name="matKhau">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text border border-secondary text-dark bg-primary">
+                                            <i class="fas fa-lock"></i>
+                                        </div>
+                                    </div>
+                                    <input required type="password" class="form-control bg-dark text-light border border-secondary" name="matKhau">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="hoTen" class="col-md-4 col-form-label text-light">Họ tên</label>
                             <div class="col-md-8">
-                                <input required type="text" class="form-control bg-dark text-light border border-secondary" name="hoTen">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text border border-secondary text-dark bg-primary">
+                                            <i class="fas fa-sticky-note"></i>
+                                        </div>
+                                    </div>
+                                    <input required type="text" class="form-control bg-dark text-light border border-secondary" name="hoTen">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-light">Email</label>
                             <div class="col-md-8">
-                                <input required type="text" class="form-control bg-dark text-light border border-secondary" name="email">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text border border-secondary text-dark bg-primary">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                    </div>
+                                    <input required type="text" class="form-control bg-dark text-light border border-secondary" name="email">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="soDienThoai" class="col-md-4 col-form-label text-light">Số điện thoại</label>
                             <div class="col-md-8">
-                                <input required type="text" class="form-control bg-dark text-light border border-secondary" name="soDienThoai">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text border border-secondary text-dark bg-primary">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                    </div>
+                                    <input required type="text" class="form-control bg-dark text-light border border-secondary" name="soDienThoai">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="noiDung" class="col-sm-4 col-form-label"></label>
-                            <div class="col-sm-8">
-                                <button class="btn btn-primary" type="submit">Đăng ký</button>
+                            <div class="col-sm-8 d-flex">
+                                <button class="btn btn-primary text-light ml-auto border border-secondary" type="submit">Đăng ký</button>
                             </div>
                         </div>
                     </form>
