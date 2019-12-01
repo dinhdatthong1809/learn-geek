@@ -4,7 +4,7 @@ export let AppComponent = {
     controllerAs: '$scope'
 };
 
-function controller($location) {
+function controller($location, $anchorScroll) {
 
     this.author = {
         id: 'PS08464',
@@ -27,5 +27,14 @@ function controller($location) {
 
     this.isActive = (viewLocation) => {
         return viewLocation === ('#' + $location.path());
+    };
+
+    this.gotoAnchor = (x) => {
+        var newHash = x;
+        
+        if ($location.hash() !== newHash)
+            $location.hash(x);
+        else
+            $anchorScroll();
     };
 }
