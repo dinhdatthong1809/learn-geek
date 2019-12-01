@@ -1,4 +1,6 @@
 import { AppComponent } from './app.component.js';
+import { FooterComponent } from './footer.component.js';
+
 import { HomeComponent } from './home/home.component.js';
 import { GioiThieuComponent } from './gioi-thieu/gioi-thieu.component.js';
 import { KhoaHocComponent } from './khoa-hoc/khoa-hoc.component.js';
@@ -25,6 +27,7 @@ export let app = angular.module('myApp',
 /* Components */
 app
     .component("appRoot", AppComponent)
+    .component("appFooter", FooterComponent)
     .component("appHome", HomeComponent)
     .component("appDangKy", DangKyComponent)
     .component("appGioiThieu", GioiThieuComponent)

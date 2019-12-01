@@ -13,7 +13,18 @@ function controller($location, $anchorScroll) {
         gender: true,
         photo: 'PS08464-DinhDatThong.jpg',
         mark: 10,
-        facebook: 'https://www.facebook.com/dinh.dat.thong'
+        address: '260/10, Bình Quới, Tp. Hồ Chí Minh, Việt Nam',
+        phoneNumber: '(090) 6546 948',
+        email: 'thongddps08464@fpt.edu.vn',
+        socialLinks:
+            [
+                // facebook
+                'https://www.facebook.com/dinh.dat.thong',
+                // instagram
+                'https://www.instagram.com/blueshootingstar1809',
+                // github
+                'https://github.com/BlueShootingStar',
+            ]
     };
 
     this.leftRoutes = [
@@ -31,7 +42,7 @@ function controller($location, $anchorScroll) {
 
     this.gotoAnchor = (x) => {
         var newHash = x;
-        
+
         if ($location.hash() !== newHash)
             $location.hash(x);
         else
