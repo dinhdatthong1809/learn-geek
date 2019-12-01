@@ -4,8 +4,7 @@ export let AppComponent = {
     controllerAs: '$scope'
 };
 
-function controller($rootScope, $location) {
-    this.loading = $rootScope.loading;
+function controller($location) {
 
     this.author = {
         id: 'PS08464',

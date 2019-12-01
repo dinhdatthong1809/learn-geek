@@ -15,16 +15,3 @@ app.config(function ($routeProvider, $locationProvider) {
             redirectTo: '/'
         });
 });
-
-app.run(($rootScope) => {
-    $rootScope.$on('$routeChangeStart', () => {
-        $rootScope.loading = true;
-    });
-    $rootScope.$on('$routeChangeSuccess', () => {
-        $rootScope.loading = false;
-    });
-    $rootScope.$on('$routeChangeError', () => {
-        $rootScope.loading = false;
-        alert("Lỗi! Không tải được template");
-    });
-});
