@@ -1,0 +1,70 @@
+<div class="font-play">
+    <div class="row bg-light">
+        <div class="container">
+            <div class="pb-4 pt-4 row d-flex justify-content-center">
+                <div class="col-lg-4">
+                    <div class="mt-3 text-lg-center text-sm-left font-balooda">
+                        <h3>
+                            <img class="img-fluid" width="50" height="50" src="assets/images/logo4.png">
+                            <span class="text-primary">LEARN</span><span class="text-dark">GEEK</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="text-dark mb-4 mt-4">Thông tin <span class="text-primary">liên hệ</span></h4>
+                    <div class="text-secondary">
+                        <p><i class="fas fa-map-marker-alt"></i> {{ $parent.$scope.author.address }}</p>
+                        <p><i class="fas fa-phone"></i> {{ $parent.$scope.author.phoneNumber }}</p>
+                        <p><i class="fas fa-envelope"></i> {{ $parent.$scope.author.email }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="text-dark mb-4 mt-4">Gửi <span class="text-primary">góp ý </span></h4>
+                    <div class="text-secondary">
+                        <form>
+                            <div class="form-group row mb-1">
+                                <div class="col-md-8">
+                                    <input required type="text" class="form-control" name="email" placeholder="Email của bạn...">
+                                </div>
+                                <label for="email" class="col-md-4 col-form-label"></label>
+                            </div>
+                            <div class="form-group row mb-1">
+                                <div class="col-md-8">
+                                    <textarea required type="text" class="form-control" name="noiDung" placeholder="Nội dung góp ý..."></textarea>
+                                </div>
+                                <label for="noiDung" class="col-md-4 col-form-label"></label>
+                            </div>
+                            <div class="form-group row mb-1">
+                                <div class="col-sm-8">
+                                    <button class="btn btn-primary" type="submit">Gửi</button>
+                                </div>
+                                <label for="submit" class="col-sm-4 col-form-label"></label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row p-3 bg-dark">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 d-flex">
+                    <p class="text-white mr-auto mb-auto">
+                        Copyright &copy; 2019. Designed by
+                        <a href="{{$parent.$scope.author.socialLinks[0]}}">
+                            {{ $parent.$scope.author.fullName }}</a>.
+                        All rights reseved
+                    </p>
+                </div>
+                <div class="col-lg-6 d-flex">
+                    <div class="ml-auto">
+                        <a ng-repeat="item in $parent.$scope.author.socialLinks" ng-href="{{item}}" target="_blank" class="text-dark btn-social btn-social-circle btn-outline-primary m-1">
+                            <i class="{{$scope.socialIcons[$index]}}"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
