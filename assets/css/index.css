@@ -1,6 +1,10 @@
 @import './navbar.css';
 @import './fonts.css';
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     height: 200px;
     position: relative;
