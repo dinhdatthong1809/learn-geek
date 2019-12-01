@@ -4,7 +4,7 @@ export let AppComponent = {
     controllerAs: '$scope'
 };
 
-function controller($location, $anchorScroll) {
+function controller($location, anchorSmoothScroll) {
 
     this.author = {
         id: 'PS08464',
@@ -41,11 +41,7 @@ function controller($location, $anchorScroll) {
     };
 
     this.gotoAnchor = (x) => {
-        var newHash = x;
-
-        if ($location.hash() !== newHash)
-            $location.hash(x);
-        else
-            $anchorScroll();
+        $location.hash(x);
+        anchorSmoothScroll.scrollTo(x);
     };
 }
