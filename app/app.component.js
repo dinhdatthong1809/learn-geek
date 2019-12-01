@@ -41,7 +41,12 @@ function controller($location, anchorSmoothScroll) {
     };
 
     this.gotoAnchor = (x) => {
-        $location.hash(x);
-        anchorSmoothScroll.scrollTo(x);
+        let newHash = x;
+        
+        if ($location.hash() !== newHash) {
+            $location.hash(x);
+        } else {
+            anchorSmoothScroll.scrollTo(x);
+        }
     };
 }
