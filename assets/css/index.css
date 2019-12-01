@@ -2,7 +2,7 @@
 @import './fonts.css';
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
