@@ -25,6 +25,6 @@ function controller() {
             title: "Chuyến bay uớc mơ nghề nghiệp đáp cánh",
             content: "Việc học không bao giờ dừng. Hãy học những gì cần thiết và đạt được thành công.",
             icon: "man.png"
-        },
+        }
     ];
 }
