@@ -7,17 +7,19 @@ import { HoiDapComponent } from './hoi-dap/hoi-dap.component.js';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component.js';
 import { DangKyComponent } from './dang-ky/dang-ky.component.js';
 
-import {studentModule} from './modules/student-module/student.module.js';
-import {employeeModule} from './modules/employee-module/employee.module.js';
-import {subjectModule} from './modules/subject-module/subject.module.js';
+import { studentModule } from './modules/student-module/student.module.js';
+import { employeeModule } from './modules/employee-module/employee.module.js';
+import { subjectModule } from './modules/subject-module/subject.module.js';
 
-export let app = angular.module('myApp', 
-    ['ngRoute',
-    'ngMaterial',
-    'ngMessages',
-    'studentModule',
-    'employeeModule',
-    'subjectModule',]
+export let app = angular.module('myApp',
+    [
+        'ngRoute',
+        'ngMaterial',
+        'ngMessages',
+        'studentModule',
+        'employeeModule',
+        'subjectModule',
+    ]
 );
 
 /* Components */

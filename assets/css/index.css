@@ -5,6 +5,14 @@ html {
     scroll-behavior: smooth;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.content-body {
+    min-height: calc(100vh - 70px);
+}
+
 header {
     height: 200px;
     position: relative;

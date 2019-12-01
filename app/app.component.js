@@ -4,7 +4,9 @@ export let AppComponent = {
     controllerAs: '$scope'
 };
 
-function controller($location) {
+function controller($rootScope, $location) {
+    this.loading = $rootScope.loading;
+
     this.author = {
         id: 'PS08464',
         fullName: 'Đinh Đạt Thông',
@@ -22,7 +24,6 @@ function controller($location) {
 
     this.rightRoutes = [
         { url: '#/dang-nhap', name: 'Đăng nhập' },
-        // { url: '#dang-ky', name: 'Đăng ký' },
     ];
 
     this.isActive = (viewLocation) => {
