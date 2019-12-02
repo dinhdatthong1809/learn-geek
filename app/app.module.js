@@ -90,3 +90,7 @@ app.service('anchorSmoothScroll', function () {
         });
     };
 });
+
+angular.element(document).ready(() => {
+    angular.bootstrap(document, ['myApp'])
+});

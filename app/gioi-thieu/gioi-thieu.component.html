@@ -12,14 +12,14 @@
             </p>
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-5 p-3">
             <div class="col-lg-6">
                 Với hình thức kết hợp việc học lý thuyết và thực hành với các bài tập trắc nghiệm, bạn sẽ nhanh chóng nắm được những khái niệm cơ bản, từ đó xây dựng từng bước nhỏ để làm nên các phần mềm ứng dụng thực thụ.
 
                 <div ng-repeat="aboutUsTile in $scope.aboutUsTiles" class="mt-5">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="img-fluid rounded-circle border border-primary shadow" width="100px" height="100px" ng-src="assets/images/icons/theme/{{aboutUsTile.icon}}">
+                            <img class="m-2 img-fluid rounded-circle border border-primary shadow" width="100px" height="100px" ng-src="assets/images/icons/theme/{{aboutUsTile.icon}}">
                         </div>
                         <div class="col-md-10">
                             <p class="h5">{{aboutUsTile.title}}</p>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 text-center">
+            <div class="col-lg-6 align-items-center">
                 <img class="img-fluid" src="assets/images/logo7.png">
             </div>
         </div>
