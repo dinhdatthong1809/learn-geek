@@ -29,6 +29,8 @@ function controller($location, anchorSmoothScroll) {
 
     this.leftRoutes = [
         { url: 'khoa-hoc', name: 'Khóa học' },
+        { url: 'luyen-tap', name: 'Luyện tập' },
+        { url: 'thao-luan', name: 'Thảo luận' },
         { url: 'hoi-dap', name: 'Hỏi đáp' },
     ];
 
