@@ -1,5 +1,5 @@
 <nav class="w-100 navbar shadow-sm navbar-expand-lg navbar-custom navbar-light font-balooda">
-    <a class="navbar-brand" href="#/">
+    <a class="navbar-brand" ui-sref="/">
         <img src="assets/images/logo4.png" width="30" height="30" class="d-inline-block align-top" alt="">
         <span class="text-primary">LEARN</span><span class="text-dark">GEEK</span>
     </a>
@@ -8,13 +8,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li ng-repeat="route in $scope.leftRoutes" class="nav-item" ng-class="{ active: $scope.isActive('{{route.url}}')}">
-                <a ng-href="{{route.url}}" class="nav-link text-uppercase">{{route.name}}</a>
+            <li ng-repeat="route in $scope.leftRoutes" class="nav-item" ui-sref-active="active">
+                <a ui-sref="{{route.url}}" class="nav-link text-uppercase">{{route.name}}</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li ng-repeat="route in $scope.rightRoutes" class="nav-item">
-                <a ng-href="{{route.url}}" class="btn btn-primary nav-link text-uppercase text-white">{{route.name}}</a>
+                <a ui-sref="{{route.url}}" class="btn btn-primary nav-link text-uppercase text-white">{{route.name}}</a>
             </li>
         </ul>
     </div>
@@ -23,7 +23,7 @@
 <div class="container-fluid">
     <div class="row content-body">
         <div class="col-12 m-0 p-0">
-            <div ng-view></div>
+            <ui-view></ui-view>
         </div>
     </div>
 

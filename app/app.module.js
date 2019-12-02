@@ -4,22 +4,22 @@ import { FooterComponent } from './footer.component.js';
 import { HomeComponent } from './home/home.component.js';
 import { GioiThieuComponent } from './gioi-thieu/gioi-thieu.component.js';
 import { KhoaHocComponent } from './khoa-hoc/khoa-hoc.component.js';
-import { LienHeComponent } from './lien-he/lien-he.component.js';
 import { HoiDapComponent } from './hoi-dap/hoi-dap.component.js';
-import { DangNhapComponent } from './dang-nhap/dang-nhap.component.js';
+import { XacThucComponent } from './xac-thuc/xac-thuc.component.js';
+import { DangNhapComponent } from './xac-thuc/dang-nhap/dang-nhap.component.js';
+import { QuenMatKhauComponent } from './xac-thuc/quen-mat-khau/quen-mat-khau.component.js';
 import { DangKyComponent } from './dang-ky/dang-ky.component.js';
 
-import { studentModule } from './modules/student-module/student.module.js';
-import { employeeModule } from './modules/employee-module/employee.module.js';
+// import { studentModule } from './modules/student-module/student.module.js';
+// import { employeeModule } from './modules/employee-module/employee.module.js';
 import { subjectModule } from './modules/subject-module/subject.module.js';
 
 export let app = angular.module('myApp',
     [
-        'ngRoute',
-        'ngMaterial',
-        'ngMessages',
-        'studentModule',
-        'employeeModule',
+        'ui.router',
+        'ui.router.stateHelper',
+        // 'studentModule',
+        // 'employeeModule',
         'subjectModule',
     ]
 );
@@ -27,14 +27,18 @@ export let app = angular.module('myApp',
 /* Components */
 app
     .component("appRoot", AppComponent)
-    .component("appFooter", FooterComponent)
+        .component("appFooter", FooterComponent)
+
     .component("appHome", HomeComponent)
-    .component("appGioiThieu", GioiThieuComponent)
-    .component("appDangKy", DangKyComponent)
+        .component("appGioiThieu", GioiThieuComponent)
+        .component("appDangKy", DangKyComponent)
+
     .component("appKhoaHoc", KhoaHocComponent)
-    .component("appLienHe", LienHeComponent)
     .component("appHoiDap", HoiDapComponent)
-    .component("appDangNhap", DangNhapComponent)
+
+    .component("appXacThuc", XacThucComponent)
+        .component("appDangNhap", DangNhapComponent)
+        .component("appQuenMatKhau", QuenMatKhauComponent)
     ;
 
 /* Services */

@@ -4404,6 +4404,7 @@ table.grid td {
 .bg-signin2{
 	background-color: #ccfff7;
     background-image: url(../../images/logo6.png);
+    background-position: center;
     height: 100%;
     border-top-left-radius: .25rem;
     border-bottom-left-radius: .25rem;

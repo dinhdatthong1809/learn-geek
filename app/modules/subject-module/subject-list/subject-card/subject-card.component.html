@@ -1,7 +1,7 @@
 <div class="card card-flip card-primary">
     <div class="card-front">
         <div class="card-body text-center">
-            <img src="assets/images/subjects/{{$scope.subject.logo}}" class="img-fluid" alt="Card image cap">
+            <img ng-src="assets/images/subjects/{{$scope.subject.logo}}" class="img-fluid" alt="Card image cap">
             <h5 class="card-title text-primary">{{$scope.subject.name}}</h5>
         </div>
     </div>
@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <img width="50px" src="assets/images/subjects/{{$scope.subject.logo}}" class="border border-primary rounded mb-1 img-fluid">
+                    <img width="50px" ng-src="assets/images/subjects/{{$scope.subject.logo}}" class="border border-primary rounded mb-1 img-fluid">
                     <p class="card-title text-primary">{{$scope.subject.name}}</p>
                     <p class="card-text">Mã môn: {{$scope.subject.id}}</p>
                     <p class="card-text">Số người học: {{$scope.subject.numberOfLearners}}</p>

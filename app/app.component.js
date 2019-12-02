@@ -28,17 +28,13 @@ function controller($location, anchorSmoothScroll) {
     };
 
     this.leftRoutes = [
-        { url: '#/khoa-hoc', name: 'Khóa học' },
-        { url: '#/hoi-dap', name: 'Hỏi đáp' },
+        { url: 'khoa-hoc', name: 'Khóa học' },
+        { url: 'hoi-dap', name: 'Hỏi đáp' },
     ];
 
     this.rightRoutes = [
-        { url: '#/dang-nhap', name: 'Đăng nhập' },
+        { url: 'xac-thuc.dang-nhap', name: 'Đăng nhập' },
     ];
-
-    this.isActive = (viewLocation) => {
-        return viewLocation === ('#' + $location.path());
-    };
 
     this.gotoAnchor = (x) => {
         let newHash = x;

@@ -1,19 +1,39 @@
 import { app } from './app.module.js';
-import { HomeComponent } from './home/home.component.js';
-import { KhoaHocComponent } from './khoa-hoc/khoa-hoc.component.js';
-import { HoiDapComponent } from './hoi-dap/hoi-dap.component.js';
-import { DangNhapComponent } from './dang-nhap/dang-nhap.component.js';
 
-app.config(($routeProvider, $locationProvider) => {
-    
+app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
+
     $locationProvider.hashPrefix('');
-    
-    $routeProvider
-        .when("/", HomeComponent)
-        .when("/khoa-hoc", KhoaHocComponent)
-        .when("/hoi-dap", HoiDapComponent)
-        .when("/dang-nhap", DangNhapComponent)
-        .otherwise({
-            redirectTo: '/'
-        });
+
+    $urlRouterProvider.otherwise('/');
+
+    let routes = [
+        { name: '/', url: '/', component: "appHome" },
+        { name: 'hoi-dap', url: '/hoi-dap', component: 'appHoiDap' },
+        {
+            name: 'khoa-hoc',
+            url: '/khoa-hoc',
+            component: 'appKhoaHoc',
+            resolve: {
+                subjects: subjectService => subjectService.getAll()
+            }
+        },
+        {
+            name: 'xac-thuc',
+            url: '/xac-thuc',
+            component: 'appXacThuc'
+        },
+            {
+                name: 'xac-thuc.dang-nhap',
+                url: '/dang-nhap',
+                component: 'appDangNhap',
+            },
+            {
+                name: 'xac-thuc.quen-mat-khau',
+                url: '/quen-mat-khau',
+                component: 'appQuenMatKhau',
+            },
+        
+    ];
+
+    routes.forEach(route => $stateProvider.state(route));
 });

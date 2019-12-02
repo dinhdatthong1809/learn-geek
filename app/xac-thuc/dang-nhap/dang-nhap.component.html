@@ -1,0 +1,40 @@
+<div class="animated fadeInDown faster text-center">
+    <img src="assets/images/logo5.png" width="60px" height="60px">
+</div>
+<div class="card-title text-uppercase text-center py-3">Đăng nhập</div>
+<form class="animated fadeInUp faster">
+    <div class="form-group">
+        <div class="position-relative has-icon-left">
+            <label for="tenDangNhap" class="sr-only">Tên đăng nhập</label>
+            <input required type="text" name="tenDangNhap" class="form-control" placeholder="Tên đăng nhập">
+            <div class="form-control-position">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="position-relative has-icon-left">
+            <label for="matKhau" class="sr-only">Mật khẩu</label>
+            <input required type="password" name="matKhau" class="form-control" placeholder="Mật khẩu">
+            <div class="form-control-position">
+                <i class="fas fa-lock"></i>
+            </div>
+        </div>
+    </div>
+    <div class="form-row mr-0 ml-0">
+        <div class="form-group col-6">
+            <div class="icheck-primary">
+                <input type="checkbox" id="user-checkbox" checked="">
+                <label for="user-checkbox">Ghi nhớ</label>
+            </div>
+        </div>
+        <div class="form-group col-6 text-right">
+            <a ui-sref="xac-thuc.quen-mat-khau">Quên mật khẩu</a>
+        </div>
+    </div>
+    <button type="button" class="btn btn-outline-primary w-100">Đăng nhập</button>
+    <div class="text-center pt-3">
+        <hr>
+        <p class="text-muted">Bạn chưa có tài khoản? <a href="#/#dang-ky"> Đăng ký tại đây</a></p>
+    </div>
+</form>
