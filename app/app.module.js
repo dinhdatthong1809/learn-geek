@@ -9,16 +9,13 @@ import { XacThucComponent } from './xac-thuc/xac-thuc.component.js';
 import { DangNhapComponent } from './xac-thuc/dang-nhap/dang-nhap.component.js';
 import { QuenMatKhauComponent } from './xac-thuc/quen-mat-khau/quen-mat-khau.component.js';
 import { DangKyComponent } from './dang-ky/dang-ky.component.js';
+import { LuyenTapComponent } from './luyen-tap/luyen-tap.component.js';
 
-// import { studentModule } from './modules/student-module/student.module.js';
-// import { employeeModule } from './modules/employee-module/employee.module.js';
 import { subjectModule } from './modules/subject-module/subject.module.js';
 
 export let app = angular.module('myApp',
     [
         'ui.router',
-        // 'studentModule',
-        // 'employeeModule',
         'subjectModule',
     ]
 );
@@ -33,6 +30,7 @@ app
         .component("appDangKy", DangKyComponent)
 
     .component("appKhoaHoc", KhoaHocComponent)
+    .component("appLuyenTap", LuyenTapComponent)
     .component("appHoiDap", HoiDapComponent)
 
     .component("appXacThuc", XacThucComponent)

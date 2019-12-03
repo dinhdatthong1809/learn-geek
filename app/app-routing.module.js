@@ -2,14 +2,16 @@ import { app } from './app.module.js';
 
 app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
 
-
     $locationProvider.hashPrefix('');
 
     $urlRouterProvider.otherwise('/');
 
     let routes = [
-        { name: '/', url: '/', component: "appHome" },
-        { name: 'hoi-dap', url: '/hoi-dap', component: 'appHoiDap' },
+        {
+            name: '/',
+            url: '/',
+            component: "appHome"
+        },
         {
             name: 'khoa-hoc',
             url: '/khoa-hoc',
@@ -17,6 +19,16 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             resolve: {
                 subjects: subjectService => subjectService.getAll()
             }
+        },
+        {
+            name: 'luyen-tap',
+            url: '/luyen-tap',
+            component: "appLuyenTap"
+        },
+        {
+            name: 'hoi-dap',
+            url: '/hoi-dap',
+            component: 'appHoiDap'
         },
         {
             name: 'xac-thuc',
@@ -32,8 +44,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                 name: 'xac-thuc.quen-mat-khau',
                 url: '/quen-mat-khau',
                 component: 'appQuenMatKhau',
-            },
-        
+            }
     ];
 
     routes.forEach(route => $stateProvider.state(route));
