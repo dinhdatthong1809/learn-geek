@@ -2,6 +2,7 @@ import { app } from './app.module.js';
 
 app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
 
+
     $locationProvider.hashPrefix('');
 
     $urlRouterProvider.otherwise('/');

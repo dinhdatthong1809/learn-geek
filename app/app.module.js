@@ -17,7 +17,6 @@ import { subjectModule } from './modules/subject-module/subject.module.js';
 export let app = angular.module('myApp',
     [
         'ui.router',
-        'ui.router.stateHelper',
         // 'studentModule',
         // 'employeeModule',
         'subjectModule',
