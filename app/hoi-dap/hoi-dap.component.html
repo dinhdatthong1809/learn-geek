@@ -1,0 +1,15 @@
+<div class="container mt-4">
+    <div class="card card-primary">
+        <div class="card-header text-uppercase text-center font-play">
+            <p class="h4 text-dark">
+               <img src="assets/images/icons/theme/quotes.png">Các câu hỏi thường gặp
+            </p>
+        </div>
+        <div class="card-body">
+            <div ng-repeat="faq in $scope.faqs" class="mt-4 mb-4">
+                <div class="font-weight-bold">{{faq.title}}</div>
+                <div>{{faq.content}}</div>
+            </div>
+        </div>
+    </div>
+</div>
