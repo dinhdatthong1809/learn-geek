@@ -4,6 +4,7 @@ import { FooterComponent } from './footer.component.js';
 import { HomeComponent } from './home/home.component.js';
 import { GioiThieuComponent } from './gioi-thieu/gioi-thieu.component.js';
 import { KhoaHocComponent } from './khoa-hoc/khoa-hoc.component.js';
+import { ThaoLuanComponent } from './thao-luan/thao-luan.component.js';
 import { HoiDapComponent } from './hoi-dap/hoi-dap.component.js';
 import { XacThucComponent } from './xac-thuc/xac-thuc.component.js';
 import { DangNhapComponent } from './xac-thuc/dang-nhap/dang-nhap.component.js';
@@ -31,6 +32,7 @@ app
 
     .component("appKhoaHoc", KhoaHocComponent)
     .component("appLuyenTap", LuyenTapComponent)
+    .component("appThaoLuan", ThaoLuanComponent)
     .component("appHoiDap", HoiDapComponent)
 
     .component("appXacThuc", XacThucComponent)
@@ -93,5 +95,5 @@ app.service('anchorSmoothScroll', function () {
 });
 
 angular.element(document).ready(() => {
-    angular.bootstrap(document, ['myApp'])
+    angular.bootstrap(document, ['myApp']);
 });

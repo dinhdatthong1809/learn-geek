@@ -26,6 +26,11 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             component: "appLuyenTap"
         },
         {
+            name: 'thao-luan',
+            url: '/thao-luan',
+            component: "appThaoLuan"
+        },
+        {
             name: 'hoi-dap',
             url: '/hoi-dap',
             component: 'appHoiDap'
