@@ -13,7 +13,7 @@ export default class SweetAlertHelper {
     
     static thatBai = (thongBao) => {
     	Swal.fire({
-			typicone : 'error',
+			icon : 'error',
 			title : 'Lỗi',
 			html : thongBao,
 			showConfirmButton : true
