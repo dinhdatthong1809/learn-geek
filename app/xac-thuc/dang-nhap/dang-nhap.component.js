@@ -6,14 +6,14 @@ export let DangNhapComponent = {
     controllerAs: '$scope'
 };
 
-function controller(AccountService) {
+function controller(accountService) {
     this.userAuthentication = {
         username: "",
         password: ""
     }
 
     this.signIn = () => {
-        AccountService
+        accountService
             .getOne(this.userAuthentication.username)
             .then(
                 (doc) => {
