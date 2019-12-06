@@ -11,7 +11,7 @@ function controller($location, anchorSmoothScroll) {
         fullName: 'Đinh Đạt Thông',
         birthday: '18-09-1997',
         gender: true,
-        photo: 'PS08464-DinhDatThong.jpg',
+        photo: 'thongddps08464.jpg',
         mark: 10,
         address: '260/10, Bình Quới, Tp. Hồ Chí Minh, Việt Nam',
         phoneNumber: '(090) 6546 948',
