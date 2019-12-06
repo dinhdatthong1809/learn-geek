@@ -5,5 +5,9 @@ export let DangNhapComponent = {
 };
 
 function controller() {
+    this.userAuthentication = {
+        username: "",
+        password: ""
+    }
 
 }

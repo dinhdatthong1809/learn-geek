@@ -1,0 +1,34 @@
+﻿[
+    {
+        "username": "thongddps08464",
+        "password": "123",
+        "fullName": "Đinh Đạt Thông",
+        "email": "thongddps08464@fpt.edu.vn",
+        "gender": true,
+        "phoneNumber": "0906546948"
+    },
+    {
+        "username": "tiendqps08547",
+        "password": "123",
+        "fullName": "Đào Quang Tiến",
+        "email": "tiendqps08547@fpt.edu.vn",
+        "gender": true,
+        "phoneNumber": "0784617120"
+    },
+    {
+        "username": "haondps07264",
+        "password": "123",
+        "fullName": "Nguyễn Đại Hào",
+        "email": "haondps07264@fpt.edu.vn",
+        "gender": false,
+        "phoneNumber": "0376555796"
+    },
+    {
+        "username": "thanhllps08444",
+        "password": "123",
+        "fullName": "Lê Long Thành",
+        "email": "thanhllps08444@fpt.edu.vn",
+        "gender": false,
+        "phoneNumber": "0367716718"
+    }
+]

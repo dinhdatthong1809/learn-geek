@@ -21,18 +21,26 @@
                 <div class="col-lg-4">
                     <h4 class="text-dark mb-4 mt-4">Gửi <span class="text-primary">góp ý </span></h4>
                     <div class="text-secondary">
-                        <form>
+                        <form name="formFeedback">
                             <div class="form-group row mb-1">
                                 <div class="col-md-8">
-                                    <input required type="text" class="form-control" name="email" placeholder="Email của bạn...">
+                                    <input required pattern="^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$" maxlength=75 type="email" class="form-control" name="email" ng-model="$scope.mail.email" placeholder="Email của bạn...">
+                                    <span class="text-danger" ng-show="formFeedback.email.$error && formFeedback.email.$dirty" ng-messages="formFeedback.email.$error" role="alert">
+                                        <span ng-message="pattern">Email không hợp lệ.</span>
+                                        <span ng-message="required">Vui lòng nhập email.</span>
+                                    </span>
                                 </div>
                                 <label for="email" class="col-md-4 col-form-label"></label>
                             </div>
                             <div class="form-group row mb-1">
                                 <div class="col-md-8">
-                                    <textarea required type="text" class="form-control" name="noiDung" placeholder="Nội dung góp ý..."></textarea>
+                                    <textarea required type="text" minlength=5 maxlength=255 class="form-control" name="content" ng-model="$scope.mail.content" placeholder="Nội dung góp ý..."></textarea>
+                                    <span class="text-danger" ng-show="formFeedback.content.$error && formFeedback.content.$dirty" ng-messages="formFeedback.content.$error" role="alert">
+                                        <span ng-message="required">Vui lòng nhập nội dung.</span>
+                                        <span ng-message="minlength">Nội dung gồm 5 đến 255 ký tự.</span>
+                                    </span>
                                 </div>
-                                <label for="noiDung" class="col-md-4 col-form-label"></label>
+                                <label for="content" class="col-md-4 col-form-label"></label>
                             </div>
                             <div class="form-group row mb-1">
                                 <div class="col-sm-8">

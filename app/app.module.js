@@ -11,12 +11,15 @@ import { DangNhapComponent } from './xac-thuc/dang-nhap/dang-nhap.component.js';
 import { QuenMatKhauComponent } from './xac-thuc/quen-mat-khau/quen-mat-khau.component.js';
 import { DangKyComponent } from './dang-ky/dang-ky.component.js';
 import { LuyenTapComponent } from './luyen-tap/luyen-tap.component.js';
+import { TrangCaNhanComponent } from './trang-ca-nhan/trang-ca-nhan.component.js';
 
 import { subjectModule } from './modules/subject-module/subject.module.js';
 
 export let app = angular.module('myApp',
     [
         'ui.router',
+        'ngMaterial',
+        'ngMessages',
         'subjectModule',
     ]
 );
@@ -38,6 +41,7 @@ app
     .component("appXacThuc", XacThucComponent)
         .component("appDangNhap", DangNhapComponent)
         .component("appQuenMatKhau", QuenMatKhauComponent)
+    .component("appTrangCaNhan", TrangCaNhanComponent)
     ;
 
 /* Services */

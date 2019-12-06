@@ -5,7 +5,7 @@ export function SubjectService($http) {
     SubjectService.getAll = () => {
         return $http
             .get('/database/subjects.json')
-            .then(response => response.data.subjects);
+            .then(response => response.data);
     };
 
     SubjectService.getOne = (id) => {

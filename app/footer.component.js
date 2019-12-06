@@ -9,5 +9,10 @@ function controller() {
         "fab fa-facebook-f",
         "fab fa-instagram",
         "fab fa-github"
-    ]
+    ];
+
+    this.mail = {
+        email: "",
+        content: ""
+    }
 }

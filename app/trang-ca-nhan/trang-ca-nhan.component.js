@@ -1,5 +1,5 @@
-export let DangKyComponent = {
-    templateUrl: './app/dang-ky/dang-ky.component.html',
+export let TrangCaNhanComponent = {
+    templateUrl: './app/trang-ca-nhan/trang-ca-nhan.component.html',
     controller: controller,
     controllerAs: '$scope'
 };

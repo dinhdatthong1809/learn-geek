@@ -49,7 +49,12 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                 name: 'xac-thuc.quen-mat-khau',
                 url: '/quen-mat-khau',
                 component: 'appQuenMatKhau',
-            }
+            },
+        {
+            name: 'trang-ca-nhan',
+            url: '/trang-ca-nhan',
+            component: 'appTrangCaNhan'
+        },
     ];
 
     routes.forEach(route => $stateProvider.state(route));

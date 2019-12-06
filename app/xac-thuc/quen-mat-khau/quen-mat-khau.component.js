@@ -5,5 +5,5 @@ export let QuenMatKhauComponent = {
 };
 
 function controller() {
-
+    this.email = "";
 }
