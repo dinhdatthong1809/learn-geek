@@ -10,14 +10,13 @@ export let AccountFormComponent = {
 function controller(accountService) {
     this.account = new Account("", "", "", "", true, "", "");
 
-    this.addAccount = () => {
+    this.signUp = () => {
         accountService
             .insert(this.account)
             .then(
-                (docRef) => {
+                () => {
                     SweetAlertHelper.thanhCong("Đăng ký thành công!");
                     this.account = new Account("", "", "", "", true, "", "");
-                    console.log(docRef);
                 },
                 (error) => {
                     SweetAlertHelper.thatBai("Đăng ký thất bại!");
