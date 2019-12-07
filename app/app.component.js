@@ -6,7 +6,7 @@ export let AppComponent = {
     controllerAs: '$scope'
 };
 
-function controller($location, anchorSmoothScroll, authenticationService) {
+function controller($window, $location, anchorSmoothScroll, authenticationService) {
 
     this.author = {
         id: 'PS08464',
