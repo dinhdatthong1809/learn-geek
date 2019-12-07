@@ -13,7 +13,7 @@ export default function AuthenticationService() {
     };
 
     AuthenticationService.signOut = () => {
-        return learnGeekAuth.signout();
+        return learnGeekAuth.signOut();
     };
 
     return AuthenticationService;
