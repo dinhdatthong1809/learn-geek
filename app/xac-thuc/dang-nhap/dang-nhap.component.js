@@ -31,7 +31,7 @@ function controller($window, accountService, authenticationService) {
                         .then(
                             () => {
                                 SweetAlertHelper.thanhCong("Đăng nhập thành công!");
-                                $window.location.reload();
+                                $window.location = '/';
                             },
                             (error) => {
                                 SweetAlertHelper.thatBai("Sai mật khẩu!");
