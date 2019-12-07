@@ -6,7 +6,7 @@ export let AppComponent = {
     controllerAs: '$scope'
 };
 
-function controller($location, anchorSmoothScroll) {
+function controller($location, anchorSmoothScroll, authenticationService) {
 
     this.author = {
         id: 'PS08464',
@@ -46,12 +46,12 @@ function controller($location, anchorSmoothScroll) {
     ];
 
     learnGeekAuth.onAuthStateChanged((account) => {
-        if (account) {
-            // signed in
-            this.rightRoutes = authenticatedRoutes;
-        } else {
+        if (!account) {
             // signed out
             this.rightRoutes = unauthenticatedRoutes;
+        } else {
+            // signed in
+            this.rightRoutes = authenticatedRoutes;
         }
     });
 
@@ -64,4 +64,12 @@ function controller($location, anchorSmoothScroll) {
             anchorSmoothScroll.scrollTo(x);
         }
     };
+    
+    this.signOut = () => {
+        authenticationService
+            .signOut()
+            .then(() => {
+                $window.location.reload();
+            });
+    }
 }
