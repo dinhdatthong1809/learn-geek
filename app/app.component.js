@@ -68,8 +68,10 @@ function controller($window, $location, anchorSmoothScroll, authenticationServic
     this.signOut = () => {
         authenticationService
             .signOut()
-            .then(() => {
-                $window.location.reload();
-            });
+            .then(
+                () => {
+                    $window.location = '/';
+                }
+            );
     }
 }
