@@ -1,7 +1,7 @@
 <form name="formAccount" ng-submit="$scope.signUp()">
     <div class="form-group row">
-        <label for="username" class="col-md-4 col-form-label text-light">Tên đăng nhập</label>
-        <div class="col-md-8">
+        <label for="username" class="col-md-5 col-form-label text-light">Tên đăng nhập</label>
+        <div class="col-md-7">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text border border-secondary text-dark bg-primary">
@@ -18,8 +18,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="password" class="col-md-4 col-form-label text-light">Mật khẩu</label>
-        <div class="col-md-8">
+        <label for="password" class="col-md-5 col-form-label text-light">Mật khẩu</label>
+        <div class="col-md-7">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text border border-secondary text-dark bg-primary">
@@ -36,8 +36,27 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="fullName" class="col-md-4 col-form-label text-light">Họ tên</label>
-        <div class="col-md-8">
+        <label for="passwordConfirm" class="col-md-5 col-form-label text-light">Xác nhận mật khẩu</label>
+        <div class="col-md-7">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text border border-secondary text-dark bg-primary">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+                <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" class="form-control bg-dark text-light border border-secondary" compare-to="$scope.account.password" name="passwordConfirm" ng-model="$scope.passwordConfirm">
+            </div>
+            <span class="text-danger" ng-show="formAccount.passwordConfirm.$error && formAccount.passwordConfirm.$dirty" ng-messages="formAccount.passwordConfirm.$error" role="alert">
+                <span ng-message="pattern">Mật khẩu chỉ gồm ký tự chữ cái và -, _, dấu cách.</span>
+                <span ng-message="required">Vui lòng nhập lại mật khẩu.</span>
+                <span ng-message="minlength">Mật khẩu ít nhất 5 đến 40 ký tự</span>
+                <span ng-message="compareTo">Chưa khớp mật khẩu</span>
+            </span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="fullName" class="col-md-5 col-form-label text-light">Họ tên</label>
+        <div class="col-md-7">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text border border-secondary text-dark bg-primary">
@@ -54,8 +73,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="email" class="col-md-4 col-form-label text-light">Email</label>
-        <div class="col-md-8">
+        <label for="email" class="col-md-5 col-form-label text-light">Email</label>
+        <div class="col-md-7">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text border border-secondary text-dark bg-primary">
@@ -71,8 +90,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="gender" class="col-md-4 col-form-label text-light">Giới tính</label>
-        <div class="col-md-8">
+        <label for="gender" class="col-md-5 col-form-label text-light">Giới tính</label>
+        <div class="col-md-7">
             <div class="icheck-primary">
                 <input type="checkbox" id="gender" ng-model="$scope.account.gender">
                 <label class="text-white" for="gender">{{ $scope.account.gender ? 'Nam' : 'Nữ' }}</label>
@@ -80,8 +99,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="phoneNumber" class="col-md-4 col-form-label text-light">Số điện thoại</label>
-        <div class="col-md-8">
+        <label for="phoneNumber" class="col-md-5 col-form-label text-light">Số điện thoại</label>
+        <div class="col-md-7">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text border border-secondary text-dark bg-primary">

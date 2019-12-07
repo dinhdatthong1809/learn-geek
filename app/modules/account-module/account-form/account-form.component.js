@@ -9,6 +9,7 @@ export let AccountFormComponent = {
 
 function controller(accountService, authenticationService) {
     this.account = new Account("", "", "", "", true, "", "");
+    this.passwordConfirm = "";
 
     this.signUp = () => {
         authenticationService

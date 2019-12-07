@@ -102,6 +102,27 @@ app.service('anchorSmoothScroll', function () {
     };
 });
 
+/* Directives */
+app.directive('compareTo', () => {
+    return {
+        require: 'ngModel',
+        scope: {
+            otherModelValue: '=compareTo'
+        },
+        link: (scope, element, attributes, ngModel) => {
+            ngModel.$validators.compareTo = (modelValue) => {
+                return modelValue == scope.otherModelValue;
+            };
+
+            scope.$watch('otherModelValue', () => {
+                ngModel.$validate();
+            });
+        }
+    };
+});
+
+
+
 angular.element(document).ready(() => {
     angular.bootstrap(document, ['myApp']);
 });

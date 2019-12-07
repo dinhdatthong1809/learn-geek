@@ -6,13 +6,15 @@ export let DangNhapComponent = {
     controllerAs: '$scope'
 };
 
-function controller(accountService, authenticationService) {
+function controller($window, accountService, authenticationService) {
     this.userAuthentication = {
         username: "",
         password: ""
     }
 
     this.signIn = () => {
+        SweetAlertHelper.choXuLy();
+
         accountService
             .getOne(this.userAuthentication.username)
             .then(
@@ -23,13 +25,19 @@ function controller(accountService, authenticationService) {
                     }
 
                     let account = doc.data();
-                    if (this.userAuthentication.password != account.password) {
-                        SweetAlertHelper.thatBai("Sai mật khẩu!");
-                        return;
-                    }
-                    
-                    authenticationService.signIn(account.email, account.password);
-                    SweetAlertHelper.thanhCong("Đăng nhập thành công!");
+
+                    authenticationService
+                        .signIn(account.email, account.password)
+                        .then(
+                            () => {
+                                SweetAlertHelper.thanhCong("Đăng nhập thành công!");
+                                $window.location.reload();
+                            },
+                            (error) => {
+                                SweetAlertHelper.thatBai("Sai mật khẩu!");
+                                console.log(error);
+                            }
+                        );
                 },
                 (error) => {
                     SweetAlertHelper.thatBai("Đăng nhập thất bại!");
