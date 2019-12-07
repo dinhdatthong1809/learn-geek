@@ -7,10 +7,13 @@ export let AccountFormComponent = {
     controllerAs: '$scope'
 };
 
-function controller(accountService) {
+function controller(accountService, authenticationService) {
     this.account = new Account("", "", "", "", true, "", "");
 
     this.signUp = () => {
+        authenticationService
+            .signUp(this.account.email, this.account.password);
+
         accountService
             .insert(this.account)
             .then(

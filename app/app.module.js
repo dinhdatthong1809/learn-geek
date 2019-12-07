@@ -13,6 +13,7 @@ import { DangKyComponent } from './dang-ky/dang-ky.component.js';
 import { LuyenTapComponent } from './luyen-tap/luyen-tap.component.js';
 import { TrangCaNhanComponent } from './trang-ca-nhan/trang-ca-nhan.component.js';
 
+import { authenticationModule } from './modules/authentication-module/authentication.module.js';
 import { accountModule } from './modules/account-module/account.module.js';
 import { subjectModule } from './modules/subject-module/subject.module.js';
 
@@ -21,6 +22,7 @@ export let app = angular.module('myApp',
         'ui.router',
         'ngMaterial',
         'ngMessages',
+        'authenticationModule',
         'accountModule',
         'subjectModule',
     ]

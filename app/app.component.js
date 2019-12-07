@@ -1,3 +1,5 @@
+import { learnGeekAuth } from '../assets/js/init-firebase.js';
+
 export let AppComponent = {
     templateUrl: './app/app.component.html',
     controller: controller,
@@ -34,13 +36,28 @@ function controller($location, anchorSmoothScroll) {
         { url: 'hoi-dap', name: 'Hỏi đáp' },
     ];
 
-    this.rightRoutes = [
-        { url: 'xac-thuc.dang-nhap', name: 'Đăng nhập' },
+    let unauthenticatedRoutes = [
+        { url: 'xac-thuc.dang-nhap', name: 'Đăng nhập' }
     ];
+
+    let authenticatedRoutes = [
+        { url: 'xac-thuc.dang-xuat', name: 'Đăng xuất' },
+        { url: 'trang-ca-nhan', name: 'Trang cá nhân' },
+    ];
+
+    learnGeekAuth.onAuthStateChanged((account) => {
+        if (account) {
+            // signed in
+            this.rightRoutes = authenticatedRoutes;
+        } else {
+            // signed out
+            this.rightRoutes = unauthenticatedRoutes;
+        }
+    });
 
     this.gotoAnchor = (x) => {
         let newHash = x;
-        
+
         if ($location.hash() !== newHash) {
             $location.hash(x);
         } else {

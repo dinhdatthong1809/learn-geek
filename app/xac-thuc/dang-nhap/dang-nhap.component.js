@@ -6,7 +6,7 @@ export let DangNhapComponent = {
     controllerAs: '$scope'
 };
 
-function controller(accountService) {
+function controller(accountService, authenticationService) {
     this.userAuthentication = {
         username: "",
         password: ""
@@ -28,6 +28,7 @@ function controller(accountService) {
                         return;
                     }
                     
+                    authenticationService.signIn(account.email, account.password);
                     SweetAlertHelper.thanhCong("Đăng nhập thành công!");
                 },
                 (error) => {

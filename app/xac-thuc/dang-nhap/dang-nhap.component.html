@@ -6,7 +6,7 @@
     <div class="form-group">
         <div class="position-relative has-icon-left">
             <label for="username" class="sr-only">Tên đăng nhập</label>
-            <input required pattern="^[a-zA-Z0-9_]+$" minlength=3 maxlength=40 type="text" name="username" class="form-control" ng-model="$scope.userAuthentication.username" placeholder="Tên đăng nhập">
+            <input required pattern="^[a-zA-Z0-9_]+$" minlength=3 maxlength=40 type="text" name="username" class="form-control" ng-model-options="{updateOn: 'blur'}" ng-model="$scope.userAuthentication.username" placeholder="Tên đăng nhập">
             <div class="form-control-position">
                 <i class="fas fa-user"></i>
             </div>
@@ -20,7 +20,7 @@
     <div class="form-group">
         <div class="position-relative has-icon-left">
             <label for="password" class="sr-only">Mật khẩu</label>
-            <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" name="password" class="form-control" ng-model="$scope.userAuthentication.password" placeholder="Mật khẩu">
+            <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" name="password" class="form-control" ng-model-options="{updateOn: 'blur'}" ng-model="$scope.userAuthentication.password" placeholder="Mật khẩu">
             <div class="form-control-position">
                 <i class="fas fa-lock"></i>
             </div>

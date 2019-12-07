@@ -13,3 +13,4 @@ let firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export let learnGeekDB = firebase.firestore();
+export let learnGeekAuth = firebase.auth();
