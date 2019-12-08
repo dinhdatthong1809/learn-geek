@@ -6,8 +6,9 @@ export default class Account {
     gender;
     phoneNumber;
     photo;
+    mark;
 
-    constructor(username, password, fullName, email, gender, phoneNumber, photo) {
+    constructor(username, password, fullName, email, gender, phoneNumber, photo, mark) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;
@@ -15,5 +16,6 @@ export default class Account {
         this.gender = gender;
         this.phoneNumber = phoneNumber;
         this.photo = photo;
+        this.mark = mark;
     }
 }
