@@ -1,28 +1,25 @@
 export function SubjectService($http) {
+    return {
+        getAll: () => {
+            return $http
+                .get('/database/subjects.json')
+                .then(response => response.data);
+        },
 
-    let SubjectService = {};
+        getOne: (id) => {
 
-    SubjectService.getAll = () => {
-        return $http
-            .get('/database/subjects.json')
-            .then(response => response.data);
+        },
+
+        insert: (subject) => {
+
+        },
+
+        delete: (id) => {
+
+        },
+
+        update: (id, subject) => {
+
+        }
     };
-
-    SubjectService.getOne = (id) => {
-
-    };
-
-    SubjectService.insert = (subject) => {
-
-    };
-
-    SubjectService.delete = (id) => {
-
-    };
-
-    SubjectService.update = (id, subject) => {
-
-    };
-
-    return SubjectService;
 }

@@ -4,7 +4,7 @@ export let TrangCaNhanComponent = {
     controllerAs: '$scope'
 };
 
-function controller(authenticationService) {
+function controller($rootScope) {
     this.account = {
         username: "",
         password: "",
@@ -14,6 +14,6 @@ function controller(authenticationService) {
         phoneNumber: ""
     };
 
-    console.log(authenticationService.account);
-    this.username = authenticationService.account.username;
+    
+    this.username = $rootScope.account.username;
 }

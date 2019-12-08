@@ -1,26 +1,21 @@
 import { learnGeekAuth } from '../../../assets/js/init-firebase.js';
 
 export default function AuthenticationService() {
+    return {
+        signUp: (email, password) => {
+            return learnGeekAuth.createUserWithEmailAndPassword(email, password);
+        },
 
-    let AuthenticationService = {};
+        signIn: (email, password) => {
+            return learnGeekAuth.signInWithEmailAndPassword(email, password);
+        },
 
-    AuthenticationService.account = {};
+        signOut: () => {
+            return learnGeekAuth.signOut();
+        },
 
-    AuthenticationService.signUp = (email, password) => {
-        return learnGeekAuth.createUserWithEmailAndPassword(email, password);
+        isAuthenticated: () => {
+            return learnGeekAuth.currentUser ? true : false;
+        },
     };
-
-    AuthenticationService.signIn = (email, password) => {
-        return learnGeekAuth.signInWithEmailAndPassword(email, password);
-    };
-
-    AuthenticationService.signOut = () => {
-        return learnGeekAuth.signOut();
-    };
-
-    AuthenticationService.isAuthenticated = () => {
-        return learnGeekAuth.currentUser ? true : false;
-    };
-
-    return AuthenticationService;
 }
