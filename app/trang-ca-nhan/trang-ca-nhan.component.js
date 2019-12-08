@@ -14,6 +14,6 @@ function controller($rootScope) {
         phoneNumber: ""
     };
 
-    // this.username = $rootScope.account.username;
-    console.log($rootScope);
+    this.username = $rootScope.account.username;
+    console.log($rootScope.account);
 }
