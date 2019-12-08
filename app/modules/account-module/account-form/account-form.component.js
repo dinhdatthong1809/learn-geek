@@ -12,6 +12,8 @@ function controller(accountService, authenticationService) {
     this.passwordConfirm = "";
 
     this.signUp = () => {
+        SweetAlertHelper.choXuLy();
+
         // Thử đăng kí tài khoản mới
         authenticationService
             .signUp(this.account.email, this.account.password)
