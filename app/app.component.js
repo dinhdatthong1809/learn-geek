@@ -1,4 +1,5 @@
 import { learnGeekAuth } from '../assets/js/init-firebase.js';
+import SweetAlertHelper from '../assets/js/sweet-alert-helper.js';
 
 export let AppComponent = {
     templateUrl: './app/app.component.html',
@@ -66,11 +67,17 @@ function controller($window, $location, anchorSmoothScroll, authenticationServic
     };
     
     this.signOut = () => {
+        SweetAlertHelper.choXuLy();
+
         authenticationService
             .signOut()
             .then(
                 () => {
                     $window.location = '/';
+                },
+                (error) => {
+                    SweetAlertHelper.thatBai("Đăng xuất thất bại!");
+                    console.log(error);
                 }
             );
     }

@@ -27,7 +27,7 @@ function controller($window, accountService, authenticationService) {
                     let account = doc.data();
 
                     authenticationService
-                        .signIn(account.email, account.password)
+                        .signIn(account.email, this.userAuthentication.password)
                         .then(
                             () => {
                                 SweetAlertHelper.thanhCong("Đăng nhập thành công!");
