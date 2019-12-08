@@ -33,6 +33,7 @@ function controller($rootScope, $window, accountService, authenticationService) 
                                 // SweetAlertHelper.thanhCong("Đăng nhập thành công!");
                                 console.log(account);
                                 $rootScope.account = account;
+                                console.log('root', $rootScope);
                                 $window.location = '/';
                             },
                             (error) => {
