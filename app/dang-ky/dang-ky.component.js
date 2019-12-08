@@ -1,3 +1,5 @@
+import Account from '../modules/account-module/account.model.js';
+
 export let DangKyComponent = {
     templateUrl: './app/dang-ky/dang-ky.component.html',
     controller: controller,
