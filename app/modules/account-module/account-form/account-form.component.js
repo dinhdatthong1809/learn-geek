@@ -7,7 +7,7 @@ export let AccountFormComponent = {
     controllerAs: '$scope'
 };
 
-function controller(accountService, authenticationService) {
+function controller($window, accountService, authenticationService) {
     this.account = new Account("", "", "", "", true, "", "");
     this.passwordConfirm = "";
 
