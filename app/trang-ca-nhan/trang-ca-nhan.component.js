@@ -13,7 +13,7 @@ function controller($rootScope) {
         gender: true,
         phoneNumber: ""
     };
-
-    this.username = $rootScope.account.username;
+    
     console.log($rootScope.account);
+    this.username = $rootScope.account.username;
 }
