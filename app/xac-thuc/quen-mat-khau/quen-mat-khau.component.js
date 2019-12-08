@@ -12,13 +12,8 @@ function controller(authenticationService) {
     this.sendPasswordResetEmail = () => {
         SweetAlertHelper.choXuLy();
 
-        var actionCodeSettings = {
-            url: 'https://learngeek.netlify.com/',
-            handleCodeInApp: true
-        };
-
         authenticationService
-            .sendPasswordResetEmail(this.email, actionCodeSettings)
+            .sendPasswordResetEmail(this.email)
             .then(
                 () => {
                     SweetAlertHelper.thanhCong("Gửi email thành công!");

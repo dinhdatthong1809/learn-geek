@@ -1,6 +1,11 @@
 import { learnGeekAuth } from '../../../assets/js/init-firebase.js';
 
 export default function AuthenticationService() {
+    let actionCodeSettings = {
+        url: 'https://learngeek.netlify.com/',
+        handleCodeInApp: true
+    };
+
     return {
         signUp: (email, password) => {
             return learnGeekAuth.createUserWithEmailAndPassword(email, password);
@@ -17,6 +22,10 @@ export default function AuthenticationService() {
         isAuthenticated: () => {
             let currentUser = learnGeekAuth.currentUser;
             return currentUser ? currentUser : null;
+        },
+
+        sendPasswordResetEmail: (email) => {
+            return  learnGeekAuth.sendPasswordResetEmail(email, actionCodeSettings)
         },
     };
 }
