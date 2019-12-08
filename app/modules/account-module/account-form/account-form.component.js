@@ -38,12 +38,6 @@ function controller(accountService, authenticationService) {
                                         this.account = new Account("", "", "", "", true, "", "");
                                     }
                                 );
-                            },
-                            // nếu thêm dữ liệu thất bại...
-                            (error) => {
-                                // thì xuất thông báo
-                                SweetAlertHelper.thatBai("Đăng ký thất bại!");
-                                console.log(error);
                             }
                         );
                 }
