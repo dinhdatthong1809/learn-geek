@@ -3,7 +3,7 @@ import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@9.3.17/src/sweetalert
 export default class SweetAlertHelper {
 
 	static thanhCong = (thongBao) => {
-    	Swal.fire({
+    	return Swal.fire({
 			icon : 'success',
 			title : 'Thành công',
 			html : thongBao,
@@ -12,7 +12,7 @@ export default class SweetAlertHelper {
     };
     
     static thatBai = (thongBao) => {
-    	Swal.fire({
+    	return Swal.fire({
 			icon : 'error',
 			title : 'Lỗi',
 			html : thongBao,
@@ -21,7 +21,7 @@ export default class SweetAlertHelper {
     }
     
     static canhBao = (thongBao) => {
-    	Swal.fire({
+    	return Swal.fire({
 			icon : 'warning',
 			title : 'Cảnh báo',
 			html : thongBao,
@@ -30,7 +30,7 @@ export default class SweetAlertHelper {
     }
     
     static hoi = (thongBao, hamDongY) => {
-    	Swal.fire({
+    	return Swal.fire({
     		icon: 'warning',
     		title: 'Bạn chắc chắn chứ?',
     		html: thongBao,
@@ -48,7 +48,7 @@ export default class SweetAlertHelper {
     }
     
     static choXuLy = () => {
-    	Swal.fire({
+    	return Swal.fire({
     		title: "Đang xử lý",
     		html: "Vui lòng chờ kết quả",
     		showConfirmButton: false,

@@ -61,12 +61,10 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             resolve: {
                 account: (authenticationService, accountService) => {
                     let username = authenticationService.isAuthenticated().displayName;
-                    console.log(username);
                     return accountService
                         .getOne(username)
                         .then(
                             (doc) => {
-                                console.log(doc.data());
                                 return doc.data();
                             }
                         );

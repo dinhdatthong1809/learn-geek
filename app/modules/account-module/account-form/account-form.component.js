@@ -35,9 +35,13 @@ function controller(accountService, authenticationService) {
                                 .then(
                                     // nếu cập nhật displayName thành công...
                                     () => {
-                                        // thì xuất thông báo
-                                        this.account = new Account("", "", "", "", true, "", "");
-                                        SweetAlertHelper.thanhCong("Đăng ký thành công!");
+                                        // thì xuất thông báo và về trang chủ
+                                        SweetAlertHelper
+                                            .thanhCong("Đăng ký thành công!")
+                                            .then((result) => {
+                                                if (result.value) {
+                                                    $window.location = '/';
+                                                };
                                     }
                                 );
                             }

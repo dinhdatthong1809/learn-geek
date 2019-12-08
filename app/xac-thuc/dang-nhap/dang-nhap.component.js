@@ -34,8 +34,23 @@ function controller($window, accountService, authenticationService) {
                                 $window.location = '/';
                             },
                             (error) => {
-                                SweetAlertHelper.thatBai("Sai mật khẩu!");
-                                console.log(error);
+                                switch (error.code) {
+                                    case 'auth/user-disabled':
+                                        SweetAlertHelper.thatBai("Tài khoản của bạn đã bị vô hiệu hóa.");
+                                        break;
+                                    case 'auth/invalid-email':
+                                        SweetAlertHelper.thatBai("Email không hợp lệ.");
+                                        break;
+                                    case 'auth/user-not-found':
+                                        SweetAlertHelper.thatBai("Không tồn tại tài khoản này.");
+                                        break;
+                                    case 'auth/wrong-password':
+                                        SweetAlertHelper.thatBai("Sai mật khẩu!");
+                                        break;
+                                    default:
+                                        SweetAlertHelper.thatBai("Đăng nhập thất bại!");
+                                        console.log(error);
+                                }
                             }
                         );
                 },
