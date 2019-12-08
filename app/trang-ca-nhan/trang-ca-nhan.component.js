@@ -8,12 +8,5 @@ export let TrangCaNhanComponent = {
 };
 
 function controller() {
-    this.account = {
-        username: "",
-        password: "",
-        fullName: "",
-        email: "",
-        gender: true,
-        phoneNumber: ""
-    };
+    
 }
