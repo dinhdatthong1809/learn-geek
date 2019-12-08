@@ -26,7 +26,7 @@
                         <i class="fas fa-lock"></i>
                     </div>
                 </div>
-                <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" class="form-control bg-dark text-light border border-secondary" name="password" ng-model="$scope.account.password">
+                <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" autocomplete="new-password" class="form-control bg-dark text-light border border-secondary" name="password" ng-model="$scope.account.password">
             </div>
             <span class="text-danger" ng-show="formAccount.password.$error && formAccount.password.$dirty" ng-messages="formAccount.password.$error" role="alert">
                 <span ng-message="pattern">Mật khẩu chỉ gồm ký tự chữ cái và -, _, dấu cách.</span>
@@ -44,7 +44,7 @@
                         <i class="fas fa-lock"></i>
                     </div>
                 </div>
-                <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" class="form-control bg-dark text-light border border-secondary" compare-to="$scope.account.password" name="passwordConfirm" ng-model="$scope.passwordConfirm">
+                <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" autocomplete="new-password" class="form-control bg-dark text-light border border-secondary" compare-to="$scope.account.password" name="passwordConfirm" ng-model="$scope.passwordConfirm">
             </div>
             <span class="text-danger" ng-show="formAccount.passwordConfirm.$error && formAccount.passwordConfirm.$dirty" ng-messages="formAccount.passwordConfirm.$error" role="alert">
                 <span ng-message="pattern">Mật khẩu chỉ gồm ký tự chữ cái và -, _, dấu cách.</span>
