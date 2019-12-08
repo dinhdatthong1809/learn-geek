@@ -4,7 +4,11 @@ export let HomeComponent = {
     controllerAs: '$scope'
 };
 
-function controller() {
+function controller(authenticationService) {
+    let account = authenticationService.isAuthenticated();
+
+    this.showRegisterSection = account ? false : true;
+
     this.aboutUsTiles = [
         {
             title: "Chọn khóa học",
