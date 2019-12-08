@@ -2,7 +2,7 @@
 <p class="text-center pb-2">
     Vui lòng nhập email. Bạn sẽ nhận được hướng dẫn đặt lại mật khẩu trong nội dung email.
 </p>
-<form class="animated fadeInUp faster" name="formForgotPassword">
+<form ng-submit="$scope.sendPasswordResetEmail()" class="animated fadeInUp faster" name="formForgotPassword">
     <div class="form-group">
         <div class="position-relative has-icon-left">
             <label for="email" class="sr-only">Email Address</label>
