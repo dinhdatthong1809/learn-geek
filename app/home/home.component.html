@@ -21,8 +21,11 @@
                     <a ui-sref="{{$parent.$scope.leftRoutes[0].url}}" class="animated zoomIn delay-1s btn btn-primary shadow mr-1">
                         Khóa học <i class="fas fa-arrow-right d-none d-md-inline ml-3"></i>
                     </a>
-                    <a href="" ng-click="$parent.$scope.gotoAnchor('dang-ky')" class="animated zoomIn delay-1s btn btn-outline-primary mr-1">
+                    <a href="" ng-if="$scope.showRegisterSection" ng-click="$parent.$scope.gotoAnchor('dang-ky')" class="animated zoomIn delay-1s btn btn-outline-primary mr-1">
                         Đăng ký
+                    </a>
+                    <a ui-sref="trang-ca-nhan" ng-if="!$scope.showRegisterSection" class="animated zoomIn delay-1s btn btn-outline-primary mr-1">
+                        Trang cá nhân
                     </a>
                 </div>
             </div>
