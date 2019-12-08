@@ -3,7 +3,7 @@ export let loadingIndicatorHook = ($transitions, $document) => {
     let body = $document.find("body");
 
     let showLoadingIndicator = () => {
-      body.append(angular.element('<div class="text-secondary" id="spinner"><i class="fas fa-circle-notch fa-10x" aria-hidden="true"></i></div>'));
+      body.append(angular.element('<div class="text-secondary" id="spinner"><i class="fas fa-circle-notch fa-10x fa-spin" aria-hidden="true"></i></div>'));
     };
 
     let hideLoadingIndicator = () => {
