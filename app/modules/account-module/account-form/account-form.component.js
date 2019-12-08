@@ -47,12 +47,16 @@ function controller(accountService, authenticationService) {
                     switch (error.code) {
                         case 'auth/email-already-in-use':
                             SweetAlertHelper.thatBai("Email này đã được sử dụng. Vui lòng chọn email khác.");
+                            break;
                         case 'auth/invalid-email':
                             SweetAlertHelper.thatBai("Email không hợp lệ.");
+                            break;
                         case 'auth/operation-not-allowed':
                             SweetAlertHelper.thatBai("Có lỗi khi đăng ký.");
+                            break;
                         case 'auth/weak-password':
                             SweetAlertHelper.thatBai("Mật khẩu chưa đủ mạnh. Vui lòng thêm cả chữ lẫn số vào mật khẩu.");
+                            break;
                         default:
                             SweetAlertHelper.thatBai("Đăng ký thất bại!");
                             console.log(error);
