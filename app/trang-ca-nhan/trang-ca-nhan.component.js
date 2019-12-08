@@ -13,7 +13,9 @@ function controller($rootScope) {
         gender: true,
         phoneNumber: ""
     };
-
     
-    this.username = $rootScope.account.username;
+    this.$onInit = () => {
+        this.username = $rootScope.account.username;
+        console.log(this.username);
+    }
 }
