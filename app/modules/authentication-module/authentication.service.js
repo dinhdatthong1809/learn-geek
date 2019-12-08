@@ -7,13 +7,17 @@ export default function AuthenticationService() {
     AuthenticationService.signUp = (email, password) => {
         return learnGeekAuth.createUserWithEmailAndPassword(email, password);
     };
-    
+
     AuthenticationService.signIn = (email, password) => {
         return learnGeekAuth.signInWithEmailAndPassword(email, password);
     };
 
     AuthenticationService.signOut = () => {
         return learnGeekAuth.signOut();
+    };
+
+    AuthenticationService.isAuthenticated = () => {
+        return learnGeekAuth.currentUser ? true : false;
     };
 
     return AuthenticationService;

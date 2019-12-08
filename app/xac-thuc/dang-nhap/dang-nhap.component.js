@@ -30,7 +30,7 @@ function controller($window, accountService, authenticationService) {
                         .signIn(account.email, this.userAuthentication.password)
                         .then(
                             () => {
-                                SweetAlertHelper.thanhCong("Đăng nhập thành công!");
+                                // SweetAlertHelper.thanhCong("Đăng nhập thành công!");
                                 $window.location = '/';
                             },
                             (error) => {

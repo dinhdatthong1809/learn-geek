@@ -40,20 +40,24 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             url: '/xac-thuc',
             component: 'appXacThuc'
         },
-            {
-                name: 'xac-thuc.dang-nhap',
-                url: '/dang-nhap',
-                component: 'appDangNhap',
-            },
-            {
-                name: 'xac-thuc.quen-mat-khau',
-                url: '/quen-mat-khau',
-                component: 'appQuenMatKhau',
-            },
+        {
+            parent: 'xac-thuc',
+            name: 'dang-nhap',
+            url: '/dang-nhap',
+            component: 'appDangNhap',
+        },
+        {
+            parent: 'xac-thuc',
+            name: 'quen-mat-khau',
+            url: '/quen-mat-khau',
+            component: 'appQuenMatKhau',
+        },
         {
             name: 'trang-ca-nhan',
             url: '/trang-ca-nhan',
-            component: 'appTrangCaNhan'
+            component: 'appTrangCaNhan',
+            // xem chi tiết tại ./global/yeu-cau-dang-nhap.hook.js
+            data: { requiresAuth: true }
         },
     ];
 

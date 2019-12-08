@@ -17,6 +17,9 @@ import { authenticationModule } from './modules/authentication-module/authentica
 import { accountModule } from './modules/account-module/account.module.js';
 import { subjectModule } from './modules/subject-module/subject.module.js';
 
+import { requireAuthHook } from './hooks/yeu-cau-dang-nhap.hook.js';
+import { loadingIndicatorHook } from './hooks/dang-tai-trang.hook.js';
+
 export let app = angular.module('myApp',
     [
         'ui.router',
@@ -121,7 +124,9 @@ app.directive('compareTo', () => {
     };
 });
 
-
+/* Hooks */
+app.run(requireAuthHook);
+app.run(loadingIndicatorHook);
 
 angular.element(document).ready(() => {
     angular.bootstrap(document, ['myApp']);

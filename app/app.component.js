@@ -38,11 +38,11 @@ function controller($window, $location, anchorSmoothScroll, authenticationServic
     ];
 
     let unauthenticatedRoutes = [
-        { url: 'xac-thuc.dang-nhap', name: 'Đăng nhập' }
+        { url: 'dang-nhap', name: 'Đăng nhập' }
     ];
 
     let authenticatedRoutes = [
-        { url: 'xac-thuc.dang-xuat', name: 'Đăng xuất' },
+        { url: 'dang-xuat', name: 'Đăng xuất' },
         { url: 'trang-ca-nhan', name: 'Trang cá nhân' },
     ];
 
