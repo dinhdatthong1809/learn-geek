@@ -1,6 +1,6 @@
 <form name="formAccount" ng-submit="$scope.submitForm()">
     <div class="form-group row">
-        <label for="username" class="col-md-5 col-form-label text-light">Tên đăng nhập</label>
+        <label for="username" class="col-md-5 col-form-label" ng-class="$scope.labelColorClass">Tên đăng nhập</label>
         <div class="col-md-7">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -119,8 +119,10 @@
     <div class="form-group row">
         <label for="" class="col-sm-4 col-form-label"></label>
         <div class="col-sm-8 d-flex">
-            <button ng-if="$scope.state == $scope.UPDATE_STATE" class="btn btn-secondary text-light ml-auto border border-secondary"><i class="fas fa-redo-alt"></i> Khôi phục</button>
-            <button class="btn btn-primary text-light ml-auto border border-secondary" type="submit"><i class="fas fa-star"></i> {{$scope.btnName}}</button>
+            <div ng-if="$scope.state == $scope.UPDATE_STATE" ng-click="$scope.resetForm()" style="cursor: pointer;" class="btn btn-secondary text-light ml-auto border border-secondary">
+                <i class="fas fa-redo-alt"></i> Khôi phục
+            </div>
+            <button class="btn btn-primary text-light ml-auto border border-primary" type="submit"><i class="fas fa-star"></i> {{$scope.btnName}}</button>
         </div>
     </div>
 </form>

@@ -16,7 +16,7 @@ export default function AuthenticationService() {
 
         isAuthenticated: () => {
             let currentUser = learnGeekAuth.currentUser;
-            return currentUser ? currentUser : false;
+            return currentUser ? currentUser : null;
         },
     };
 }

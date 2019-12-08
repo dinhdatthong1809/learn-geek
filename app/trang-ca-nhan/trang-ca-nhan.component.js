@@ -8,5 +8,5 @@ export let TrangCaNhanComponent = {
 };
 
 function controller() {
-
+    
 }

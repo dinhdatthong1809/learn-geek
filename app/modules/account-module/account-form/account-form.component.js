@@ -24,9 +24,12 @@ function controller($window, accountService, authenticationService) {
 
         if (this.state == this.REGISTER_STATE) {
             this.btnName = "Đăng ký";
+            this.labelColorClass = "text-white";
         }
         else {
             this.btnName = "Lưu thông tin";
+            this.labelColorClass = "text-dark";
+            this.passwordConfirm = this.account.password;
         }
     }
 
@@ -37,6 +40,12 @@ function controller($window, accountService, authenticationService) {
         else {
             this.update();
         }
+    }
+
+    /* hàm khôi phục dữ liệu trên form */
+    this.resetForm = () => {
+        this.account = JSON.parse(JSON.stringify(this.dataForReset));
+        this.passwordConfirm = this.account.password;
     }
 
     this.signUp = () => {
