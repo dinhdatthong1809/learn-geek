@@ -4,12 +4,40 @@ import SweetAlertHelper from '../../../../assets/js/sweet-alert-helper.js';
 export let AccountFormComponent = {
     templateUrl: './app/modules/account-module/account-form/account-form.component.html',
     controller: controller,
-    controllerAs: '$scope'
+    controllerAs: '$scope',
+    bindings: {
+        state: '<',
+        account: '<'
+    }
 };
 
 function controller($window, accountService, authenticationService) {
-    this.account = new Account("", "", "", "", true, "", "", 0);
+    this.REGISTER_STATE = 1;
+    this.UPDATE_STATE = 2;
+
     this.passwordConfirm = "";
+
+    this.dataForReset;
+
+    this.$onInit = () => {
+        this.dataForReset = JSON.parse(JSON.stringify(this.account));
+
+        if (this.state == this.REGISTER_STATE) {
+            this.btnName = "Đăng ký";
+        }
+        else {
+            this.btnName = "Lưu thông tin";
+        }
+    }
+
+    this.submitForm = () => {
+        if (this.state == this.REGISTER_STATE) {
+            this.signUp();
+        }
+        else {
+            this.update();
+        }
+    }
 
     this.signUp = () => {
         SweetAlertHelper.choXuLy();
@@ -84,5 +112,9 @@ function controller($window, accountService, authenticationService) {
                         );
                 }
             );
+    }
+
+    this.update = () => {
+        SweetAlertHelper.thanhCong("Cập nhật thành công!");
     }
 }

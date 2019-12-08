@@ -36,13 +36,13 @@
                     <div class="card">
                         <div class="card-body">
                             <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a href="javascript:void();" data-target="#profile" data-toggle="pill" class="nav-link"><i class="far fa-user"></i> <span class="hidden-xs">Hồ sơ</span></a>
                                 </li>
                             </ul>
                             <div class="tab-content p-3">
                                 <div class="tab-pane active" id="profile">
-                                    <app-account-form></app-account-form>
+                                    <app-account-form state=2 account="$scope.account"></app-account-form>
                                 </div>
                             </div>
                         </div>

@@ -5,4 +5,5 @@ export let DangKyComponent = {
 };
 
 function controller() {
+    this.account = new Account("", "", "", "", true, "", "", 0);
 }
