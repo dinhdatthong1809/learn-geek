@@ -20,7 +20,7 @@
     <div class="form-group">
         <div class="position-relative has-icon-left">
             <label for="password" class="sr-only">Mật khẩu</label>
-            <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" name="password" class="form-control" ng-model-options="{updateOn: 'blur'}" ng-model="$scope.userAuthentication.password" placeholder="Mật khẩu">
+            <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" autocomplete="new-password" name="password" class="form-control" ng-model-options="{updateOn: 'blur'}" ng-model="$scope.userAuthentication.password" placeholder="Mật khẩu">
             <div class="form-control-position">
                 <i class="fas fa-lock"></i>
             </div>
