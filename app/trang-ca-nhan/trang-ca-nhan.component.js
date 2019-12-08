@@ -1,10 +1,13 @@
 export let TrangCaNhanComponent = {
     templateUrl: './app/trang-ca-nhan/trang-ca-nhan.component.html',
     controller: controller,
-    controllerAs: '$scope'
+    controllerAs: '$scope',
+    binding: {
+        account: '<'
+    }
 };
 
-function controller($rootScope) {
+function controller() {
     this.account = {
         username: "",
         password: "",
@@ -13,7 +16,4 @@ function controller($rootScope) {
         gender: true,
         phoneNumber: ""
     };
-    
-    console.log($rootScope.account);
-    this.username = $rootScope.account.username;
 }

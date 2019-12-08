@@ -6,7 +6,9 @@ export default function AccountService() {
 
     return {
         getAll: () => {
-
+            return collection
+                .doc(id)
+                .get();
         },
 
         getOne: (id) => {

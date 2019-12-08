@@ -57,7 +57,10 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             url: '/trang-ca-nhan',
             component: 'appTrangCaNhan',
             // xem chi tiết tại ./global/yeu-cau-dang-nhap.hook.js
-            data: { requiresAuth: true }
+            data: { requiresAuth: true },
+            resolve: {
+                account: accountService => accountService.getOne()
+            }
         },
     ];
 
