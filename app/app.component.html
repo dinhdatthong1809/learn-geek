@@ -14,10 +14,10 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li ng-repeat="route in $scope.rightRoutes" class="nav-item">
-                <div ng-if="route.url == 'xac-thuc.dang-xuat'">
+                <div ng-if="route.url == 'dang-xuat'">
                     <a href="javascript:void();" ng-click="$scope.signOut()" class="nav-link text-uppercase">{{route.name}}</a>
                 </div>
-                <div ng-if="route.url != 'xac-thuc.dang-xuat'">
+                <div ng-if="route.url != 'dang-xuat'">
                     <a ui-sref="{{route.url}}" class="nav-link text-uppercase" ng-class="{'btn btn-primary text-white' : $last}">{{route.name}}</a>
                 </div>
             </li>
