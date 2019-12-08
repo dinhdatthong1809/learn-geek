@@ -31,6 +31,7 @@ function controller($rootScope, $window, accountService, authenticationService) 
                         .then(
                             () => {
                                 // SweetAlertHelper.thanhCong("Đăng nhập thành công!");
+                                console.log(account);
                                 $rootScope.account = account;
                                 $window.location = '/';
                             },
