@@ -14,5 +14,6 @@ function controller(authenticationService) {
         phoneNumber: ""
     };
 
+    console.log(authenticationService.account);
     this.username = authenticationService.account.username;
 }
