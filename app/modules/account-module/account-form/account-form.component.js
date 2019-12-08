@@ -38,10 +38,13 @@ function controller(accountService, authenticationService) {
                                         // thì xuất thông báo và về trang chủ
                                         SweetAlertHelper
                                             .thanhCong("Đăng ký thành công!")
-                                            .then((result) => {
-                                                if (result.value) {
-                                                    $window.location = '/';
-                                                };
+                                            .then(
+                                                (result) => {
+                                                    if (result.value) {
+                                                        $window.location = '/';
+                                                    };
+                                                }
+                                            );
                                     }
                                 );
                             }
