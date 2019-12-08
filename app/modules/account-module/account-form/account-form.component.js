@@ -12,15 +12,40 @@ function controller(accountService, authenticationService) {
     this.passwordConfirm = "";
 
     this.signUp = () => {
+        // Thử đăng kí tài khoản mới
         authenticationService
             .signUp(this.account.email, this.account.password)
             .then(
+                // nếu đăng ký thành công...
                 (result) => {
-                    return result.user.updateProfile(
-                        {
-                            displayName: this.account.username
-                        }
-                    )
+                    // thì thêm dữ liệu vào database
+                    accountService
+                        .insert(this.account)
+                        .then(
+                            // nếu thêm dữ liệu thành công...
+                            () => {
+                                // thì cập nhật displayName trong tài khoản
+                                result.user.updateProfile(
+                                    {
+                                        displayName: this.account.username
+                                    }
+                                )
+                                .then(
+                                    // nếu cập nhật displayName thành công...
+                                    () => {
+                                        // thì xuất thông báo
+                                        SweetAlertHelper.thanhCong("Đăng ký thành công!");
+                                        this.account = new Account("", "", "", "", true, "", "");
+                                    }
+                                );
+                            },
+                            // nếu thêm dữ liệu thất bại...
+                            (error) => {
+                                // thì xuất thông báo
+                                SweetAlertHelper.thatBai("Đăng ký thất bại!");
+                                console.log(error);
+                            }
+                        );
                 }
             )
             .catch(
@@ -38,19 +63,6 @@ function controller(accountService, authenticationService) {
                             SweetAlertHelper.thatBai("Đăng ký thất bại!");
                             console.log(error);
                     }
-                }
-            );
-
-        accountService
-            .insert(this.account)
-            .then(
-                () => {
-                    SweetAlertHelper.thanhCong("Đăng ký thành công!");
-                    this.account = new Account("", "", "", "", true, "", "");
-                },
-                (error) => {
-                    SweetAlertHelper.thatBai("Đăng ký thất bại!");
-                    console.log(error);
                 }
             );
     }
