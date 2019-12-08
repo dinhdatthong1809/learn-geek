@@ -63,7 +63,7 @@
                         <i class="fas fa-sticky-note"></i>
                     </div>
                 </div>
-                <input required pattern="^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$" minlength=5 maxlength=40 type="text" class="form-control bg-dark text-light border border-secondary" name="fullName" ng-model="$scope.account.fullName">
+                <input required pattern="^[a-zA-ZÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềếểệỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$" minlength=5 maxlength=40 type="text" class="form-control bg-dark text-light border border-secondary" name="fullName" ng-model="$scope.account.fullName">
             </div>
             <span class="text-danger" ng-show="formAccount.fullName.$error && formAccount.fullName.$dirty" ng-messages="formAccount.fullName.$error" role="alert">
                 <span ng-message="pattern">Họ tên chỉ gồm ký tự chữ cái và dấu cách.</span>
