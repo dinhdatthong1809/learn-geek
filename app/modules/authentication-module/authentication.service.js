@@ -4,6 +4,8 @@ export default function AuthenticationService() {
 
     let AuthenticationService = {};
 
+    AuthenticationService.account = {};
+
     AuthenticationService.signUp = (email, password) => {
         return learnGeekAuth.createUserWithEmailAndPassword(email, password);
     };

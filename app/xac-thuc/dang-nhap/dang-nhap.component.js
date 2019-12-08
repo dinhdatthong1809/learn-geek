@@ -6,7 +6,7 @@ export let DangNhapComponent = {
     controllerAs: '$scope'
 };
 
-function controller($rootScope, $window, accountService, authenticationService) {
+function controller($window, accountService, authenticationService) {
     this.userAuthentication = {
         username: "",
         password: ""
@@ -31,7 +31,7 @@ function controller($rootScope, $window, accountService, authenticationService) 
                         .then(
                             () => {
                                 // SweetAlertHelper.thanhCong("Đăng nhập thành công!");
-                                $rootScope.account = account;
+                                authenticationService.account = account;
                                 $window.location = '/';
                             },
                             (error) => {
