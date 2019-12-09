@@ -59,8 +59,15 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             // xem chi tiết tại ./global/yeu-cau-dang-nhap.hook.js
             data: { requiresAuth: true },
             resolve: {
-                account: (authenticationService, accountService) => {
-                    let username = authenticationService.isAuthenticated().displayName;
+                account: ($window, authenticationService, accountService) => {
+                    let currentUser = authenticationService.isAuthenticated();
+
+                    if (!currentUser) {
+                        $window.location = "/";
+                        return null;
+                    }
+
+                    let username = currentUser.displayName;
                     return accountService
                         .getOne(username)
                         .then(

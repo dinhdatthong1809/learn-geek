@@ -28,7 +28,7 @@ export default function AccountService() {
         update: (account) => {
             return collection
                 .doc(account.username)
-                .set(Object.assign({}, account))
+                .set(Object.assign({}, account), { merge: true })
         }
     };
 }
