@@ -63,7 +63,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                     let currentUser = authenticationService.isAuthenticated();
 
                     if (!currentUser) {
-                        $window.location = "/";
+                        $window.location = "/#/dang-nhap";
                         return null;
                     }
 
