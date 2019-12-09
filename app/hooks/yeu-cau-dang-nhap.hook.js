@@ -7,7 +7,7 @@ export let requireAuthHook = ($transitions) => {
     
     $transitions.onStart(requiresAuthCriteria, (trans) => {
         let authenticationService = trans.injector().get('authenticationService');
-        console.log(authenticationService.isAuthenticated() === null);
+        
         if (authenticationService.isAuthenticated() === null) {
             return trans.router.stateService.target('dang-nhap');
         }
