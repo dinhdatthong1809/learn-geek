@@ -144,18 +144,74 @@
     <div class="modal-dialog">
         <div class="modal-content animated bounceIn">
             <div class="modal-header">
-                <h5 class="modal-title"><i class="fa fa-star"></i> Đổi mật khẩu</h5>
+                <h5 class="modal-title"><i class="fas fa-key"></i> Đổi mật khẩu</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, dicta. Voluptate cumque odit quam velit maiores sint rerum, dolore impedit commodi. Tempora eveniet odit vero rem blanditiis, tenetur laudantium cumque.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                <button type="button" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Save changes</button>
-            </div>
+            <form name="formChangePassword" ng-submit="$scope.submitFormChangePassword()">
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="old-password" class="col-md-5 col-form-label" ng-class="$scope.labelColorClass">Mật khẩu cũ</label>
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text border border-secondary text-dark bg-primary">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+                                <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" autocomplete="new-password" class="form-control bg-dark text-light border border-secondary" name="old-password" ng-model="$scope.oldPassword">
+                            </div>
+                            <span class="text-danger" ng-show="formChangePassword.old-password.$error && formChangePassword.old-password.$dirty" ng-messages="formChangePassword.old-password.$error" role="alert">
+                                <span ng-message="pattern">Mật khẩu chỉ gồm ký tự chữ cái và -, _, dấu cách.</span>
+                                <span ng-message="required">Vui lòng nhập mật khẩu.</span>
+                                <span ng-message="minlength">Mật khẩu ít nhất 5 đến 40 ký tự</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="new-password" class="col-md-5 col-form-label" ng-class="$scope.labelColorClass">Mật khẩu mới</label>
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text border border-secondary text-dark bg-primary">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+                                <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" autocomplete="new-password" class="form-control bg-dark text-light border border-secondary" name="new-password" ng-model="$scope.newPassword">
+                            </div>
+                            <span class="text-danger" ng-show="formChangePassword.new-password.$error && formChangePassword.new-password.$dirty" ng-messages="formChangePassword.new-password.$error" role="alert">
+                                <span ng-message="pattern">Mật khẩu chỉ gồm ký tự chữ cái và -, _, dấu cách.</span>
+                                <span ng-message="required">Vui lòng nhập mật khẩu.</span>
+                                <span ng-message="minlength">Mật khẩu ít nhất 5 đến 40 ký tự</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="passwordConfirm" class="col-md-5 col-form-label" ng-class="$scope.labelColorClass">Xác nhận mật khẩu</label>
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text border border-secondary text-dark bg-primary">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+                                <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" autocomplete="new-password" class="form-control bg-dark text-light border border-secondary" compare-to="$scope.newPassword" name="passwordConfirm" ng-model="$scope.passwordConfirm">
+                            </div>
+                            <span class="text-danger" ng-show="formChangePassword.passwordConfirm.$error && formChangePassword.passwordConfirm.$dirty" ng-messages="formChangePassword.passwordConfirm.$error" role="alert">
+                                <span ng-message="pattern">Mật khẩu chỉ gồm ký tự chữ cái và -, _, dấu cách.</span>
+                                <span ng-message="required">Vui lòng nhập lại mật khẩu.</span>
+                                <span ng-message="minlength">Mật khẩu ít nhất 5 đến 40 ký tự</span>
+                                <span ng-message="compareTo">Chưa khớp mật khẩu</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div style="cursor: pointer" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</div>
+                    <button type="button" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Hoàn tất</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

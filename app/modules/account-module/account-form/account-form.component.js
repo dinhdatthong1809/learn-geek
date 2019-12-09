@@ -17,6 +17,10 @@ function controller($window, accountService, authenticationService) {
 
     this.passwordConfirm = "";
 
+    // for changing password
+    this.oldPassword = "";
+    this.newPassword = "";
+
     this.dataForReset;
 
     this.$onInit = () => {
@@ -26,10 +30,13 @@ function controller($window, accountService, authenticationService) {
             this.btnName = "Đăng ký";
             this.labelColorClass = "text-white";
         }
-        else {
+        else if (this.state == this.UPDATE_STATE) {
             this.btnName = "Lưu thông tin";
             this.labelColorClass = "text-dark";
             this.passwordConfirm = this.account.password;
+        }
+        else {
+
         }
     }
 
@@ -37,15 +44,24 @@ function controller($window, accountService, authenticationService) {
         if (this.state == this.REGISTER_STATE) {
             this.signUp();
         }
-        else {
+        else if (this.state == this.UPDATE_STATE) {
             this.update();
         }
+        else {
+
+        }
+    }
+
+    this.submitFormChangePassword = () => {
+        SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!s");
     }
 
     /* hàm khôi phục dữ liệu trên form */
     this.resetForm = () => {
         this.account = JSON.parse(JSON.stringify(this.dataForReset));
         this.passwordConfirm = this.account.password;
+        this.oldPassword = "";
+        this.newPassword = "";
     }
 
     this.clearFormChangePassword = () => {
