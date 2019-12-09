@@ -74,11 +74,12 @@ function controller($window, accountService, authenticationService) {
                                         // nếu thêm dữ liệu thành công...
                                         () => {
                                             // thì cập nhật displayName trong tài khoản
-                                            result.user.updateProfile(
-                                                {
-                                                    displayName: this.account.username
-                                                }
-                                            )
+                                            result.user
+                                                .updateProfile(
+                                                    {
+                                                        displayName: this.account.username
+                                                    }
+                                                )
                                                 .then(
                                                     // nếu cập nhật displayName thành công...
                                                     () => {
@@ -124,6 +125,15 @@ function controller($window, accountService, authenticationService) {
     }
 
     this.update = () => {
-        SweetAlertHelper.thanhCong("Cập nhật thành công!");
+        SweetAlertHelper.choXuLy();
+
+        authenticationService
+            .update(this.account)
+            .then(
+                () => {
+                    this.dataForReset = JSON.parse(JSON.stringify(this.account));
+                    SweetAlertHelper.thanhCong("Cập nhật thành công!");
+                }
+            );
     }
 }

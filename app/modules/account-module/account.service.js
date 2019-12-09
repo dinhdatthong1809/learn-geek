@@ -24,9 +24,11 @@ export default function AccountService() {
         delete: (id) => {
 
         },
-
-        update: (id, account) => {
-
+        
+        update: (account) => {
+            return collection
+                .doc(account.username)
+                .set(Object.assign({}, account))
         }
     };
 }
