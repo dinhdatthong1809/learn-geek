@@ -74,6 +74,9 @@ function controller($window, accountService, authenticationService) {
                     (doc) => {
                         account = doc.data();
 
+                        console.log(this.oldPassword != account.password);
+                        console.log(account.password);
+
                         if (this.oldPassword != account.password) {
                             SweetAlertHelper.thatBai("Mật khẩu cũ không chính xác!");
                             return;
@@ -90,6 +93,7 @@ function controller($window, accountService, authenticationService) {
                                         .then(
                                             () => {
                                                 SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!");
+                                                this.resetFormChangePassword();
                                             }
                                         )
                                         .catch(
@@ -122,7 +126,7 @@ function controller($window, accountService, authenticationService) {
         this.newPassword = "";
     }
 
-    this.clearFormChangePassword = () => {
+    this.resetFormChangePassword = () => {
         this.passwordConfirm = "";
         this.oldPassword = "";
         this.newPassword = "";

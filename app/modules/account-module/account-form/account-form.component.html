@@ -148,7 +148,7 @@
             <div class="modal-header">
                 <h5 class="modal-title"><i class="fas fa-key"></i> Đổi mật khẩu</h5>
                 
-                <button ng-click="$scope.formChangePassword.$setPristine(); $scope.clearFormChangePassword()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button ng-click="$scope.formChangePassword.$setPristine(); $scope.resetFormChangePassword()" type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
@@ -211,7 +211,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <div ng-click="$scope.formChangePassword.$setPristine(); $scope.clearFormChangePassword()" style="cursor: pointer" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</div>
+                    <div ng-click="$scope.formChangePassword.$setPristine(); $scope.resetFormChangePassword()" style="cursor: pointer" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</div>
                     <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Hoàn tất</button>
                 </div>
             </form>
