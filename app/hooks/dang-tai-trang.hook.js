@@ -1,5 +1,6 @@
 // Hook dùng để hiện dấu hiệu đang tải trang trong khi chuyển trang
 export let loadingIndicatorHook = ($transitions, $document) => {
+  
   let body = $document.find("body");
 
   let showLoadingIndicator = () => {
