@@ -1,4 +1,6 @@
 // hook yêu cầu đăng nhập trước khi vào một trang cần xác thực
+requireAuthHook.$inject = ['$transitions', 'authenticationService'];
+
 export let requireAuthHook = ($transitions, authenticationService) => {
     
     let requiresAuthCriteria = {
@@ -11,5 +13,5 @@ export let requireAuthHook = ($transitions, authenticationService) => {
         if (currentUser === null) {
             return trans.router.stateService.target('dang-nhap');
         }
-    });
+    }, {priority: 10});
 }
