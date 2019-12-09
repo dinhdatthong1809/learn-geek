@@ -127,9 +127,10 @@ function controller($window, accountService, authenticationService) {
     }
 
     this.resetFormChangePassword = () => {
-        this.passwordConfirm = "";
+        this.formChangePassword.$setPristine(); 
         this.oldPassword = "";
         this.newPassword = "";
+        this.passwordConfirm = "";
     }
 
     this.signUp = () => {
