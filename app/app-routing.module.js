@@ -66,7 +66,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                         if (user) {
                             username = user.displayName;
                         } else {
-                            $state.go('dang-nhap');
+                            $state.go('dang-nhap', undefined, {reload: true});
                         }
                     });
 
