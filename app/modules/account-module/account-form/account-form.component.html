@@ -17,6 +17,19 @@
             </span>
         </div>
     </div>
+    <div class="form-group row" ng-if="$scope.state == $scope.UPDATE_STATE">
+        <label for="change-password" class="col-md-5 col-form-label" ng-class="$scope.labelColorClass">Mật khẩu</label>
+        <div class="col-md-7">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text border border-secondary text-dark bg-primary">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+                <div style="cursor: pointer;" class="btn btn-outline-primary btn-block rounded">Đổi mật khẩu</div>
+            </div>
+        </div>
+    </div>
     <div class="form-group row" ng-if="$scope.state != $scope.UPDATE_STATE">
         <label for="password" class="col-md-5 col-form-label" ng-class="$scope.labelColorClass">Mật khẩu</label>
         <div class="col-md-7">
