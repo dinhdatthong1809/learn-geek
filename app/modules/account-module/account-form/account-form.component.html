@@ -142,12 +142,13 @@
     </div>
 </form>
 
-<div ng-if="$scope.state == $scope.UPDATE_STATE" class="modal fade" id="modal-change-password" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog">
+<div ng-if="$scope.state == $scope.UPDATE_STATE" class="modal fade" id="modal-change-password" style="display: none;" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content animated bounceIn">
             <div class="modal-header">
                 <h5 class="modal-title"><i class="fas fa-key"></i> Đổi mật khẩu</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                
+                <button ng-click="$scope.formChangePassword.$setPristine(); $scope.clearFormChangePassword()" type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
@@ -210,7 +211,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <div ng-click="$scope.clearFormChangePassword()" style="cursor: pointer" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</div>
+                    <div ng-click="$scope.formChangePassword.$setPristine(); $scope.clearFormChangePassword()" style="cursor: pointer" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Đóng</div>
                     <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Hoàn tất</button>
                 </div>
             </form>
