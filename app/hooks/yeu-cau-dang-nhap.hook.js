@@ -1,23 +1,17 @@
-import { learnGeekAuth } from '../../assets/js/init-firebase.js';
-
 // hook yêu cầu đăng nhập trước khi vào một trang cần xác thực
-export let requireAuthHook = ($transitions) => {
+export let requireAuthHook = ($transitions, authenticationService) => {
 
     let requiresAuthCriteria = {
         to: (state) => state.data && state.data.requiresAuth
     };
 
     $transitions.onBefore(requiresAuthCriteria, (trans) => {
-        learnGeekAuth.onAuthStateChanged(function (user) {
+        authenticationService.learnGeekAuth.onAuthStateChanged((user) => {
             if (user) {
-                // User is signed in.
+
             } else {
                 trans.router.stateService.target('dang-nhap');
             }
         });
-
-        // if (currentUser === null) {
-        //     return 
-        // }
     });
 }

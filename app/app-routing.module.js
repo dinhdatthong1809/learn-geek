@@ -60,14 +60,16 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             data: { requiresAuth: true },
             resolve: {
                 account: ($window, authenticationService, accountService) => {
-                    let currentUser = authenticationService.isAuthenticated();
+                    let username = "";
 
-                    if (!currentUser) {
-                        $window.location = "/";
-                        return null;
-                    }
+                    authenticationService.learnGeekAuth.onAuthStateChanged((user) => {
+                        if (user) {
+                            username = user.displayName;
+                        } else {
+                            $window.location = "/";
+                        }
+                    });
 
-                    let username = currentUser.displayName;
                     return accountService
                         .getOne(username)
                         .then(

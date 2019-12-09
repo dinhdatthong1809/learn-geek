@@ -7,6 +7,8 @@ export default function AuthenticationService() {
     };
 
     return {
+        learnGeekAuth: learnGeekAuth,
+
         signUp: (email, password) => {
             return learnGeekAuth.createUserWithEmailAndPassword(email, password);
         },
