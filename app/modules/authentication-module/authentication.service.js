@@ -20,8 +20,7 @@ export default function AuthenticationService() {
         },
 
         isAuthenticated: () => {
-            let currentUser = learnGeekAuth.currentUser;
-            return currentUser ? currentUser : null;
+            return learnGeekAuth.currentUser;
         },
 
         sendPasswordResetEmail: (email) => {
