@@ -3,7 +3,7 @@ import { learnGeekAuth } from '../../../assets/js/init-firebase.js';
 export default function AuthenticationService() {
     let actionCodeSettings = {
         url: 'https://learngeek.netlify.com/',
-        handleCodeInApp: true
+        handleCodeInApp: true,
     };
 
     return {
