@@ -1,7 +1,7 @@
 // hook yêu cầu đăng nhập trước khi vào một trang cần xác thực
 requireAuthHook.$inject = ['$transitions', 'authenticationService'];
 
-export let requireAuthHook = ($transitions, authenticationService) => {
+export function requireAuthHook($transitions, authenticationService) {
     
     let requiresAuthCriteria = {
         to: (state) => state.data && state.data.requiresAuth
