@@ -151,7 +151,7 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form name="formChangePassword" ng-submit="$scope.submitFormChangePassword()">
+            <form novalidate name="$scope.formChangePassword" ng-submit="$scope.submitFormChangePassword()">
                 <div class="modal-body">
                     <div class="form-group row">
                         <label for="oldPassword" class="col-md-5 col-form-label" ng-class="$scope.labelColorClass">Mật khẩu cũ</label>
@@ -164,9 +164,9 @@
                                 </div>
                                 <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" autocomplete="new-password" class="form-control bg-dark text-light border border-secondary" name="oldPassword" ng-model="$scope.oldPassword">
                             </div>
-                            <span class="text-danger" ng-show="formChangePassword.oldPassword.$error && formChangePassword.oldPassword.$dirty" ng-messages="formChangePassword.oldPassword.$error" role="alert">
+                            <span class="text-danger" ng-show="$scope.formChangePassword.oldPassword.$error && $scope.formChangePassword.oldPassword.$dirty" ng-messages="$scope.formChangePassword.oldPassword.$error" role="alert">
                                 <span ng-message="pattern">Mật khẩu chỉ gồm ký tự chữ cái và -, _, dấu cách.</span>
-                                <span ng-message="required">Vui lòng nhập mật khẩu.</span>
+                                <span ng-message="required">Vui lòng nhập mật khẩu cũ.</span>
                                 <span ng-message="minlength">Mật khẩu ít nhất 5 đến 40 ký tự</span>
                             </span>
                         </div>
@@ -182,15 +182,15 @@
                                 </div>
                                 <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" autocomplete="newPassword" class="form-control bg-dark text-light border border-secondary" name="newPassword" ng-model="$scope.newPassword">
                             </div>
-                            <span class="text-danger" ng-show="formChangePassword.newPassword.$error && formChangePassword.newPassword.$dirty" ng-messages="formChangePassword.newPassword.$error" role="alert">
+                            <span class="text-danger" ng-show="$scope.formChangePassword.newPassword.$error && $scope.formChangePassword.newPassword.$dirty" ng-messages="$scope.formChangePassword.newPassword.$error" role="alert">
                                 <span ng-message="pattern">Mật khẩu chỉ gồm ký tự chữ cái và -, _, dấu cách.</span>
-                                <span ng-message="required">Vui lòng nhập mật khẩu.</span>
+                                <span ng-message="required">Vui lòng nhập mật khẩu mới.</span>
                                 <span ng-message="minlength">Mật khẩu ít nhất 5 đến 40 ký tự</span>
                             </span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="passwordConfirm" class="col-md-5 col-form-label" ng-class="$scope.labelColorClass">Xác nhận mật khẩu</label>
+                        <label for="passwordConfirm" class="col-md-5 col-form-label" ng-class="$scope.labelColorClass">Xác nhận mật khẩu mới</label>
                         <div class="col-md-7">
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -200,7 +200,7 @@
                                 </div>
                                 <input required pattern="^[a-zA-Z0-9\s\u002D\u005F]+$" minlength=5 maxlength=40 type="password" autocomplete="new-password" class="form-control bg-dark text-light border border-secondary" compare-to="$scope.newPassword" name="passwordConfirm" ng-model="$scope.passwordConfirm">
                             </div>
-                            <span class="text-danger" ng-show="formChangePassword.passwordConfirm.$error && formChangePassword.passwordConfirm.$dirty" ng-messages="formChangePassword.passwordConfirm.$error" role="alert">
+                            <span class="text-danger" ng-show="$scope.formChangePassword.passwordConfirm.$error && $scope.formChangePassword.passwordConfirm.$dirty" ng-messages="$scope.formChangePassword.passwordConfirm.$error" role="alert">
                                 <span ng-message="pattern">Mật khẩu chỉ gồm ký tự chữ cái và -, _, dấu cách.</span>
                                 <span ng-message="required">Vui lòng nhập lại mật khẩu mới.</span>
                                 <span ng-message="minlength">Mật khẩu ít nhất 5 đến 40 ký tự</span>

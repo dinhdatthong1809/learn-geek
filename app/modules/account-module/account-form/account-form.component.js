@@ -53,7 +53,9 @@ function controller($window, accountService, authenticationService) {
     }
 
     this.submitFormChangePassword = () => {
-        SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!");
+        if (this.formChangePassword.$valid) {
+            SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!");
+        }
     }
 
     /* hàm khôi phục dữ liệu trên form */
