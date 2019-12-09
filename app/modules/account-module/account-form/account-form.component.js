@@ -127,7 +127,7 @@ function controller($window, accountService, authenticationService) {
     this.update = () => {
         SweetAlertHelper.choXuLy();
 
-        authenticationService
+        accountService
             .update(this.account)
             .then(
                 () => {
