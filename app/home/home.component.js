@@ -5,9 +5,13 @@ export let HomeComponent = {
 };
 
 function controller(authenticationService) {
+    this.showRegisterSection = true;
+
     let account = authenticationService.isAuthenticated();
 
-    this.showRegisterSection = account ? false : true;
+    if (account)
+        this.showRegisterSection = false;
+    
 
     this.aboutUsTiles = [
         {
