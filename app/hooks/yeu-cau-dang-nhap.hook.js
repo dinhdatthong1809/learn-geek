@@ -10,8 +10,11 @@ export let requireAuthHook = ($transitions, authenticationService) => {
             if (user) {
 
             } else {
+                console.log("done");
                 trans.router.stateService.target('dang-nhap');
             }
         });
+
+        console.log("outside");
     });
 }
