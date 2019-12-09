@@ -70,6 +70,10 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                         }
                     });
 
+                    if (username == "") {
+                        return;
+                    }
+
                     return accountService
                         .getOne(username)
                         .then(
