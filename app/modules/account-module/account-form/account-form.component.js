@@ -33,7 +33,7 @@ function controller($window, accountService, authenticationService) {
         else if (this.state == this.UPDATE_STATE) {
             this.btnName = "Lưu thông tin";
             this.labelColorClass = "text-dark";
-            this.passwordConfirm = this.account.password;
+            this.passwordConfirm = "";
         }
         else {
 
@@ -53,7 +53,7 @@ function controller($window, accountService, authenticationService) {
     }
 
     this.submitFormChangePassword = () => {
-        SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!s");
+        SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!");
     }
 
     /* hàm khôi phục dữ liệu trên form */
