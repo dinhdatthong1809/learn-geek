@@ -54,7 +54,25 @@ function controller($window, accountService, authenticationService) {
 
     this.submitFormChangePassword = () => {
         if (this.formChangePassword.$valid) {
-            SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!");
+            let currentUser = authenticationService.isAuthenticated();
+
+            if (!currentUser) {
+                return;
+            }
+
+            currentUser
+                .updatePassword(this.newPassword)
+                .then(
+                    () => {
+                        SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!");
+                    }
+                )
+                .catch(
+                    (error) => {
+                        SweetAlertHelper.thatBai("Đổi mật khẩu thất bại!");
+                        console.log(error);
+                    }
+                );
         }
     }
 
