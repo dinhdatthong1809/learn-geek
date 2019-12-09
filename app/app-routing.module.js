@@ -60,20 +60,14 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             data: { requiresAuth: true },
             resolve: {
                 account: ($window, authenticationService, accountService) => {
-                    let username = null;
+                    let currentUser = authenticationService.isAuthenticated();
 
-                    authenticationService.learnGeekAuth.onAuthStateChanged((user) => {
-                        if (user) {
-                            username = user.displayName;
-                        } else {
-                            $window.location = "/#/dang-nhap";
-                        }
-                    });
-
-                    if (username == null) {
-                        return {};
+                    if (!currentUser) {
+                        $window.location = "/";
+                        return null;
                     }
 
+                    let username = currentUser.displayName;
                     return accountService
                         .getOne(username)
                         .then(
