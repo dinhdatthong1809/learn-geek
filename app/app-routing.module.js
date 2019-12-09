@@ -59,14 +59,14 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             // xem chi tiết tại ./global/yeu-cau-dang-nhap.hook.js
             data: { requiresAuth: true },
             resolve: {
-                account: ($state, authenticationService, accountService) => {
+                account: ($window, authenticationService, accountService) => {
                     let username = "";
 
                     authenticationService.learnGeekAuth.onAuthStateChanged((user) => {
                         if (user) {
                             username = user.displayName;
                         } else {
-                            $state.go('dang-nhap', undefined, {reload: true});
+                            $window.location = "/#/dang-nhap";
                         }
                     });
 
