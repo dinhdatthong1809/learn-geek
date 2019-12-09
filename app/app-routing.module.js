@@ -60,7 +60,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             data: { requiresAuth: true },
             resolve: {
                 account: ($window, authenticationService, accountService) => {
-                    let username = "";
+                    let username = null;
 
                     authenticationService.learnGeekAuth.onAuthStateChanged((user) => {
                         if (user) {
@@ -70,8 +70,8 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                         }
                     });
 
-                    if (username == "") {
-                        return;
+                    if (username == null) {
+                        return {};
                     }
 
                     return accountService
