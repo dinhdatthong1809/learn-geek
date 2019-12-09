@@ -8,6 +8,8 @@ export let requireAuthHook = ($transitions, authenticationService) => {
     $transitions.onBefore(requiresAuthCriteria, (trans) => {
         let currentUser = authenticationService.isAuthenticated();
 
+        console.log(currentUser);
+
         if (currentUser === null) {
             return trans.router.stateService.target('dang-nhap');
         }
