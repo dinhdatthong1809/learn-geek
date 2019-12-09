@@ -59,13 +59,15 @@ function controller($window, accountService, authenticationService) {
     /* hàm khôi phục dữ liệu trên form */
     this.resetForm = () => {
         this.account = JSON.parse(JSON.stringify(this.dataForReset));
-        this.passwordConfirm = this.account.password;
+        this.passwordConfirm = "";
         this.oldPassword = "";
         this.newPassword = "";
     }
 
     this.clearFormChangePassword = () => {
-        
+        this.passwordConfirm = "";
+        this.oldPassword = "";
+        this.newPassword = "";
     }
 
     this.signUp = () => {
