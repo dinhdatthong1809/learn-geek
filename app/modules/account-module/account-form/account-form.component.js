@@ -48,6 +48,10 @@ function controller($window, accountService, authenticationService) {
         this.passwordConfirm = this.account.password;
     }
 
+    this.clearFormChangePassword = () => {
+        
+    }
+
     this.signUp = () => {
         SweetAlertHelper.choXuLy();
 
