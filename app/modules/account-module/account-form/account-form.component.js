@@ -53,69 +53,70 @@ function controller($window, accountService, authenticationService) {
     }
 
     this.submitFormChangePassword = () => {
+        if (this.formChangePassword.$valid == false) {
+            SweetAlertHelper.thatBai("Bạn vui lòng nhập chính xác các thông tin");
+            return;
+        }
+
         SweetAlertHelper.choXuLy();
 
-        if (this.formChangePassword.$valid) {
-            let currentUser = authenticationService.isAuthenticated();
+        let currentUser = authenticationService.isAuthenticated();
 
-            if (!currentUser) {
-                SweetAlertHelper.thatBai("Phiên người dùng của bạn đã hết hạn. Vui lòng đăng nhập lại!");
-                $window.location = "/";
-                return;
-            }
-
-            let account;
-
-            let username = currentUser.displayName;
-            // Kiểm tra mật khẩu cũ
-            accountService
-                .getOne(username)
-                .then(
-                    (doc) => {
-                        account = doc.data();
-
-                        console.log(this.oldPassword != account.password);
-                        console.log(account.password);
-
-                        if (this.oldPassword != account.password) {
-                            SweetAlertHelper.thatBai("Mật khẩu cũ không chính xác!");
-                            return;
-                        }
-
-                        account.password = this.newPassword;
-
-                        accountService
-                            .update(account)
-                            .then(
-                                () => {
-                                    currentUser
-                                        .updatePassword(this.newPassword)
-                                        .then(
-                                            () => {
-                                                SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!");
-                                                this.resetFormChangePassword();
-                                            }
-                                        )
-                                        .catch(
-                                            (error) => {
-                                                SweetAlertHelper.thatBai("Đổi mật khẩu thất bại!");
-                                                console.log(error);
-                                            }
-                                        );
-                                }
-                            )
-                            .catch(
-                                (error) => {
-                                    SweetAlertHelper.thatBai("Đổi mật khẩu thất bại!");
-                                    console.log(error);
-                                }
-                            );
-
-                    }
-                );
-
-            
+        if (!currentUser) {
+            SweetAlertHelper.thatBai("Phiên người dùng của bạn đã hết hạn. Vui lòng đăng nhập lại!");
+            $window.location = "/";
+            return;
         }
+
+        let account;
+
+        let username = currentUser.displayName;
+        // Kiểm tra mật khẩu cũ
+        accountService
+            .getOne(username)
+            .then(
+                (doc) => {
+                    account = doc.data();
+
+                    console.log(this.oldPassword != account.password);
+                    console.log(account.password);
+
+                    if (this.oldPassword != account.password) {
+                        SweetAlertHelper.thatBai("Mật khẩu cũ không chính xác!");
+                        return;
+                    }
+
+                    account.password = this.newPassword;
+
+                    accountService
+                        .update(account)
+                        .then(
+                            () => {
+                                currentUser
+                                    .updatePassword(this.newPassword)
+                                    .then(
+                                        () => {
+                                            SweetAlertHelper.thanhCong("Đổi mật khẩu thành công!");
+                                            this.resetFormChangePassword();
+                                        }
+                                    )
+                                    .catch(
+                                        (error) => {
+                                            SweetAlertHelper.thatBai("Đổi mật khẩu thất bại!");
+                                            console.log(error);
+                                        }
+                                    );
+                            }
+                        )
+                        .catch(
+                            (error) => {
+                                SweetAlertHelper.thatBai("Đổi mật khẩu thất bại!");
+                                console.log(error);
+                            }
+                        );
+
+                }
+            );
     }
 
     /* hàm khôi phục dữ liệu trên form */
