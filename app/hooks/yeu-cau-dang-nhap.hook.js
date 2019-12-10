@@ -5,7 +5,7 @@ export let requireAuthHook = ($transitions) => {
         to: (state) => state.data && state.data.requiresAuth
     };
     
-    $transitions.onBefore(requiresAuthCriteria, (trans) => {
+    $transitions.onBefore(requiresAuthCriteria, async (trans) => {
         let authenticationService = trans.injector().get('authenticationService');
         
         let currentUser = await authenticationService.isAuthenticated();
