@@ -24,6 +24,7 @@ function controller($window, accountService, authenticationService) {
     this.dataForReset;
 
     this.$onInit = () => {
+        $("input[type='checkbox']").bootstrapSwitch();
         this.dataForReset = JSON.parse(JSON.stringify(this.account));
 
         if (this.state == this.REGISTER_STATE) {

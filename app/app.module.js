@@ -130,5 +130,6 @@ app.run(loadingIndicatorHook);
 
 angular.element(document).ready(() => {
     angular.bootstrap(document, ['myApp']);
+    $("input[type='checkbox']").bootstrapSwitch();
 });
 
