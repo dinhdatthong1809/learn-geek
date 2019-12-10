@@ -33,17 +33,17 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             // xem chi tiết tại ./global/yeu-cau-dang-nhap.hook.js
             data: { requiresAuth: true },
             resolve: {
-                subject: (subjectService, $stateParams, $timeout, $state) => {
+                subject: (subjectService, $stateParams, $timeout, $window) => {
                     return subjectService
                         .getOne($stateParams.maMonHoc)
                         .then(doc => doc.data())
-                        .catch(error => $timeout(() => $state.go('/')));
+                        .catch(error => $timeout(() => $window.location = '/'));
                 },
-                quizs: (quizService, $stateParams, $timeout, $state) => {
+                quizs: (quizService, $stateParams, $timeout, $window) => {
                     return quizService
                         .getOne($stateParams.maMonHoc)
                         .then(response => response.data)
-                        .catch(error => $timeout(() => $state.go('/')));;
+                        .catch(error => $timeout(() => $window.location = '/'));
                 }
             }
         },
