@@ -1,4 +1,3 @@
-import { learnGeekAuth } from '../assets/js/init-firebase.js';
 import SweetAlertHelper from '../assets/js/sweet-alert-helper.js';
 
 export let AppComponent = {
@@ -46,13 +45,13 @@ function controller($window, $location, anchorSmoothScroll, authenticationServic
         { url: 'trang-ca-nhan', name: 'Trang cá nhân' },
     ];
 
-    learnGeekAuth.onAuthStateChanged((account) => {
-        if (!account) {
-            // signed out
-            this.rightRoutes = unauthenticatedRoutes;
-        } else {
+    authenticationService.learnGeekAuth.onAuthStateChanged((account) => {
+        if (account) {
             // signed in
             this.rightRoutes = authenticatedRoutes;
+        } else {
+            // signed out
+            this.rightRoutes = unauthenticatedRoutes;
         }
     });
 

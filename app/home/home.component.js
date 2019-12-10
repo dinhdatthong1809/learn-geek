@@ -7,11 +7,15 @@ export let HomeComponent = {
 function controller(authenticationService) {
     this.showRegisterSection = true;
 
-    let account = authenticationService.isAuthenticated();
-
-    if (account)
-        this.showRegisterSection = false;
-    
+    authenticationService.learnGeekAuth.onAuthStateChanged((account) => {
+        if (account) {
+            // signed in
+            this.showRegisterSection = false;
+        } else {
+            // signed out
+            this.showRegisterSection = true;
+        }
+    });
 
     this.aboutUsTiles = [
         {
