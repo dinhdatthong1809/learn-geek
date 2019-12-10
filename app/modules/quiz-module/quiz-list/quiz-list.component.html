@@ -1,15 +1,15 @@
-<div class="container">
+<div>
     <div class="mb-3 d-flex justify-content-between">
-        <div ng-hide="$scope.index == 0">
-            <button class="btn btn-outline-primary" ng-click="$scope.first()"><i class="fas fa-angle-double-left fa-2x"></i></button>
-            <button class="btn btn-outline-primary" ng-click="$scope.prev()"><i class="fas fa-angle-left fa-2x"></i></button>
-        </div>
         <div>
+            <button ng-disabled="$scope.index == 0" class="btn btn-outline-primary" ng-click="$scope.first()"><i class="fas fa-angle-double-left fa-2x"></i></button>
+            <button ng-disabled="$scope.index == 0" class="btn btn-outline-primary" ng-click="$scope.prev()"><i class="fas fa-angle-left fa-2x"></i></button>
+        </div>
+        <div class="align-self-center">
             <p class="h5">{{$scope.index + 1}} / {{$scope.quizs.length}}</p>
         </div>
-        <div ng-hide="$scope.index == $scope.quizs.length - 1">
-            <button class="btn btn-outline-primary" ng-click="$scope.next()"><i class="fas fa-angle-right fa-2x"></i></button>
-            <button class="btn btn-outline-primary" ng-click="$scope.last()"><i class="fas fa-angle-double-right fa-2x"></i></button>
+        <div>
+            <button ng-disabled="$scope.index == $scope.quizs.length - 1" class="btn btn-outline-primary" ng-click="$scope.next()"><i class="fas fa-angle-right fa-2x"></i></button>
+            <button ng-disabled="$scope.index == $scope.quizs.length - 1" class="btn btn-outline-primary" ng-click="$scope.last()"><i class="fas fa-angle-double-right fa-2x"></i></button>
         </div>
     </div>
 
