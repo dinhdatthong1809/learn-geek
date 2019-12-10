@@ -4226,6 +4226,7 @@ table.grid td {
     margin-bottom: 0;
     font-weight: normal;
     cursor: pointer;
+    text-transform: none !important;
 }
 
 [class*="icheck-"] > input:first-child {
