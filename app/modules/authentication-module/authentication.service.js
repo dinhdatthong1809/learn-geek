@@ -21,7 +21,7 @@ export default function AuthenticationService() {
             return learnGeekAuth.signOut();
         },
 
-        isAuthenticated: () => {
+        isAuthenticated: async () => {
             return new Promise(resolve => {
                 if (learnGeekAuth.currentUser) {
                     resolve(learnGeekAuth.currentUser);
