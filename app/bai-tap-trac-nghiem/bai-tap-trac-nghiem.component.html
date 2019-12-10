@@ -38,8 +38,8 @@
                                         <div class="text-primary text-center"></div>
                                         <div class="text-danger text-right">
                                             <i class="far fa-clock"></i>
-                                            <timer end-time="{{$scope.deadline}}" interval="1000" language="vi">{{hourUnit}}</timer>
-                                            <timer end-time="{{$scope.deadline}}">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+                                            <timer end-time="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
+                                            <timer end-time="$scope.deadline" interval="1000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
                                         </div>
                                     </div>
                                     <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
