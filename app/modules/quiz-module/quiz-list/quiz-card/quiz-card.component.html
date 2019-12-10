@@ -1,4 +1,4 @@
 <div>
-    {{$scope.index}} Câu hỏi: {{$scope.quiz.Text}}
+    {{$scope.index + 1}} Câu hỏi: {{$scope.quiz.Text}}
 </div>
-<div ng-repeat="answer in $scope.quiz.Answers">{{$index}} {{answer.Text}}</div>
+<div ng-repeat="answer in $scope.quiz.Answers">{{$index + 1}} {{answer.Text}}</div>

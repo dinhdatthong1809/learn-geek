@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row" ng-repeat="quiz in $scope.quizs">
-        <app-quiz-card quiz="quiz" index=$index></app-quiz-card>
-    </div>
+    <app-quiz-card quiz="$scope.quizs[$scope.index]" index=$scope.index></app-quiz-card>
+    <button class="btn btn-primary" ng-click="$scope.prev()">Câu trước</button>
+    <button class="btn btn-primary" ng-click="$scope.next()">Câu sau</button>
 </div>

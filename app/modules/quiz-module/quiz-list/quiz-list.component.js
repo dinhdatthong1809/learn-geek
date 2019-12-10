@@ -8,5 +8,14 @@ export let QuizListComponent = {
 };
 
 function controller() {
+    this.index = 0;
+
+    this.prev = () => {
+        this.index++;
+    };
+
+    this.next = () => {
+        this.index++;
+    };
 
 }
