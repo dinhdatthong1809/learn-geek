@@ -11,7 +11,8 @@ export function SubjectService($http) {
                 .then(
                     (response) => {
                         for (let i = 0; i < response.data.length; i++) {
-                            learnGeekDB.doc(collection).set(Object.assign({}, response.data[i]));
+                            console.log(response.data[i].id);
+                            collection.doc(response.data[i].id).set(Object.assign({}, response.data[i]));
                         }
                         
 
