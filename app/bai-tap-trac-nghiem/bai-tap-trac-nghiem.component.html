@@ -42,7 +42,11 @@
                                             <br>
                                             <timer end-time="$scope.deadline" interval="1000">{{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
                                             <br>
-                                            <timer countdown="30" interval="1000"><div class="progress progress-striped active {{displayProgressActive}}"style="height: 30px;"> Remaining time : {{countdown}} second{{secondsS}} ({{progressBar}}%). Activity? {{displayProgressActive}} <div class="bar" style="min-width: 2em;width: {{progressBar}}%;"></div> </div></timer>
+                                            <timer countdown="30" interval="1000">
+                                                <div class="progress active {{displayProgressActive}}" style="height: 10px;"> Remaining time : {{countdown}} second{{secondsS}} ({{progressBar}}%). Activity? {{displayProgressActive}}
+                                                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" ng-style="min-width: 2em;width: {{progressBar}}%;"></div>
+                                                </div>
+                                            </timer>
                                         </div>
                                     </div>
                                     <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
