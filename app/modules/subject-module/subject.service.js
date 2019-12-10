@@ -6,17 +6,13 @@ export function SubjectService($http) {
 
     return {
         getAll: () => {
-            return $http
-                .get('/database/subjects.json')
+            return collection
+                .get()
                 .then(
-                    (response) => {
-                        for (let i = 0; i < response.data.length; i++) {
-                            console.log(response.data[i].id);
-                            collection.doc(response.data[i].id).set(Object.assign({}, response.data[i]));
-                        }
-                        
-
-                        return response.data;
+                    (querySnapshot) => {
+                        let list = [];
+                        querySnapshot.forEach( doc => list.push(doc.data()) );
+                        return list;
                     }
                 );
         },

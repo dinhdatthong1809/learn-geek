@@ -12,6 +12,7 @@ import { QuenMatKhauComponent } from './xac-thuc/quen-mat-khau/quen-mat-khau.com
 import { DangKyComponent } from './dang-ky/dang-ky.component.js';
 import { LuyenTapComponent } from './luyen-tap/luyen-tap.component.js';
 import { TrangCaNhanComponent } from './trang-ca-nhan/trang-ca-nhan.component.js';
+import { BaiTapTracNghiemComponent } from './bai-tap-trac-nghiem/bai-tap-trac-nghiem.component.js';
 
 import { authenticationModule } from './modules/authentication-module/authentication.module.js';
 import { accountModule } from './modules/account-module/account.module.js';
@@ -43,6 +44,7 @@ app
         .component("appDangKy", DangKyComponent)
 
     .component("appKhoaHoc", KhoaHocComponent)
+    .component("appBaiTapTracNghiem", BaiTapTracNghiemComponent)
     .component("appLuyenTap", LuyenTapComponent)
     .component("appThaoLuan", ThaoLuanComponent)
     .component("appHoiDap", HoiDapComponent)
