@@ -17,7 +17,7 @@ function controller() {
     };
 
     this.next = () => {
-        if (this.index < quizs.length - 1) {
+        if (this.index < this.quizs.length - 1) {
             this.index++;
         }
     };
