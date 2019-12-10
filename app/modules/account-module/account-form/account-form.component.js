@@ -52,7 +52,7 @@ function controller($window, accountService, authenticationService) {
         }
     }
 
-    this.submitFormChangePassword = () => {
+    this.submitFormChangePassword = async () => {
         if (this.formChangePassword.$valid == false) {
             SweetAlertHelper.thatBai("Bạn vui lòng nhập chính xác các thông tin");
             return;
@@ -60,7 +60,7 @@ function controller($window, accountService, authenticationService) {
 
         SweetAlertHelper.choXuLy();
 
-        let currentUser = authenticationService.isAuthenticated();
+        let currentUser = await authenticationService.isAuthenticated();
 
         if (!currentUser) {
             SweetAlertHelper.thatBai("Phiên người dùng của bạn đã hết hạn. Vui lòng đăng nhập lại!");
