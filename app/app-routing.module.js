@@ -36,8 +36,10 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                         .getOne($stateParams.maMonHoc)
                         .then(doc => doc.data());
                 },
-                quizs: () => {
-                    return null;
+                quizs: ($stateParams, quizService) => {
+                    return quizService
+                        .getOne($stateParams.maMonHoc)
+                        .then(response => response.data);
                 }
             }
         },

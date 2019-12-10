@@ -8,18 +8,6 @@ export let SubjectCardComponent = {
     },
 };
 
-function controller($scope) {
-    this.rank;
+function controller() {
 
-    this.$onInit = () => {
-        
-    }
-
-    this.closeForm = () => {
-        $scope.$broadcast("closeForm"); 
-    }
-
-    this.deleteOneEmit = () => {
-        $scope.$emit("deleteOneEventEmitter", this.index);
-    }
 }

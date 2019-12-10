@@ -1,6 +1,5 @@
 import { AppComponent } from './app.component.js';
 import { FooterComponent } from './footer.component.js';
-
 import { HomeComponent } from './home/home.component.js';
 import { GioiThieuComponent } from './gioi-thieu/gioi-thieu.component.js';
 import { KhoaHocComponent } from './khoa-hoc/khoa-hoc.component.js';
@@ -14,10 +13,11 @@ import { LuyenTapComponent } from './luyen-tap/luyen-tap.component.js';
 import { TrangCaNhanComponent } from './trang-ca-nhan/trang-ca-nhan.component.js';
 import { BaiTapTracNghiemComponent } from './bai-tap-trac-nghiem/bai-tap-trac-nghiem.component.js';
 
+import { angularSwitchModule } from '../assets/lib/js/angular-bootstrap-switch.js';
 import { authenticationModule } from './modules/authentication-module/authentication.module.js';
 import { accountModule } from './modules/account-module/account.module.js';
 import { subjectModule } from './modules/subject-module/subject.module.js';
-import { angularSwitchModule } from '../assets/lib/js/angular-bootstrap-switch.js';
+import { quizModule } from './modules/quiz-module/quiz.module.js';
 
 import { requireAuthHook } from './hooks/yeu-cau-dang-nhap.hook.js';
 import { loadingIndicatorHook } from './hooks/dang-tai-trang.hook.js';
@@ -31,6 +31,7 @@ export let app = angular.module('myApp',
         'authenticationModule',
         'accountModule',
         'subjectModule',
+        'quizModule',
     ]
 );
 
