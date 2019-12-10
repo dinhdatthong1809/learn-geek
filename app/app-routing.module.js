@@ -62,6 +62,8 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                 account: async ($window, authenticationService, accountService) => {
                     let currentUser = await authenticationService.isAuthenticated();
 
+                    console.log(currentUser)
+
                     if (!currentUser) {
                         $window.location = "/#/dang-nhap";
                         return null;
