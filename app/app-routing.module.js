@@ -26,6 +26,18 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                 subjects: subjectService => subjectService.getAll()
             }
         },
+        // {
+        //     name: 'bai-tap-trac-nghiem',
+        //     url: '/{maMonHoc}',
+        //     component: 'appBaiTapTracNghiem',
+        //     // resolve: {
+        //     //     subject: function (subjectService, $stateParams) {
+        //     //         return people.find(function (person) {
+        //     //             return person.id === $stateParams.personId;
+        //     //         });
+        //     //     }
+        //     // }
+        // },
         {
             name: 'luyen-tap',
             url: '/luyen-tap',

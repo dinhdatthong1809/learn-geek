@@ -1,6 +1,6 @@
 import { learnGeekDB } from '../../../assets/js/init-firebase.js';
 
-export default function AccountService() {
+export function AccountService() {
 
     let collection = learnGeekDB.collection("accounts");
 
