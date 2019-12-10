@@ -14,6 +14,7 @@ import { TrangCaNhanComponent } from './trang-ca-nhan/trang-ca-nhan.component.js
 import { BaiTapTracNghiemComponent } from './bai-tap-trac-nghiem/bai-tap-trac-nghiem.component.js';
 
 import { angularSwitchModule } from '../assets/lib/js/angular-bootstrap-switch.js';
+import { timerModule } from '../assets/lib/js/angular-timer.min.js';
 import { authenticationModule } from './modules/authentication-module/authentication.module.js';
 import { accountModule } from './modules/account-module/account.module.js';
 import { subjectModule } from './modules/subject-module/subject.module.js';
@@ -26,6 +27,7 @@ export let app = angular.module('myApp',
     [
         'ui.router',
         'angularBootstrapSwitch',
+        'timer',
         'ngMaterial',
         'ngMessages',
         'authenticationModule',
