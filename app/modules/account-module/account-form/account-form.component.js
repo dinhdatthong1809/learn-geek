@@ -78,9 +78,6 @@ function controller($window, accountService, authenticationService) {
                 (doc) => {
                     account = doc.data();
 
-                    console.log(this.oldPassword != account.password);
-                    console.log(account.password);
-
                     if (this.oldPassword != account.password) {
                         SweetAlertHelper.thatBai("Mật khẩu cũ không chính xác!");
                         return;
