@@ -1,4 +1,10 @@
-<div>
-    {{$scope.index + 1}} Câu hỏi: {{$scope.quiz.Text}}
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            {{$scope.index + 1}} Câu hỏi: {{$scope.quiz.Text}}
+        </div>
+    </div>
+    <div class="card-body">
+        <input type="radio" name="answer" ng-repeat="answer in $scope.quiz.Answers"> {{answer.Text}}
+    </div>
 </div>
-<div ng-repeat="answer in $scope.quiz.Answers">{{$index + 1}} {{answer.Text}}</div>

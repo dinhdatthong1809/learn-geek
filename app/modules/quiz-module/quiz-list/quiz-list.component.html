@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="row mb-3">
-        <button class="btn btn-primary" ng-click="$scope.prev()"><i class="fas fa-caret-left"></i></button>
-        <button class="btn btn-primary" ng-click="$scope.next()"><i class="fas fa-caret-right"></i></button>
+    <div class="mb-3 d-flex">
+        <button class="btn btn-primary" ng-click="$scope.prev()"><i class="fas fa-caret-left fa-2x"></i></button>
+        <button class="btn btn-primary" ng-click="$scope.next()"><i class="fas fa-caret-right fa-2x"></i></button>
     </div>
 
     <app-quiz-card quiz="$scope.quizs[$scope.index]" index=$scope.index></app-quiz-card>
