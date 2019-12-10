@@ -28,15 +28,16 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
         },
         {
             name: 'bai-tap-trac-nghiem',
-            url: '/{maMonHoc}',
+            url: '/bai-tap-trac-nghiem/{maMonHoc}',
             component: 'appBaiTapTracNghiem',
-            // resolve: {
-            //     subject: function (subjectService, $stateParams) {
-            //         return people.find(function (person) {
-            //             return person.id === $stateParams.personId;
-            //         });
-            //     }
-            // }
+            resolve: {
+                subject: ($stateParams) => {
+                    return $stateParams.maMonHoc;
+                },
+                quizs: () => {
+                    return null;
+                }
+            }
         },
         {
             name: 'luyen-tap',
