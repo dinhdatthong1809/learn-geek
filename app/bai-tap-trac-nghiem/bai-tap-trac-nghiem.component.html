@@ -38,8 +38,11 @@
                                         <div class="text-primary text-center"></div>
                                         <div class="text-danger text-right">
                                             <i class="far fa-clock"></i>
-                                            <timer end-time="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
-                                            <timer end-time="$scope.deadline" interval="1000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+                                            Thời gian còn lại: <timer end-time="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
+                                            <br>
+                                            <timer end-time="$scope.deadline" interval="1000">{{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+                                            <br>
+                                            <timer countdown="30" interval="1000"><div class="progress progress-striped active {{displayProgressActive}}"style="height: 30px;"> Remaining time : {{countdown}} second{{secondsS}} ({{progressBar}}%). Activity? {{displayProgressActive}} <div class="bar" style="min-width: 2em;width: 100%;"></div> </div></timer>
                                         </div>
                                     </div>
                                     <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
