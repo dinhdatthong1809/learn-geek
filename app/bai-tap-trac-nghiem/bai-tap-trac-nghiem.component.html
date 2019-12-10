@@ -31,14 +31,14 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <div>
-                                    <div class="d-flex d-flex justify-content-between mb-2" timer-controls>
+                                    <div class="d-flex d-flex justify-content-between mb-2">
                                         <div class="text-primary text-left">
                                             <i class="fas fa-puzzle-piece"></i> {{$scope.subject.name}}
                                         </div>
                                         <div class="text-primary text-center">
-                                            <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
                                         </div>
-                                        <div class="text-danger text-right">
+                                        <div class="text-danger text-right" timer-controls>
+                                                <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
                                             <i class="far fa-clock"></i>
                                             Thời gian còn lại: <timer autostart="false" end-time="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
                                             <br>
