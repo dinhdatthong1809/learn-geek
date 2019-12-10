@@ -22,7 +22,7 @@ export default function AuthenticationService() {
         },
 
         isAuthenticated: async () => {
-            return new Promise(resolve => {
+            return await new Promise(resolve => {
                 if (learnGeekAuth.currentUser) {
                     resolve(learnGeekAuth.currentUser);
                 }
