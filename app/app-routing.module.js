@@ -34,12 +34,14 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                 subject: (subjectService, $stateParams) => {
                     return subjectService
                         .getOne($stateParams.maMonHoc)
-                        .then(doc => doc.data());
+                        .then(doc => doc.data())
+                        .catch(error => $timeout(() => $state.go('/')));
                 },
                 quizs: ($stateParams, quizService) => {
                     return quizService
                         .getOne($stateParams.maMonHoc)
-                        .then(response => response.data);
+                        .then(response => response.data)
+                        .catch(error => $timeout(() => $state.go('/')));;
                 }
             }
         },
