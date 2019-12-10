@@ -1,6 +1,6 @@
 import { learnGeekDB } from '../../../assets/js/init-firebase.js';
 
-export function SubjectService($http) {
+export function SubjectService() {
 
     let collection = learnGeekDB.collection("subjects");
 
@@ -18,7 +18,9 @@ export function SubjectService($http) {
         },
 
         getOne: (id) => {
-
+            return collection
+                .doc(id)
+                .get();
         },
 
         insert: (subject) => {

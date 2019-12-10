@@ -31,8 +31,10 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             url: '/bai-tap-trac-nghiem/{maMonHoc}',
             component: 'appBaiTapTracNghiem',
             resolve: {
-                subject: ($stateParams) => {
-                    return $stateParams.maMonHoc;
+                subject: (subjectService, $stateParams) => {
+                    return subjectService
+                        .getOne($stateParams.maMonHoc)
+                        .then(doc => doc.data());
                 },
                 quizs: () => {
                     return null;
@@ -91,11 +93,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                     let username = currentUser.displayName;
                     return accountService
                         .getOne(username)
-                        .then(
-                            (doc) => {
-                                return doc.data();
-                            }
-                        );
+                        .then(doc => doc.data());
                 }
             }
         },
