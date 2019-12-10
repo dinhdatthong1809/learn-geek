@@ -12,7 +12,7 @@ function controller() {
     this.deadline;
 
     this.$onInit = () => {
-        this.deadline = this.quizs.length();
+        this.deadline = this.quizs.length;
     }
 }
 
