@@ -31,7 +31,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             url: '/bai-tap-trac-nghiem/{maMonHoc}',
             component: 'appBaiTapTracNghiem',
             // xem chi tiết tại ./global/yeu-cau-dang-nhap.hook.js
-            // data: { requiresAuth: true },
+            data: { requiresAuth: true },
             resolve: {
                 subject: (subjectService, $stateParams) => {
                     return subjectService
