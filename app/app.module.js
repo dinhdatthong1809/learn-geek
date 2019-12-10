@@ -16,6 +16,7 @@ import { TrangCaNhanComponent } from './trang-ca-nhan/trang-ca-nhan.component.js
 import { authenticationModule } from './modules/authentication-module/authentication.module.js';
 import { accountModule } from './modules/account-module/account.module.js';
 import { subjectModule } from './modules/subject-module/subject.module.js';
+import { angularSwitchModule } from '../assets/lib/js/angular-bootstrap-switch.js';
 
 import { requireAuthHook } from './hooks/yeu-cau-dang-nhap.hook.js';
 import { loadingIndicatorHook } from './hooks/dang-tai-trang.hook.js';
@@ -23,6 +24,7 @@ import { loadingIndicatorHook } from './hooks/dang-tai-trang.hook.js';
 export let app = angular.module('myApp',
     [
         'ui.router',
+        'angularBootstrapSwitch',
         'ngMaterial',
         'ngMessages',
         'authenticationModule',
@@ -130,6 +132,5 @@ app.run(loadingIndicatorHook);
 
 angular.element(document).ready(() => {
     angular.bootstrap(document, ['myApp']);
-    $("input[type='checkbox']").bootstrapSwitch();
 });
 
