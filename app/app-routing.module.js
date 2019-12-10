@@ -62,10 +62,10 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                 account: async ($state, authenticationService, accountService) => {
                     let currentUser = await authenticationService.isAuthenticated();
 
-                    console.log(currentUser)
-
                     if (currentUser === null) {
-                        $state.go('dang-nhap');
+                        $timeout(function () {
+                            $state.go('dang-nhap');
+                        })
                         return null;
                     }
 

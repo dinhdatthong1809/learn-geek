@@ -5,10 +5,12 @@ export let requireAuthHook = ($transitions) => {
         to: (state) => state.data && state.data.requiresAuth
     };
     
-    $transitions.onStart(requiresAuthCriteria, (trans) => {
+    $transitions.onBefore(requiresAuthCriteria, (trans) => {
         let authenticationService = trans.injector().get('authenticationService');
         
-        if (authenticationService.isAuthenticated() === null) {
+        let currentUser = await authenticationService.isAuthenticated();
+        
+        if (currentUser === null) {
             return trans.router.stateService.target('dang-nhap');
         }
     });
