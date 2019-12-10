@@ -1,10 +1,13 @@
 <div class="card">
     <div class="card-header">
         <div class="card-title">
-            {{$scope.index + 1}} Câu hỏi: {{$scope.quiz.Text}}
+            {{$scope.index + 1}}. {{$scope.quiz.Text}}
         </div>
     </div>
     <div class="card-body">
-        <input type="radio" name="answer" ng-repeat="answer in $scope.quiz.Answers"> {{answer.Text}}
+        <div class="icheck-primary" ng-repeat="answer in $scope.quiz.Answers">
+            <input type="radio" id="answer" name="answer">
+            <label for="answer">{{answer.Text}}</label>
+        </div>
     </div>
 </div>

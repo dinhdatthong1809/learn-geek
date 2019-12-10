@@ -10,6 +10,10 @@ export let QuizListComponent = {
 function controller() {
     this.index = 0;
 
+    this.first = () => {
+        this.index = 0;
+    };
+
     this.prev = () => {
         if (this.index > 0) {
             this.index--;
@@ -20,6 +24,10 @@ function controller() {
         if (this.index < this.quizs.length - 1) {
             this.index++;
         }
+    };
+
+    this.last = () => {
+        this.index = this.quizs.length - 1;
     };
 
 }
