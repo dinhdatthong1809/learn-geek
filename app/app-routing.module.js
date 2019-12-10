@@ -10,7 +10,13 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
         {
             name: '/',
             url: '/',
-            component: "appHome"
+            component: "appHome",
+            resolve: {
+                showRegisterSection: async (authenticationService) => {
+                    let currentUser = await authenticationService.isAuthenticated();
+                    return currentUser === null ? true : false;
+                }
+            }
         },
         {
             name: 'khoa-hoc',

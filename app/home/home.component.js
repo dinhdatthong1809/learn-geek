@@ -1,22 +1,13 @@
 export let HomeComponent = {
     templateUrl: './app/home/home.component.html',
     controller: controller,
-    controllerAs: '$scope'
+    controllerAs: '$scope',
+    bindings: {
+        showRegisterSection: '<'
+    }
 };
 
-function controller(authenticationService) {
-    this.showRegisterSection = true;
-
-    authenticationService.learnGeekAuth.onAuthStateChanged((account) => {
-        if (account) {
-            // signed in
-            this.showRegisterSection = false;
-        } else {
-            // signed out
-            this.showRegisterSection = true;
-        }
-    });
-
+function controller() {
     this.aboutUsTiles = [
         {
             title: "Chọn khóa học",
