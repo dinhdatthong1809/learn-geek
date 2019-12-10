@@ -31,14 +31,15 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <div>
-                                    <div class="d-flex d-flex justify-content-between">
+                                    <div class="d-flex d-flex justify-content-between mb-2">
                                         <div class="text-primary text-left">
                                             <i class="fas fa-puzzle-piece"></i> {{$scope.subject.name}}
                                         </div>
                                         <div class="text-primary text-center"></div>
                                         <div class="text-danger text-right">
                                             <i class="far fa-clock"></i>
-                                            <timer language="vi" end-time="1577811600000">{{hhours}} hour{{hhoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}.</timer>
+                                            
+                                            <timer language="vi" end-time="1577811600000" interval="1000">{{hhours}} hour{{hhoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}.</timer>
                                         </div>
                                     </div>
                                     <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
