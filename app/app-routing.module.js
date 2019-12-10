@@ -33,13 +33,13 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             // xem chi tiết tại ./global/yeu-cau-dang-nhap.hook.js
             data: { requiresAuth: true },
             resolve: {
-                subject: (subjectService, $stateParams) => {
+                subject: (subjectService, $stateParams, $timeout) => {
                     return subjectService
                         .getOne($stateParams.maMonHoc)
                         .then(doc => doc.data())
                         .catch(error => $timeout(() => $state.go('/')));
                 },
-                quizs: ($stateParams, quizService) => {
+                quizs: (quizService, $stateParams, $timeout) => {
                     return quizService
                         .getOne($stateParams.maMonHoc)
                         .then(response => response.data)
