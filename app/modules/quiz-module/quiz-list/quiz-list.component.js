@@ -11,11 +11,15 @@ function controller() {
     this.index = 0;
 
     this.prev = () => {
-        this.index++;
+        if (this.index > 0) {
+            this.index--;
+        }
     };
 
     this.next = () => {
-        this.index++;
+        if (this.index < quizs.length - 1) {
+            this.index++;
+        }
     };
 
 }
