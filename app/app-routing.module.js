@@ -59,13 +59,13 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             // xem chi tiết tại ./global/yeu-cau-dang-nhap.hook.js
             data: { requiresAuth: true },
             resolve: {
-                account: async ($window, authenticationService, accountService) => {
+                account: async ($state, authenticationService, accountService) => {
                     let currentUser = await authenticationService.isAuthenticated();
 
                     console.log(currentUser)
 
                     if (currentUser === null) {
-                        $window.location = "/#/dang-nhap";
+                        $state.go('dang-nhap');
                         return null;
                     }
 
