@@ -64,7 +64,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
 
                     console.log(currentUser)
 
-                    if (!currentUser) {
+                    if (currentUser === null) {
                         $window.location = "/#/dang-nhap";
                         return null;
                     }
