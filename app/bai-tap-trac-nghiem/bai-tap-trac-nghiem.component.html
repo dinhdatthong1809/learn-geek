@@ -34,6 +34,8 @@
                                     <div class="d-flex d-flex justify-content-between mb-2">
                                         <div class="text-primary text-left">
                                             <i class="fas fa-puzzle-piece"></i> {{$scope.subject.name}}
+                                            <button class="btn btn-sm btn-dark" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
+                                            <button class="btn" ng-click="timerToggle()" type="button">{{btnText[timerStatus]}}</button>
                                         </div>
                                         <div class="text-primary text-center"></div>
                                         <div class="text-danger text-right">
@@ -42,15 +44,11 @@
                                             <br>
                                             <timer end-time="$scope.deadline" interval="1000">{{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
                                             <br>
-                                            <timer countdown="30" interval="1000">
+                                            <timer countdown="$scope.deadline" interval="1000">
                                                 <div class="progress">
-                                                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" width="{{progressBar}}%"></div>
+                                                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{progressBar}}%"></div>
                                                 </div>
                                             </timer>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                                            </div>
-                                            <br>
                                         </div>
                                     </div>
                                     <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
