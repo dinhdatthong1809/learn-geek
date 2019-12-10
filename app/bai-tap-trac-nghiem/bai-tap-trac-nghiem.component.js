@@ -9,10 +9,10 @@ export let BaiTapTracNghiemComponent = {
 };
 
 function controller() {
-    this.deadline;
+    this.deadline = this.quizs.length * 60 * 1000;
 
     this.$onInit = () => {
-        this.deadline = this.quizs.length * 60 * 1000;
+        // this.deadline = this.quizs.length * 60 * 1000;
     }
 }
 
