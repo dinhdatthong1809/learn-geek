@@ -62,7 +62,7 @@ function controller($window, accountService, authenticationService) {
 
         let currentUser = await authenticationService.isAuthenticated();
 
-        if (!currentUser) {
+        if (currentUser == null) {
             SweetAlertHelper.thatBai("Phiên người dùng của bạn đã hết hạn. Vui lòng đăng nhập lại!");
             $window.location = "/";
             return;
