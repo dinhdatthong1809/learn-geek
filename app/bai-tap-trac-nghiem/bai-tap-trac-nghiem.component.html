@@ -38,11 +38,12 @@
                                         <div class="text-primary text-center">
                                         </div>
                                         <div class="text-danger text-right" timer-controls>
-                                                <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
-                                            <i class="far fa-clock"></i>
-                                            Thời gian còn lại: <timer autostart="false" end-time="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
+                                            <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
                                             <br>
-                                            <timer countdown="$scope.deadline" autostart="false" interval="1000">
+                                            <i class="far fa-clock"></i>
+                                            Thời gian còn lại: <timer autostart="false" end-time="60" interval="1000" language="vi">{{hourUnit}}</timer>
+                                            <br>
+                                            <timer countdown="60" autostart="false" interval="1000">
                                                 <div class="progress">
                                                     <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{progressBar}}%"></div>
                                                 </div>
