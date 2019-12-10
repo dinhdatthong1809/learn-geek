@@ -22,11 +22,21 @@ export default function AuthenticationService() {
         },
 
         isAuthenticated: () => {
-            return learnGeekAuth.currentUser;
+            return new Promise(resolve => {
+                if (learnGeekAuth.currentUser) {
+                    resolve(learnGeekAuth.currentUser);
+                }
+                else {
+                    const unsubscribe = learnGeekAuth.onAuthStateChanged((user) => {
+                        unsubscribe();
+                        resolve(user ? learnGeekAuth.currentUser : null);
+                    });
+                }
+            });
         },
 
         sendPasswordResetEmail: (email) => {
-            return  learnGeekAuth.sendPasswordResetEmail(email, actionCodeSettings)
+            return learnGeekAuth.sendPasswordResetEmail(email, actionCodeSettings)
         },
     };
 }
