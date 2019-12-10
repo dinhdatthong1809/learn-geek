@@ -137,18 +137,7 @@ app.directive('timer', function ($timeout, $compile) {
             startTimeAttr: '=?startTime', //a question mark makes it optional
             countdownAttr: '=?countdown' //what unit?
         },
-        template: '<div><p>' +
-            '<p>Time ends in : {{ hours }} hour<span data-ng-show="hours > 1">s</span>, ' +
-            '{{ minutes }} minutes, ' +
-            '{{ seconds }} seconds ' +
-            '<span data-ng-if="millis">, milliseconds: {{millis}}</span></p>' +
-
-            '<p>Interval ID: {{ intervalId  }}<br>' +
-            'Start Time: {{ startTime | date:"mediumTime" }}<br>' +
-            'Stopped Time: {{ stoppedTime || "Not stopped" }}</p>' +
-            '</p>' +
-            '<button data-ng-click="resume()" data-ng-disabled="!stoppedTime">Resume</button>' +
-            '<button data-ng-click="stop()" data-ng-disabled="stoppedTime">Stop</button>',
+        template: '{{ hours }} giờ, {{ minutes }} phút, {{ seconds }} giây',
 
         link: function (scope, elem, attrs) {
 
