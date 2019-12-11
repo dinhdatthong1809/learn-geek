@@ -27,7 +27,7 @@ function controller($scope) {
     };
 
     $scope.$on('timer-stopped', (event, data) => {
-        this.nopBai();
+        this.hetGioLamBai();
     });
 
     this.btnText = {
