@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="text-danger text-right">
                                             <i class="far fa-clock"></i>
-                                            Thời gian còn lại: <timer autostart="false" countdown="{{$scope.deadline}}" interval="1000" language="vi">{{hourUnit}}</timer>
+                                            Thời gian còn lại: <timer autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
                                             <br>
                                             <timer countdown="60" interval="1000" autostart="false" >
                                                 <div class="progress">
