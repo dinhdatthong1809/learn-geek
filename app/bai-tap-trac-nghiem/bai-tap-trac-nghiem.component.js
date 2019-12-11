@@ -16,21 +16,24 @@ function controller($scope) {
 
     this.lamBai = () => {
         if (this.dangLamBai == false) {
-            $scope.$broadcast('timer-start');
             this.dangLamBai = true;
+            $scope.$broadcast('timer-start');
         }
         else {
-            $scope.$broadcast('timer-stop');
             this.dangLamBai = false;
+            $scope.$broadcast('timer-stop');
         }
     };
 
     $scope.$on('timer-stopped', (event, data) => {
-        console.log('deadline ', this.deadline);
-        console.log('event ', event);
-        console.log('data ', data);
         
-        this.nopBai();
+        if (this.dangLamBai) {
+            this.dangLamBai = false;
+            this.hetGioLamBai();
+        }
+        else {
+            this.nopBai();
+        }
 
         $scope.$broadcast('timer-reset');
     });
@@ -41,7 +44,6 @@ function controller($scope) {
 
     this.hetGioLamBai = () => {
         SweetAlertHelper.thongBao("Bạn đã hết giờ làm bài!");
-        $scope.$broadcast('timer-reset');
     };
 }
 

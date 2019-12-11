@@ -43,18 +43,17 @@
                                         <div class="text-primary text-center mx-3">
                                         </div>
                                         <div class="text-danger text-right">
-                                            
                                         </div>
                                     </div>
                                     <div class="d-flex mb-3 justify-content-center" timer-controls>
                                         <div class="text-center">
-                                            <button ng-click="$scope.lamBai()" class="btn btn-block btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">
+                                            <button ng-click="$scope.lamBai()" class="btn btn-block btn-lg btn-dark align-self-center" ng-click="timerToggle()" type="button">
                                                 {{$scope.dangLamBai ? 'Nộp bài' : 'Bắt đầu làm bài'}}
                                             </button>
                                             <div class="text-danger mt-2">
                                                 <i class="far fa-clock"></i>
                                                 Thời gian còn lại:
-                                                <timer finish-callback="$scope.hetGioLamBai()" max-time-unit="'hour'" autostart="false" countdown="$scope.deadline" interval="1000" language="vi">
+                                                <timer max-time-unit="'hour'" autostart="false" countdown="$scope.deadline" interval="1000" language="vi">
                                                     {{hhours}} giờ, {{mminutes}} phút, {{sseconds}} giây
                                                 </timer>
                                                 <br>
