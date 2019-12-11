@@ -21,12 +21,13 @@ function controller($scope) {
         }
         else {
             $scope.$broadcast('timer-stop');
+            $scope.$broadcast('timer-reset');
             this.dangLamBai = false;
         }
     };
 
     $scope.$on('timer-stopped', (event, data) => {
-        this.hetGioLamBai();
+        this.nopBai();
     });
 
     this.btnText = {
@@ -35,8 +36,12 @@ function controller($scope) {
         stopped: "Bắt đầu làm bài"
     };
 
+    this.nopBai = () => {
+        SweetAlertHelper.thongBao("Bạn đã nộp bài!");
+    };
+
     this.hetGioLamBai = () => {
         SweetAlertHelper.thongBao("Bạn đã hết giờ làm bài!");
-    }
+    };
 }
 
