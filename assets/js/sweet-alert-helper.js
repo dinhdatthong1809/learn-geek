@@ -20,6 +20,15 @@ export default class SweetAlertHelper {
 		});
 	}
 
+	static thongBao = (thongBao) => {
+		return Swal.fire({
+			icon: 'info',
+			title: 'Thông báo',
+			html: thongBao,
+			showConfirmButton: true
+		});
+	}
+
 	static canhBao = (thongBao) => {
 		return Swal.fire({
 			icon: 'warning',
