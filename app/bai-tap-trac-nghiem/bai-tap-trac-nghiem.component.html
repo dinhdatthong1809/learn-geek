@@ -34,26 +34,27 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <div>
-                                    <div class="d-flex d-flex justify-content-between mb-5" timer-controls>
+                                    <div class="d-flex d-flex justify-content-between mb-5">
                                         <div class="text-primary text-left">
                                             <i class="fas fa-puzzle-piece"></i> {{$scope.subject.name}}
                                             <br>
-                                            Thời gian làm bài: {{$scope.deadline}}
+                                            <i class="far fa-clock"></i> Tổng thời gian làm bài: <timer autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
                                         </div>
                                         <div class="text-primary text-center mx-3">
-                                            <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
                                         </div>
-                                        <div class="text-danger text-right">
+                                        <div class="text-danger text-right" timer-controls>
                                             <i class="far fa-clock"></i>
                                             Thời gian còn lại: <timer autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
                                             <br>
-                                            <timer countdown="60" interval="1000" autostart="false" >
+                                            <timer countdown="$scope.deadline" interval="1000" autostart="false" >
                                                 <div class="progress">
                                                     <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{progressBar}}%"></div>
                                                 </div>
                                             </timer>
                                         </div>
                                     </div>
+                                    <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
+
                                     <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
                                 </div>
                             </div>
