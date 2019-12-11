@@ -51,7 +51,10 @@
                                             <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
                                             <div class="text-danger">
                                                 <i class="far fa-clock"></i>
-                                                Thời gian còn lại: <timer max-time-unit="'hour'" autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
+                                                Thời gian còn lại:
+                                                <timer max-time-unit="'hour'" autostart="false" countdown="$scope.deadline" interval="1000" language="vi">
+                                                        {{hhours}} giờ, {{mminutes}} phút, {{sseconds}} giây
+                                                </timer>
                                                 <br>
                                                 <timer countdown="$scope.deadline" interval="1000" autostart="false" >
                                                     <div class="progress">
