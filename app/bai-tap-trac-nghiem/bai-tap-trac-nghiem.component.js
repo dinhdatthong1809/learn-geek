@@ -11,11 +11,28 @@ export let BaiTapTracNghiemComponent = {
     }
 };
 
-function controller() {
+function controller($scope) {
+    this.dangLamBai = false;
+
+    this.lamBai = () => {
+        if (this.dangLamBai == false) {
+            $scope.$broadcast('timer-start');
+            this.dangLamBai = true;
+        }
+        else {
+            $scope.$broadcast('timer-stop');
+            this.dangLamBai = false;
+        }
+    };
+
+    $scope.$on('timer-stopped', (event, data) => {
+        this.hetGioLamBai();
+    });
+
     this.btnText = {
-        reset: "Start",
-        started: "Stop",
-        stopped: "Resume"
+        reset: "Bắt đầu làm bài",
+        started: "Kết thúc bài làm",
+        stopped: "Bắt đầu làm bài"
     };
 
     this.hetGioLamBai = () => {
