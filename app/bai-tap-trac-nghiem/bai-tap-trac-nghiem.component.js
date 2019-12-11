@@ -10,6 +10,10 @@ export let BaiTapTracNghiemComponent = {
 };
 
 function controller() {
-    
+    this.btnText = {
+        reset: "Start",
+        started: "Stop",
+        stopped: "Resume"
+    };
 }
 
