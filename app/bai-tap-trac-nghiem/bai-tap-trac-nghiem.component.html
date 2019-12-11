@@ -48,18 +48,17 @@
                                     </div>
                                     <div class="d-flex mb-3 justify-content-center" timer-controls>
                                         <div class="text-center">
+                                            <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
                                             <div class="text-danger">
                                                 <i class="far fa-clock"></i>
-                                                Thời gian còn lại: <timer autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
+                                                Thời gian còn lại: <timer max-time-unit="'hour'" autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
                                                 <br>
                                                 <timer countdown="$scope.deadline" interval="1000" autostart="false" >
                                                     <div class="progress">
                                                         <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{progressBar}}%"></div>
                                                     </div>
                                                 </timer>
-                                                <br>
                                             </div>
-                                            <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
                                         </div>
                                     </div>
                                     <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
