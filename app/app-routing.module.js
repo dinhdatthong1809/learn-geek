@@ -46,7 +46,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                         .catch(error => $timeout(() => $window.location = '/'));
                 },
                 deadline: (quizService, $stateParams, $timeout, $window) => {
-                    return 10;
+                    return 2;
 
                     // return quizService
                     //     .getOne($stateParams.maMonHoc)
