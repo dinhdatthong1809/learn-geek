@@ -38,7 +38,7 @@
                                         <div class="text-primary text-left">
                                             <i class="fas fa-puzzle-piece"></i> {{$scope.subject.name}}
                                             <br>
-                                            <i class="far fa-clock"></i> Tổng thời gian làm bài: <timer autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
+                                            <i class="fas fa-clock"></i> Tổng thời gian làm bài: <timer autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
                                         </div>
                                         <div class="text-primary text-center mx-3">
                                         </div>
@@ -48,12 +48,15 @@
                                     </div>
                                     <div class="d-flex mb-3 justify-content-center" timer-controls>
                                         <div class="text-center">
-                                            <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
-                                            <div class="text-danger">
+                                            <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">
+                                                Bắt đầu làm bài 
+                                                {{btnText[timerStatus]}}
+                                            </button>
+                                            <div class="text-danger mt-2">
                                                 <i class="far fa-clock"></i>
                                                 Thời gian còn lại:
                                                 <timer max-time-unit="'hour'" autostart="false" countdown="$scope.deadline" interval="1000" language="vi">
-                                                        {{hhours}} giờ, {{mminutes}} phút, {{sseconds}} giây
+                                                    {{hhours}} giờ, {{mminutes}} phút, {{sseconds}} giây
                                                 </timer>
                                                 <br>
                                                 <timer countdown="$scope.deadline" interval="1000" autostart="false" >
