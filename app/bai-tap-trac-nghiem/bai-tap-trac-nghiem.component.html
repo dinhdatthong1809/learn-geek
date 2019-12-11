@@ -37,13 +37,15 @@
                                     <div class="d-flex d-flex justify-content-between mb-5" timer-controls>
                                         <div class="text-primary text-left">
                                             <i class="fas fa-puzzle-piece"></i> {{$scope.subject.name}}
+                                            <br>
+                                            Thời gian làm bài: {{$scope.deadline}}
                                         </div>
-                                        <div class="text-primary text-center">
+                                        <div class="text-primary text-center mx-3">
                                             <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
                                         </div>
                                         <div class="text-danger text-right">
                                             <i class="far fa-clock"></i>
-                                            Thời gian còn lại: <timer autostart="false" countdown="60" interval="1000" language="vi">{{hourUnit}}</timer>
+                                            Thời gian còn lại: <timer autostart="false" countdown="{{$scope.deadline}}" interval="1000" language="vi">{{hourUnit}}</timer>
                                             <br>
                                             <timer countdown="60" interval="1000" autostart="false" >
                                                 <div class="progress">

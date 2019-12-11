@@ -4,15 +4,12 @@ export let BaiTapTracNghiemComponent = {
     controllerAs: '$scope',
     bindings: {
         subject: '<',
-        quizs: '<'
+        quizs: '<',
+        deadline: '<'
     }
 };
 
 function controller() {
-    this.deadline = 60 * 1000;
-
-    this.$onInit = () => {
-        this.deadline = this.quizs.length * 60 * 1000;
-    }
+    
 }
 
