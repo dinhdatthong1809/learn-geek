@@ -28,7 +28,7 @@ function controller($scope) {
     $scope.$on('timer-stopped', (event, data) => {
         $scope.$broadcast('timer-reset');
 
-        if (deadline == 0) {
+        if (this.deadline == 0) {
             this.hetGioLamBai();
         }
         else {
