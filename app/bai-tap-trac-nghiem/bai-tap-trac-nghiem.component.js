@@ -30,12 +30,7 @@ function controller($scope) {
         console.log('event ', event);
         console.log('data ', data);
         
-        if (this.deadline == 0) {
-            this.hetGioLamBai();
-        }
-        else {
-            this.nopBai();
-        }
+        this.nopBai();
 
         $scope.$broadcast('timer-reset');
     });
@@ -46,6 +41,7 @@ function controller($scope) {
 
     this.hetGioLamBai = () => {
         SweetAlertHelper.thongBao("Bạn đã hết giờ làm bài!");
+        $scope.$broadcast('timer-reset');
     };
 }
 
