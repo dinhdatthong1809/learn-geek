@@ -21,20 +21,20 @@ function controller($scope) {
         }
         else {
             $scope.$broadcast('timer-stop');
-            $scope.$broadcast('timer-reset');
             this.dangLamBai = false;
         }
     };
 
     $scope.$on('timer-stopped', (event, data) => {
-        this.hetGioLamBai();
-    });
+        $scope.$broadcast('timer-reset');
 
-    this.btnText = {
-        reset: "Bắt đầu làm bài",
-        started: "Kết thúc bài làm",
-        stopped: "Bắt đầu làm bài"
-    };
+        if (deadline == 0) {
+            this.hetGioLamBai();
+        }
+        else {
+            this.nopBai();
+        }
+    });
 
     this.nopBai = () => {
         SweetAlertHelper.thongBao("Bạn đã nộp bài!");
