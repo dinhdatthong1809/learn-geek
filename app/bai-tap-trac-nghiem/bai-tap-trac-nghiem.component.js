@@ -33,6 +33,7 @@ function controller($scope) {
         else {
             this.nopBai();
         }
+        
         $scope.$broadcast('timer-reset');
     });
 
