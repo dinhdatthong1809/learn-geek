@@ -42,19 +42,22 @@
                                         </div>
                                         <div class="text-primary text-center mx-3">
                                         </div>
-                                        <div class="text-danger text-right" timer-controls>
-                                            <i class="far fa-clock"></i>
-                                            Thời gian còn lại: <timer autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
-                                            <br>
-                                            <timer countdown="$scope.deadline" interval="1000" autostart="false" >
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{progressBar}}%"></div>
-                                                </div>
-                                            </timer>
+                                        <div class="text-danger text-right">
+                                            
                                         </div>
                                     </div>
-                                    <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
-
+                                    <div class="row mb-3" timer-controls>
+                                        <i class="far fa-clock"></i>
+                                        Thời gian còn lại: <timer autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
+                                        <br>
+                                        <timer countdown="$scope.deadline" interval="1000" autostart="false" >
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{progressBar}}%"></div>
+                                            </div>
+                                        </timer>
+                                        <br>
+                                        <button class="btn btn-sm btn-dark align-self-center" ng-click="timerToggle()" type="button">Bắt đầu làm bài</button>
+                                    </div>
                                     <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
                                 </div>
                             </div>
