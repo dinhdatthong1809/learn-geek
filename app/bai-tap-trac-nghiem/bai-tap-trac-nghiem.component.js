@@ -45,11 +45,11 @@ function controller($scope) {
     });
 
     this.nopBai = () => {
-        SweetAlertHelper.thongBao("Bạn đã nộp bài!", this.ketQua());
+        SweetAlertHelper.thongBao("Bạn đã nộp bài! <br>" + this.ketQua());
     };
 
     this.hetGioLamBai = () => {
-        SweetAlertHelper.thongBao("Bạn đã hết giờ làm bài!", this.ketQua());
+        SweetAlertHelper.thongBao("Bạn đã hết giờ làm bài! <br>" + this.ketQua());
     };
 
     this.tinhDiem = () => {
