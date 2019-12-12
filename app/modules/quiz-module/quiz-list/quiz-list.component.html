@@ -15,5 +15,5 @@
 
     <app-quiz-card quiz="$scope.quizs[$scope.index]" index=$scope.index></app-quiz-card>
 
-    <button ng-class="{'btn-primary': $index == $scope.index}" ng-click="$scope.goToQuiz($index)" ng-repeat="quiz in $scope.quizs" class="btn">{{("0" + ($index + 1)).slice(-2)}}</button>
+    <button ng-class="{'border border-primary': $index == $scope.index}" ng-click="$scope.goToQuiz($index)" ng-repeat="quiz in $scope.quizs" class="btn">{{("0" + ($index + 1)).slice(-2)}}</button>
 </div>
