@@ -21,6 +21,7 @@ import { subjectModule } from './modules/subject-module/subject.module.js';
 import { quizModule } from './modules/quiz-module/quiz.module.js';
 
 import { requireAuthHook } from './hooks/yeu-cau-dang-nhap.hook.js';
+import { isDoingQuizHook } from './hooks/dang-lam-bai.hook.js';
 import { loadingIndicatorHook } from './hooks/dang-tai-trang.hook.js';
 
 export let app = angular.module('myApp',
@@ -133,6 +134,7 @@ app.directive('compareTo', () => {
 
 /* Hooks */
 app.run(requireAuthHook);
+app.run(isDoingQuizHook);
 app.run(loadingIndicatorHook);
 
 angular.element(document).ready(() => {

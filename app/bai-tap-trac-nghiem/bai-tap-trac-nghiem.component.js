@@ -12,7 +12,7 @@ export let BaiTapTracNghiemComponent = {
     }
 };
 
-function controller($scope, $transitions) {
+function controller($scope) {
     this.dangLamBai = false;
 
     this.soCauDung = 0;
