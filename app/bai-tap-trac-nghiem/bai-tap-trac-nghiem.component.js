@@ -23,7 +23,9 @@ function controller($scope, $transitions) {
        this.quizs = _.sample(this.allQuizs, 10);
     }
 
-    $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, async (trans) => {
+    $transitions.onStart({from: 'bai-tap-trac-nghiem'}, async (trans) => {
+        console.log("change");
+
         if (this.dangLamBai) {
             let hoi = await SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?")
             .then(
