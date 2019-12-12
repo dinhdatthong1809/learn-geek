@@ -1,3 +1,5 @@
+import SweetAlertHelper from '../assets/js/sweet-alert-helper.js';
+
 export let FooterComponent = {
     templateUrl: './app/footer.component.html',
     controller: controller,
@@ -14,5 +16,9 @@ function controller() {
     this.mail = {
         email: "",
         content: ""
+    }
+
+    this.guiGopY = () => {
+        SweetAlertHelper.thanhCong("Gửi góp ý thành công!");
     }
 }

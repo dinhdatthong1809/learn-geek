@@ -21,7 +21,7 @@
                 <div class="col-lg-4">
                     <h4 class="text-dark mb-4 mt-4">Gửi <span class="text-primary">góp ý </span></h4>
                     <div class="text-secondary">
-                        <form name="formFeedback">
+                        <form name="formFeedback" ng-submit="$scope.guiGopY()">
                             <div class="form-group row mb-1">
                                 <div class="col-md-8">
                                     <input required pattern="^[a-zA-Z][a-zA-Z0-9_\.]{5,50}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$" maxlength=75 type="email" class="form-control" name="email" ng-model="$scope.mail.email" placeholder="Email của bạn...">

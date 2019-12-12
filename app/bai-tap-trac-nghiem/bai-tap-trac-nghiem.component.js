@@ -46,11 +46,13 @@ function controller($scope) {
     });
 
     this.nopBai = () => {
-        SweetAlertHelper.thongBao("Bạn đã nộp bài! <br><br>" + this.ketQua());
+        let str = "<div class='text-success'>Bạn đã nộp bài!</div><br>";
+        SweetAlertHelper.thongBao(str + this.ketQua());
     };
 
     this.hetGioLamBai = () => {
-        SweetAlertHelper.canhBao("Bạn đã hết giờ làm bài! <br><br>" + this.ketQua());
+        let str = "<div class='text-danger'>Đã hết giờ làm bài!</div><br>";
+        SweetAlertHelper.canhBao(str + this.ketQua());
     };
 
     this.tinhDiem = () => {
