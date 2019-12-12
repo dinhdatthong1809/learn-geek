@@ -20,7 +20,7 @@ function controller($scope, $transitions) {
     this.soCauChuaLam = 0;
 
     this.$onInit = () => {
-       this.quizs = _.sample(this.allQuizs, 10);
+       this.quizs = _.sample(this.allQuizs, 90);
     }
 
     $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, async (trans) => {
