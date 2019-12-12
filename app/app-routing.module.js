@@ -50,7 +50,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
 
                     return quizService
                         .getOne($stateParams.maMonHoc)
-                        .then(response => response.data.length)
+                        .then(response => response.data.length * 60)
                         .catch(error => $timeout(() => $window.location = '/'));
                 }
             }
