@@ -23,15 +23,16 @@ function controller($scope, $transitions) {
        this.quizs = _.sample(this.allQuizs, 10);
     }
 
-    $transitions.onStart({from: 'bai-tap-trac-nghiem'}, () => {
+    $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, (trans) => {
         console.log("haha");
+        console.log(this.dangLamBai);
 
         if (this.dangLamBai) {
-            SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn làm bài tiếp?", () => {
-                event.preventDefault();
+            SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?", () => {
+                return trans.router.stateService.target(trans.to().name);
             });
         }
-        return;
+        return false;
     });
 
     this.lamBai = () => {
