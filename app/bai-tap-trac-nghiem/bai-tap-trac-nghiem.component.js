@@ -29,7 +29,7 @@ function controller($scope) {
         
         for (let i = 0; i < this.quizs.length; i++) {
             if (this.quizs[i].prototype.studentAnswer) {
-                console.log(this.quizs[i].prototype.studentAnswer);
+                console.log(i, this.quizs[i].prototype.studentAnswer);
             }
         }
 
