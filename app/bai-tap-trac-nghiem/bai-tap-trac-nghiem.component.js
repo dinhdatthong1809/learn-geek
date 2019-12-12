@@ -29,6 +29,7 @@ function controller($scope, $transitions) {
             .then(
                 (result) => {
                     if (result.value) {
+                        console.log(trans.to().name);
                         return trans.router.stateService.target(trans.to().name);
                     }
 
@@ -38,6 +39,8 @@ function controller($scope, $transitions) {
             
             return hoi;
         }
+
+        return true;
     });
 
     this.lamBai = () => {
