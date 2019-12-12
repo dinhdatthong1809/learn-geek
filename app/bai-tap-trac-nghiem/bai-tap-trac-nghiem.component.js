@@ -30,7 +30,9 @@ function controller($scope) {
     };
 
     $scope.$on('timer-stopped', (event, data) => {
-        
+
+        this.tinhDiem();
+
         if (this.dangLamBai) {
             this.dangLamBai = false;
             this.hetGioLamBai();
