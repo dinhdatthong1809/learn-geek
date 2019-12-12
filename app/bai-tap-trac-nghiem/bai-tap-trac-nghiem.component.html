@@ -35,7 +35,7 @@
                             <div class="card-body">
                                 <div>
                                     <div class="d-flex justify-content-between mb-5">
-                                        <div class="text-primary text-left">
+                                        <div class="text-dark text-left">
                                             <i class="fas fa-puzzle-piece"></i> {{$scope.subject.name}}
                                             <br>
                                             <i class="fas fa-clock"></i> Tổng thời gian làm bài: <timer autostart="false" countdown="$scope.deadline" interval="1000" language="vi">{{hourUnit}}</timer>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="d-flex mb-3 justify-content-center" timer-controls>
                                         <div class="text-center">
-                                            <button ng-click="$scope.lamBai()" class="btn btn-block btn-lg btn-dark align-self-center" ng-click="timerToggle()" type="button">
+                                            <button ng-click="$scope.lamBai()" ng-class="{btn-dark: !$scope.dangLamBai, btn-primary: $scope.dangLamBai}" class="btn btn-block btn-lg align-self-center" ng-click="timerToggle()" type="button">
                                                 {{$scope.dangLamBai ? 'Nộp bài' : 'Bắt đầu làm bài'}}
                                             </button>
                                             <div class="text-danger mt-2">
@@ -65,7 +65,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
+                                    <div ng-if="$scope.dangLamBai">
+                                        <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
+                                    </div>
                                 </div>
                             </div>
                         </div>
