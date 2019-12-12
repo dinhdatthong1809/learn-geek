@@ -28,7 +28,8 @@ function controller($scope) {
     $scope.$on('timer-stopped', (event, data) => {
         
         for (let i = 0; i < this.quizs.length; i++) {
-            if (this.quizs[i].prototype.studentAnswer) {
+            if (this.quizs[i].prototype) {
+                console.log(i, this.quizs[i]);
                 console.log(i, this.quizs[i].prototype.studentAnswer);
             }
         }
