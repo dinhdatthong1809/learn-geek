@@ -23,7 +23,7 @@ function controller($scope, $transitions) {
        this.quizs = _.sample(this.allQuizs, 10);
     }
 
-    $transitions.onStart({from: 'bai-tap-trac-nghiem'}, async (trans) => {
+    $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, async (trans) => {
         console.log("change");
 
         if (this.dangLamBai) {
