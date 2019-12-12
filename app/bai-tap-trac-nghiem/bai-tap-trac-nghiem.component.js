@@ -23,11 +23,11 @@ function controller($scope, $transitions) {
        this.quizs = _.sample(this.allQuizs, 10);
     }
 
-    $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, async (trans) => {
+    $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, (trans) => {
         console.log("change");
 
         if (this.dangLamBai) {
-            let hoi = await SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?")
+            let hoi = SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?")
             .then(
                 (result) => {
                     if (result.value) {
