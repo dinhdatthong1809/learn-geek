@@ -27,6 +27,10 @@ function controller($scope) {
 
     $scope.$on('timer-stopped', (event, data) => {
         
+        for (let i = 0; i < this.quizs.length; i++) {
+            console.log(this.quizs.prototype.studentAnswer);
+        }
+
         if (this.dangLamBai) {
             this.dangLamBai = false;
             this.hetGioLamBai();
