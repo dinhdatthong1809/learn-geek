@@ -38,7 +38,7 @@ export default class SweetAlertHelper {
 		});
 	}
 
-	static hoi = (thongBao, hamDongY) => {
+	static hoi = (thongBao) => {
 		return Swal.fire({
 			icon: 'warning',
 			title: 'Bạn chắc chắn chứ?',
@@ -49,10 +49,6 @@ export default class SweetAlertHelper {
 			cancelButtonColor: '#d33',
 			confirmButtonText: 'Đồng ý!',
 			confirmButtonColor: '#3085d6'
-		}).then((result) => {
-			if (result.value) {
-				return hamDongY();
-			}
 		});
 	}
 
