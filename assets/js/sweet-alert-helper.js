@@ -20,12 +20,13 @@ export default class SweetAlertHelper {
 		});
 	}
 
-	static thongBao = (thongBao) => {
+	static thongBao = (thongBao, footerDom) => {
 		return Swal.fire({
 			icon: 'info',
 			title: 'Thông báo',
 			html: thongBao,
-			showConfirmButton: true
+			showConfirmButton: true,
+			footer: footerDom
 		});
 	}
 
