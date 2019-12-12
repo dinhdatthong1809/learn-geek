@@ -51,7 +51,7 @@ export default class SweetAlertHelper {
 			confirmButtonColor: '#3085d6'
 		}).then((result) => {
 			if (result.value) {
-				hamDongY();
+				return hamDongY();
 			}
 		});
 	}
