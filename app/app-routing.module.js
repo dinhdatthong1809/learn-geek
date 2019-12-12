@@ -32,6 +32,9 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             component: 'appBaiTapTracNghiem',
             // xem chi tiết tại ./global/yeu-cau-dang-nhap.hook.js
             data: { requiresAuth: true },
+            onExit: ($transition$, $state$) => {
+                return console.log($state$.name, $transition$.params());
+            },
             resolve: {
                 subject: (subjectService, $stateParams, $timeout, $window) => {
                     return subjectService
