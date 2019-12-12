@@ -23,28 +23,28 @@ function controller($scope) {
        this.quizs = _.sample(this.allQuizs, 10);
     }
 
-    $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, (trans) => {
-        console.log("change");
+    // $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, (trans) => {
+    //     console.log("change");
 
-        if (this.dangLamBai) {
-            let hoi = SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?")
-            .then(
-                (result) => {
-                    if (result.value) {
-                        return trans.router.stateService.target(trans.to().name);
-                    }
+    //     if (this.dangLamBai) {
+    //         let hoi = SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?")
+    //         .then(
+    //             (result) => {
+    //                 if (result.value) {
+    //                     return trans.router.stateService.target(trans.to().name);
+    //                 }
 
-                    return false;
-                }
-            );
+    //                 return false;
+    //             }
+    //         );
             
-            console.log(hoi);
+    //         console.log(hoi);
 
-            return hoi;
-        }
+    //         return hoi;
+    //     }
 
-        return true;
-    });
+    //     return true;
+    // });
 
     this.lamBai = () => {
         if (this.dangLamBai == false) {
