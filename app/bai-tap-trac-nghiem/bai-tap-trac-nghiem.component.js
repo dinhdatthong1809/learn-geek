@@ -23,6 +23,17 @@ function controller($scope) {
        this.quizs = _.sample(this.allQuizs, 10);
     }
 
+    $scope.$on('$stateChangeStart', (event, toState, toParams, fromState, fromParams) => {
+        if (fromState.name == 'bai-tap-trac-nghiem') {
+            if (this.dangLamBai) {
+                SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn làm bài tiếp?", () => {
+                    event.preventDefault();
+                });
+            }
+            return;
+        }
+    });
+
     this.lamBai = () => {
         if (this.dangLamBai == false) {
             this.dangLamBai = true;
@@ -85,7 +96,10 @@ function controller($scope) {
         let ketQua = '';
         ketQua += `<div>Số câu đúng: <span class="font-weight-bold text-success">${this.soCauDung}</span></div>`;
         ketQua += `<div>Số câu sai: <span class="font-weight-bold text-danger">${this.soCauSai}</span></div>`;
-        ketQua += `<div>Số câu chưa làm: <span class="font-weight-bold text-dark">${this.soCauChuaLam}</span></div>`;
+        
+        if (this.soCauChuaLam > 0) {
+            ketQua += `<div>Số câu chưa làm: <span class="font-weight-bold text-dark">${this.soCauChuaLam}</span></div>`;
+        }
 
         return ketQua;
     }
