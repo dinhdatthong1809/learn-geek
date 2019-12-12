@@ -45,11 +45,11 @@ function controller($scope) {
     });
 
     this.nopBai = () => {
-        SweetAlertHelper.thongBao("Bạn đã nộp bài! <br>" + this.ketQua());
+        SweetAlertHelper.thongBao("Bạn đã nộp bài! <br><br>" + this.ketQua());
     };
 
     this.hetGioLamBai = () => {
-        SweetAlertHelper.thongBao("Bạn đã hết giờ làm bài! <br>" + this.ketQua());
+        SweetAlertHelper.thongBao("Bạn đã hết giờ làm bài! <br><br>" + this.ketQua());
     };
 
     this.tinhDiem = () => {
@@ -74,8 +74,8 @@ function controller($scope) {
 
     this.ketQua = () => {
         let ketQua = '';
-        ketQua += `<div>Số câu đúng: <span class="font-weight-bold text-success">${this.soCauDung}</span></div><br>`;
-        ketQua += `<div>Số câu sai: <span class="font-weight-bold text-danger">${this.soCauSai}</span></div><br>`;
+        ketQua += `<div>Số câu đúng: <span class="font-weight-bold text-success">${this.soCauDung}</span></div>`;
+        ketQua += `<div>Số câu sai: <span class="font-weight-bold text-danger">${this.soCauSai}</span></div>`;
         ketQua += `<div>Số câu chưa làm: <span class="font-weight-bold text-dark">${this.soCauChuaLam}</span></div>`;
 
         return ketQua;
