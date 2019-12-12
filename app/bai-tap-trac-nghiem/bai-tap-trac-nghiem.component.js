@@ -85,6 +85,11 @@ function controller($scope) {
     this.resetKetQua = () => {
         this.soCauDung = 0;
         this.soCauSai = 0;
+
+        // quét mảng và xóa bài làm
+        for (let i = 0; i < this.quizs.length; i++) {
+            delete this.quizs[i].studentAnswer; 
+        }
     }
 }
 
