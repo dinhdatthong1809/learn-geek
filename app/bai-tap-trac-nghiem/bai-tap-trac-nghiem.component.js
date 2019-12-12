@@ -42,6 +42,7 @@ function controller($scope) {
         }
 
         $scope.$broadcast('timer-reset');
+        this.resetKetQua();
     });
 
     this.nopBai = () => {
@@ -49,7 +50,7 @@ function controller($scope) {
     };
 
     this.hetGioLamBai = () => {
-        SweetAlertHelper.thongBao("Bạn đã hết giờ làm bài! <br><br>" + this.ketQua());
+        SweetAlertHelper.canhBao("Bạn đã hết giờ làm bài! <br><br>" + this.ketQua());
     };
 
     this.tinhDiem = () => {
@@ -81,6 +82,9 @@ function controller($scope) {
         return ketQua;
     }
 
-
+    this.resetKetQua = () => {
+        this.soCauDung = 0;
+        this.soCauSai = 0;
+    }
 }
 
