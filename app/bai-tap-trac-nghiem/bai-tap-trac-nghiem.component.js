@@ -29,13 +29,13 @@ function controller($scope, $transitions) {
             .then(
                 (result) => {
                     if (result.value) {
-                        return hamDongY();
+                        return trans.router.stateService.target(trans.to().name);
                     }
+
+                    return false;
                 }
             );
             
-            trans.router.stateService.target(trans.to().name);
-
             return hoi;
         }
     });
