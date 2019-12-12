@@ -24,9 +24,6 @@ function controller($scope, $transitions) {
     }
 
     $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, (trans) => {
-        console.log("haha");
-        console.log(this.dangLamBai);
-
         if (this.dangLamBai) {
             SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?", () => {
                 return trans.router.stateService.target(trans.to().name);
