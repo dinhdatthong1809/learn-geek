@@ -12,7 +12,7 @@ export let BaiTapTracNghiemComponent = {
     }
 };
 
-function controller($scope) {
+function controller($scope, $transitions) {
     this.dangLamBai = false;
 
     this.soCauDung = 0;
@@ -23,17 +23,15 @@ function controller($scope) {
        this.quizs = _.sample(this.allQuizs, 10);
     }
 
-    $scope.$on('$stateChangeStart', (event, toState, toParams, fromState, fromParams) => {
+    $transitions.onStart({from: 'bai-tap-trac-nghiem'}, () => {
         console.log("haha");
 
-        if (fromState.name == 'bai-tap-trac-nghiem') {
-            if (this.dangLamBai) {
-                SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn làm bài tiếp?", () => {
-                    event.preventDefault();
-                });
-            }
-            return;
+        if (this.dangLamBai) {
+            SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn làm bài tiếp?", () => {
+                event.preventDefault();
+            });
         }
+        return;
     });
 
     this.lamBai = () => {
