@@ -5,5 +5,5 @@ export let isDoingQuizHook = ($transitions) => {
     console.log("change");
   };
 
-  $transitions.Before({ from: 'bai-tap-trac-nghiem' }, isDoingQuizIndicator);
+  $transitions.onBefore({ from: 'bai-tap-trac-nghiem' }, isDoingQuizIndicator);
 }
