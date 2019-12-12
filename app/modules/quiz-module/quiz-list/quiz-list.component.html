@@ -14,4 +14,6 @@
     </div>
 
     <app-quiz-card quiz="$scope.quizs[$scope.index]" index=$scope.index></app-quiz-card>
+
+    <button ng-click="$scope.goToQuiz($index)" ng-repeat="quiz in $scope.quizs" class="btn btn-sm">{{$index}}</button>
 </div>

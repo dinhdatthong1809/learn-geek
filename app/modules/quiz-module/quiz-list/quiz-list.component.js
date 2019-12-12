@@ -30,4 +30,8 @@ function controller() {
         this.index = this.quizs.length - 1;
     };
 
+    this.goToQuiz = (index) => {
+        this.index = index;
+    }
+
 }
