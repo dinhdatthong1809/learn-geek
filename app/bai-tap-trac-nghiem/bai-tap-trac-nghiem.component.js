@@ -24,6 +24,8 @@ function controller($scope) {
     }
 
     $scope.$on('$stateChangeStart', (event, toState, toParams, fromState, fromParams) => {
+        console.log("haha");
+
         if (fromState.name == 'bai-tap-trac-nghiem') {
             if (this.dangLamBai) {
                 SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn làm bài tiếp?", () => {
