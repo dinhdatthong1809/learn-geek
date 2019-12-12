@@ -39,6 +39,16 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                         .then(doc => doc.data())
                         .catch(error => $timeout(() => $window.location = '/'));
                 },
+                allQuizs: (quizService, $stateParams, $timeout, $window) => {
+                    return quizService
+                        .getOne($stateParams.maMonHoc)
+                        .then(
+                            response => {
+                                return response.data;
+                            }
+                        )
+                        .catch(error => $timeout(() => $window.location = '/'));
+                },
                 quizs: (quizService, $stateParams, $timeout, $window) => {
                     return quizService
                         .getOne($stateParams.maMonHoc)

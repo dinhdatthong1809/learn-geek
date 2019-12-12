@@ -6,6 +6,7 @@ export let BaiTapTracNghiemComponent = {
     controllerAs: '$scope',
     bindings: {
         subject: '<',
+        allQuizs: '<',
         quizs: '<',
         deadline: '<'
     }
@@ -17,6 +18,10 @@ function controller($scope) {
     this.soCauDung = 0;
     this.soCauSai = 0;
     this.soCauChuaLam = 0;
+
+    this.$onInit = () => {
+       this.quizs = _.sample(this.allQuizs, 10);
+    }
 
     this.lamBai = () => {
         if (this.dangLamBai == false) {
@@ -43,6 +48,7 @@ function controller($scope) {
 
         $scope.$broadcast('timer-reset');
         this.resetKetQua();
+        this.quizs = _.sample(this.allQuizs, 10);
     });
 
     this.nopBai = () => {
