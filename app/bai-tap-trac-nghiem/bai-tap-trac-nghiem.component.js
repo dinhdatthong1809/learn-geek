@@ -88,7 +88,7 @@ function controller($scope) {
 
         // quét mảng và xóa bài làm
         for (let i = 0; i < this.quizs.length; i++) {
-            delete this.quizs[i].studentAnswer; 
+            delete this.quizs[i].studentAnswer;
         }
     }
 }
