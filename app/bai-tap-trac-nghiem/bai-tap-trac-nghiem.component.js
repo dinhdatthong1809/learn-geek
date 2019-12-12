@@ -20,7 +20,7 @@ function controller($scope, $transitions) {
     this.soCauChuaLam = 0;
 
     this.$onInit = () => {
-       this.quizs = _.sample(this.allQuizs, 90);
+       this.quizs = _.sample(this.allQuizs, 10);
     }
 
     $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, async (trans) => {
@@ -29,7 +29,6 @@ function controller($scope, $transitions) {
             .then(
                 (result) => {
                     if (result.value) {
-                        console.log(trans.to().name);
                         return trans.router.stateService.target(trans.to().name);
                     }
 
@@ -37,6 +36,8 @@ function controller($scope, $transitions) {
                 }
             );
             
+            console.log(hoi);
+
             return hoi;
         }
 
