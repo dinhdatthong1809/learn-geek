@@ -2,6 +2,9 @@
 export let isDoingQuizHook = ($transitions) => {
 
   let isDoingQuizIndicator = async (trans) => {
+    let quizService = trans.injector().get('quizService');
+
+    console.log(quizService.dangLamBai);
     console.log("change");
     console.log(trans.params('from'));
   };
