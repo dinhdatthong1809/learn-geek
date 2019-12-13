@@ -1,9 +1,9 @@
 import SweetAlertHelper from '../../assets/js/sweet-alert-helper.js';
 
 // Hook dùng để báo hiệu nếu người dùng đang làm bài mà có ý định chuyển trang
-export let isDoingQuizHook = ($transitions) => {
+export let isDoingQuizHook = async ($transitions) => {
 
-  let isDoingQuizIndicator = async (trans) => {
+  let isDoingQuizIndicator = (trans) => {
     let quizService = trans.injector().get('quizService');
 
     if (quizService.dangLamBai) {
