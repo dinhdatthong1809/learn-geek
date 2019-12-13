@@ -61,11 +61,11 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
                         .catch(error => $timeout(() => $window.location = '/'));
                 },
                 deadline: (quizService, $stateParams, $timeout, $window) => {
-                    return 2;
-                    // return quizService
-                    //     .getOne($stateParams.maMonHoc)
-                    //     .then(response => (_.sample(response.data, 10).length) * 60)
-                    //     .catch(error => $timeout(() => $window.location = '/'));
+                    // return 2;
+                    return quizService
+                        .getOne($stateParams.maMonHoc)
+                        .then(response => (_.sample(response.data, 10).length) * 60)
+                        .catch(error => $timeout(() => $window.location = '/'));
                 }
             }
         },
