@@ -6,24 +6,24 @@ export let isDoingQuizHook = ($transitions) => {
   let isDoingQuizIndicator = (trans) => {
     let quizService = trans.injector().get('quizService');
 
-    if (quizService.dangLamBai) {
-      let hoi = SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?")
-        .then(
-          (result) => {
-            if (result.value) {
-              return trans.router.stateService.target(trans.to().name);
-            }
+    // if (quizService.dangLamBai) {
+    //   let hoi = SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?")
+    //     .then(
+    //       (result) => {
+    //         if (result.value) {
+    //           return trans.router.stateService.target(trans.to().name);
+    //         }
 
-            return false;
-          }
-        );
+    //         return false;
+    //       }
+    //     );
 
-        console.log(hoi);
-        return hoi;
-    }
+    //     console.log(hoi);
+    //     return hoi;
+    // }
     console.log('return');
     return trans.router.stateService.target(trans.to().name);;
   };
 
-  $transitions.onStart({ from: 'bai-tap-trac-nghiem' }, isDoingQuizIndicator);
+  $transitions.onBefore({ from: 'bai-tap-trac-nghiem' }, isDoingQuizIndicator);
 }
