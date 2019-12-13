@@ -22,7 +22,7 @@ export let isDoingQuizHook = ($transitions) => {
     //     return hoi;
     // }
     console.log('return');
-    return trans.router.stateService.target('/');
+    return;
   };
 
   $transitions.onBefore({ from: 'bai-tap-trac-nghiem' }, isDoingQuizIndicator);
