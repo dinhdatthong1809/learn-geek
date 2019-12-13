@@ -21,6 +21,8 @@ export let isDoingQuizHook = ($transitions) => {
         console.log(hoi);
         return hoi;
     }
+    console.log('return');
+    return trans.router.stateService.target(trans.to().name);;
   };
 
   $transitions.onStart({ from: 'bai-tap-trac-nghiem' }, isDoingQuizIndicator);
