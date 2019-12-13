@@ -18,13 +18,11 @@ export let isDoingQuizHook = ($transitions) => {
           }
         );
 
-        if (hoi == false) {
-          return false;
-        }
-        console.log(hoi);
-        return;
+      if (hoi == false) {
+        return false;
+      }
     }
-    console.log('return');
+    
     return;
   };
 
