@@ -12,8 +12,9 @@ export let BaiTapTracNghiemComponent = {
     }
 };
 
-function controller($scope) {
+function controller($scope, quizService) {
     this.dangLamBai = false;
+    quizService.dangLamBai = false;
 
     this.soCauDung = 0;
     this.soCauSai = 0;
@@ -49,10 +50,12 @@ function controller($scope) {
     this.lamBai = () => {
         if (this.dangLamBai == false) {
             this.dangLamBai = true;
+            quizService.dangLamBai = true;
             $scope.$broadcast('timer-start');
         }
         else {
             this.dangLamBai = false;
+            quizService.dangLamBai = false;
             $scope.$broadcast('timer-stop');
         }
     };
@@ -63,6 +66,7 @@ function controller($scope) {
 
         if (this.dangLamBai) {
             this.dangLamBai = false;
+            quizService.dangLamBai = false;
             this.hetGioLamBai();
         }
         else {

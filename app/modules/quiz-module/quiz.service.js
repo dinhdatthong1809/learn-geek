@@ -5,7 +5,7 @@ export function QuizService($http) {
     // let collection = learnGeekDB.collection("quizs");
 
     this.getAll = () => {
-        
+
     };
 
     this.getOne = (id) => {
@@ -13,7 +13,6 @@ export function QuizService($http) {
             .get(`/database/quizs/${id}.json`);
     };
 
-    return;
     // return {
     //     getAll: () => {
     //     },
