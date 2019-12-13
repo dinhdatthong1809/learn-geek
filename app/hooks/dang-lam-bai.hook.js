@@ -4,9 +4,21 @@ export let isDoingQuizHook = ($transitions) => {
   let isDoingQuizIndicator = async (trans) => {
     let quizService = trans.injector().get('quizService');
 
-    console.log(quizService.dangLamBai);
-    console.log("change");
-    console.log(trans.params('from'));
+    if (quizService.dangLamBai) {
+      let hoi = await SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?")
+        .then(
+          (result) => {
+            if (result.value) {
+              return trans.router.stateService.target(trans.to().name);
+            }
+
+            return false;
+          }
+        );
+
+        console.log(hoi);
+        return hoi;
+    }
   };
 
   $transitions.onBefore({ from: 'bai-tap-trac-nghiem' }, isDoingQuizIndicator);
