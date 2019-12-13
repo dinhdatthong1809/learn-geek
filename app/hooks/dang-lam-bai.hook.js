@@ -23,5 +23,5 @@ export let isDoingQuizHook = ($transitions) => {
     }
   };
 
-  $transitions.onBefore({ from: 'bai-tap-trac-nghiem' }, isDoingQuizIndicator);
+  $transitions.onStart({ from: 'bai-tap-trac-nghiem' }, isDoingQuizIndicator);
 }
