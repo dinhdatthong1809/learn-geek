@@ -27,15 +27,16 @@ function controller($scope, quizService) {
     }
 
     this.lamBai = () => {
-        if (this.dangLamBai == false) {
-            this.dangLamBai = true;
-            quizService.dangLamBai = true;
-            $scope.$broadcast('timer-start');
-        }
-        else {
+        if (this.dangLamBai) {
             this.dangLamBai = false;
             quizService.dangLamBai = false;
             $scope.$broadcast('timer-stop');
+        }
+        else {
+            this.dangLamBai = true;
+            quizService.dangLamBai = true;
+            $scope.$broadcast('timer-start');
+            this.ketQuaSauKhiLamBai = {};
         }
     };
 
