@@ -67,13 +67,16 @@
 
                                     </div>
                                     <div ng-if="$scope.ketQuaSauKhiLamBai.length > 0">
-                                        Kết quả của bài vừa rồi
+                                        Kết quả của bài trước
+                                        <br>
                                         <div ng-repeat="quiz in $scope.ketQuaSauKhiLamBai">
-                                            {{quiz.Text}}
+                                            <div class="h5">
+                                                {{$index}}. {{quiz.Text}}
+                                            </div>
 
                                             <div class="icheck-dark" ng-repeat="answer in quiz.Answers">
-                                                <input disabled type="radio" id="{{answer.Id}}" name="{{quiz.Id}}" ng-value="answer.Id" ng-bind="quiz.studentAnswer">
-                                                <label ng-class="{'text-success': (answer.Id == quiz.AnswerId), 'text-danger': ((answer.Id == quiz.studentAnswer) && (answer.Id != quiz.AnswerId))}" for="{{answer.Id}}">{{answer.Text}}</label>
+                                                <input disabled type="radio" id="{{answer.Id}}" name="{{quiz.Id}}" ng-value="answer.Id" ng-model="quiz.studentAnswer">
+                                                <label ng-class="{'text-success': (answer.Id == quiz.AnswerId), 'text-danger': ((answer.Id == quiz.studentAnswer) && (answer.Id != quiz.AnswerId))}" class="h5" for="{{answer.Id}}">{{answer.Text}}</label>
                                             </div>
 
                                         </div>
