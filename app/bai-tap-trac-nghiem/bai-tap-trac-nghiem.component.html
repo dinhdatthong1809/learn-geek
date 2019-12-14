@@ -67,11 +67,13 @@
 
                                     </div>
                                     <div ng-if="$scope.ketQuaSauKhiLamBai.length > 0">
-                                        Kết quả của bài trước
+                                        <div class="text-center h5">
+                                            Kết quả của bài vừa làm
+                                        </div>
                                         <br>
                                         <div ng-repeat="quiz in $scope.ketQuaSauKhiLamBai">
                                             <div class="h5">
-                                                {{$index}}. {{quiz.Text}}
+                                                {{$index + 1}}. {{quiz.Text}}
                                             </div>
 
                                             <div class="icheck-dark" ng-repeat="answer in quiz.Answers">
