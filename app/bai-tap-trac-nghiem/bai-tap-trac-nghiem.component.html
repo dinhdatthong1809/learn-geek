@@ -64,6 +64,19 @@
                                     </div>
                                     <div ng-if="$scope.dangLamBai">
                                         <app-quiz-list quizs="$scope.quizs"></app-quiz-list>
+
+                                        <div ng-if="$scope.ketQuaSauKhiLamBai.length > 0">
+                                            Kết quả của bài vừa rồ
+                                            <div ng-repeat="quiz in $scope.ketQuaSauKhiLamBai">
+                                                {{quiz.Text}}
+
+                                                <div class="icheck-primary" ng-repeat="answer in quiz.Answers">
+                                                    <input type="radio" id="{{answer.Id}}" name="{{quiz.Id}}" ng-value="answer.Id" ng-bind="quiz.studentAnswer">
+                                                    <label ng-class="{'text-success': (answer.Id == quiz.AnswerId), 'text-danger': (quiz.studentAnswer != quiz.AnswerId)}" class="h5" for="{{answer.Id}}">{{answer.Text}}</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

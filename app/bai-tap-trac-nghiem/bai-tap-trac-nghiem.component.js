@@ -20,32 +20,11 @@ function controller($scope, quizService) {
     this.soCauSai = 0;
     this.soCauChuaLam = 0;
 
+    this.ketQuaSauKhiLamBai = [];
+
     this.$onInit = () => {
        this.quizs = _.sample(this.allQuizs, 10);
     }
-
-    // $transitions.onBefore({from: 'bai-tap-trac-nghiem'}, (trans) => {
-    //     console.log("change");
-
-    //     if (this.dangLamBai) {
-    //         let hoi = SweetAlertHelper.hoi("Bạn đang trong trạng thái làm bài, bạn muốn hủy bài làm?")
-    //         .then(
-    //             (result) => {
-    //                 if (result.value) {
-    //                     return trans.router.stateService.target(trans.to().name);
-    //                 }
-
-    //                 return false;
-    //             }
-    //         );
-            
-    //         console.log(hoi);
-
-    //         return hoi;
-    //     }
-
-    //     return true;
-    // });
 
     this.lamBai = () => {
         if (this.dangLamBai == false) {
@@ -103,6 +82,8 @@ function controller($scope, quizService) {
             else {
                 this.soCauSai++;
             }
+
+            this.ketQuaSauKhiLamBai.push(Object.assign({}, currentQuiz));
         }
 
         this.soCauChuaLam = this.quizs.length - this.soCauDung - this.soCauSai;
