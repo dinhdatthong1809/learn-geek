@@ -36,7 +36,7 @@ function controller($scope, quizService) {
             this.dangLamBai = true;
             quizService.dangLamBai = true;
             $scope.$broadcast('timer-start');
-            this.ketQuaSauKhiLamBai = {};
+            this.ketQuaSauKhiLamBai = [];
         }
     };
 
