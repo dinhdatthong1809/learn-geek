@@ -76,7 +76,7 @@
                                                 {{$index + 1}}. {{quiz.Text}}
                                             </div>
 
-                                            <div class="icheck-dark" ng-repeat="answer in quiz.Answers">
+                                            <div class="icheck-primary" ng-repeat="answer in quiz.Answers">
                                                 <input disabled type="radio" id="{{answer.Id}}" name="{{quiz.Id}}" ng-value="answer.Id" ng-model="quiz.studentAnswer">
                                                 <label ng-class="{'text-success': (answer.Id == quiz.AnswerId), 'text-danger': ((answer.Id == quiz.studentAnswer) && (answer.Id != quiz.AnswerId))}" class="h5" for="{{answer.Id}}">{{answer.Text}}</label>
                                             </div>
