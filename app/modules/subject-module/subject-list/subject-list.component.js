@@ -3,7 +3,8 @@ export let SubjectListComponent = {
     controller: controller,
     controllerAs: '$scope',
     bindings: {
-        subjects: '<'
+        subjects: '<',
+        size: '<'
     }
 };
 
@@ -11,7 +12,7 @@ function controller() {
     this.begin = 0;
 
     this.numberOfItem = 6;
-    this.pageCount = Math.ceil(this.subjects.length / this.numberOfItem);
+    this.pageCount = Math.ceil(this.size / this.numberOfItem);
 
     this.first = () => {
         this.begin = 0;

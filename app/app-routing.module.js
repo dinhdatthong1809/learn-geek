@@ -23,7 +23,7 @@ app.config(($stateProvider, $locationProvider, $urlRouterProvider) => {
             url: '/khoa-hoc',
             component: 'appKhoaHoc',
             resolve: {
-                subjects: subjectService => subjectService.getAll()
+                subjects: subjectService => subjectService.getAll(),
             }
         },
         {
