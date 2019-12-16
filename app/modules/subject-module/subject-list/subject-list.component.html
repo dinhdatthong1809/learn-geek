@@ -1,5 +1,5 @@
 <div class="row">
-    <div ng-repeat="subject in $scope.subjects" class="col-lg-4">
+    <div ng-repeat="subject in $scope.subjects | limitTo : 3 : 0" class="col-lg-4">
         <app-subject-card subject="subject" index=$index></app-subject-card>
     </div>
 </div>
