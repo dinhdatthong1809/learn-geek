@@ -1,19 +1,18 @@
 <div class="row">
-    <div ng-repeat="subject in $scope.subjects | limitTo : 3 : 0" class="col-lg-4">
+    <div ng-repeat="subject in $scope.subjects | limitTo : $scope.numberOfItem : $scope.begin" class="col-lg-4">
         <app-subject-card subject="subject" index=$index></app-subject-card>
     </div>
 
     <div class="mb-3 d-flex justify-content-between">
         <div>
-            <button ng-disabled="$scope.index == 0" class="btn btn-outline-primary" ng-click="$scope.first()"><i class="fas fa-angle-double-left fa-2x"></i></button>
-            <button ng-disabled="$scope.index == 0" class="btn btn-outline-primary" ng-click="$scope.prev()"><i class="fas fa-angle-left fa-2x"></i></button>
+            <button class="btn btn-outline-primary" ng-click="$scope.first()"><i class="fas fa-angle-double-left fa-2x"></i></button>
+            <button class="btn btn-outline-primary" ng-click="$scope.prev()"><i class="fas fa-angle-left fa-2x"></i></button>
         </div>
         <div class="align-self-center">
-            <p class="h5">{{$scope.index + 1}} / {{$scope.quizs.length}}</p>
         </div>
         <div>
-            <button ng-disabled="$scope.index == $scope.subjects.length - 1" class="btn btn-outline-primary" ng-click="$scope.next()"><i class="fas fa-angle-right fa-2x"></i></button>
-            <button ng-disabled="$scope.index == $scope.subjects.length - 1" class="btn btn-outline-primary" ng-click="$scope.last()"><i class="fas fa-angle-double-right fa-2x"></i></button>
+            <button class="btn btn-outline-primary" ng-click="$scope.next()"><i class="fas fa-angle-right fa-2x"></i></button>
+            <button class="btn btn-outline-primary" ng-click="$scope.last()"><i class="fas fa-angle-double-right fa-2x"></i></button>
         </div>
     </div>
 </div>

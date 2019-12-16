@@ -8,25 +8,28 @@ export let SubjectListComponent = {
 };
 
 function controller() {
-    this.index = 0;
+    this.begin = 0;
+
+    this.numberOfItem = 6;
+    this.pageCount = Math.ceil(this.subjects.length / this.numberOfItem);
 
     this.first = () => {
-        this.index = 0;
+        this.begin = 0;
     };
 
     this.prev = () => {
-        if (this.index > 0) {
-            this.index--;
+        if (this.begin > 0) {
+            this.begin -= this.numberOfItem;
         }
     };
 
     this.next = () => {
-        if (this.index < this.quizs.length - 1) {
-            this.index++;
+        if (this.begin < (this.pageCount - 1) * this.numberOfItem) {
+            this.begin += this.numberOfItem;
         }
-    };
+    }
 
     this.last = () => {
-        this.index = this.quizs.length - 1;
-    };
+        this.begin = (this.pageCount - 1) * this.numberOfItem;
+    }
 }
