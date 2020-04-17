@@ -23,9 +23,9 @@ function controller($window, $location, anchorSmoothScroll, authenticationServic
                 // facebook
                 'https://www.facebook.com/dinh.dat.thong',
                 // instagram
-                'https://www.instagram.com/blueshootingstar1809',
+                'https://www.instagram.com/dinhdatthong1809',
                 // github
-                'https://github.com/BlueShootingStar',
+                'https://github.com/dinhdatthong1809',
             ]
     };
 
