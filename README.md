@@ -1,2 +1,2 @@
 # LearnGeek
-Go to: https://learngeek.netlify.com/ for more information
+Go to: https://learngeek.netlify.app/ for more information
