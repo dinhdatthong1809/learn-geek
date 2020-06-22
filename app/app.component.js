@@ -17,7 +17,7 @@ function controller($window, $location, anchorSmoothScroll, authenticationServic
         mark: 10,
         address: '260/10, Bình Quới, Tp. Hồ Chí Minh, Việt Nam',
         phoneNumber: '(090) 6546 948',
-        email: 'thongddps08464@fpt.edu.vn',
+        email: 'datthong180997@gmail.com',
         socialLinks:
             [
                 // facebook
